@@ -46,6 +46,7 @@ const currentPath = Astro.url.pathname;
             </div>
             <a href="/pedals" class:list={["px-3 py-2 text-sm font-heading font-semibold transition-colors rounded", currentPath.startsWith('/pedals') ? "text-brand-orange" : "text-gray-300 hover:text-brand-orange"]}>Guitar Pedals</a>
             <a href="/about" class:list={["px-3 py-2 text-sm font-heading font-semibold transition-colors rounded", currentPath === '/about/' || currentPath === '/about' ? "text-brand-orange" : "text-gray-300 hover:text-brand-orange"]}>About</a>
+            <a href="/contact" class:list={["px-3 py-2 text-sm font-heading font-semibold transition-colors rounded", currentPath === '/contact/' || currentPath === '/contact' ? "text-brand-orange" : "text-gray-300 hover:text-brand-orange"]}>Contact</a>
           </div>
 
           <!-- Mobile menu button -->
@@ -65,6 +66,7 @@ const currentPath = Astro.url.pathname;
           <a href="/microphones/chester" class="block pl-8 py-2 text-sm font-heading font-semibold text-gray-300 hover:text-brand-orange transition-colors">Chester</a>
           <a href="/pedals" class="block px-4 py-2 text-sm font-heading font-semibold text-gray-300 hover:text-brand-orange transition-colors">Guitar Pedals</a>
           <a href="/about" class="block px-4 py-2 text-sm font-heading font-semibold text-gray-300 hover:text-brand-orange transition-colors">About</a>
+          <a href="/contact" class="block px-4 py-2 text-sm font-heading font-semibold text-gray-300 hover:text-brand-orange transition-colors">Contact</a>
         </div>
       </div>
     </nav>
@@ -78,9 +80,6 @@ const currentPath = Astro.url.pathname;
         <div class="flex justify-center mb-4">
           <img src="/images/logo-icon.png" alt="Molinello Music" class="h-10 w-10 opacity-80" />
         </div>
-        <p class="text-sm mb-2">
-          Contact: <a href="mailto:info@molinellomusic.com" class="text-brand-orange hover:underline">info@molinellomusic.com</a>
-        </p>
         <p class="text-xs text-gray-500">&copy; 2024-2025 Molinello Music. All rights reserved.</p>
       </div>
     </footer>
