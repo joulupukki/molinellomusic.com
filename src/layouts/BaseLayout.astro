@@ -1,0 +1,97 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Hand-built microphones, guitar pedals, and original music by Boyd Timothy.' } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/png" href="/images/logo-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;600&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-white text-brand-dark font-body min-h-screen flex flex-col">
+    <nav class="bg-brand-dark sticky top-0 z-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="flex items-center justify-between h-16">
+          <a href="/" class="flex items-center gap-2 shrink-0">
+            <img src="/images/logo-icon.png" alt="Molinello Music" class="h-9 w-9" />
+            <span class="text-white font-heading font-bold text-lg hidden sm:inline">Molinello Music</span>
+          </a>
+
+          <!-- Desktop nav -->
+          <div class="hidden md:flex items-center gap-1">
+            <a href="/" class:list={["px-3 py-2 text-sm font-heading font-semibold transition-colors rounded", currentPath === '/' ? "text-brand-orange" : "text-gray-300 hover:text-brand-orange"]}>Home</a>
+            <a href="/news" class:list={["px-3 py-2 text-sm font-heading font-semibold transition-colors rounded", currentPath === '/news/' || currentPath === '/news' ? "text-brand-orange" : "text-gray-300 hover:text-brand-orange"]}>News</a>
+            <div class="relative group">
+              <a href="/microphones" class:list={["px-3 py-2 text-sm font-heading font-semibold transition-colors rounded", currentPath.startsWith('/microphones') ? "text-brand-orange" : "text-gray-300 hover:text-brand-orange"]}>Microphones</a>
+              <div class="absolute left-0 top-full pt-1 hidden group-hover:block">
+                <div class="bg-brand-charcoal rounded-lg shadow-xl py-2 min-w-[140px]">
+                  <a href="/microphones/milton" class="block px-4 py-2 text-sm text-gray-300 hover:text-brand-orange hover:bg-white/5 transition-colors">Milton</a>
+                  <a href="/microphones/chester" class="block px-4 py-2 text-sm text-gray-300 hover:text-brand-orange hover:bg-white/5 transition-colors">Chester</a>
+                </div>
+              </div>
+            </div>
+            <a href="/pedals" class:list={["px-3 py-2 text-sm font-heading font-semibold transition-colors rounded", currentPath.startsWith('/pedals') ? "text-brand-orange" : "text-gray-300 hover:text-brand-orange"]}>Guitar Pedals</a>
+            <a href="/about" class:list={["px-3 py-2 text-sm font-heading font-semibold transition-colors rounded", currentPath === '/about/' || currentPath === '/about' ? "text-brand-orange" : "text-gray-300 hover:text-brand-orange"]}>About</a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white p-2" aria-label="Toggle menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile nav -->
+        <div id="mobile-menu" class="hidden md:hidden pb-4">
+          <a href="/" class="block px-4 py-2 text-sm font-heading font-semibold text-gray-300 hover:text-brand-orange transition-colors">Home</a>
+          <a href="/news" class="block px-4 py-2 text-sm font-heading font-semibold text-gray-300 hover:text-brand-orange transition-colors">News</a>
+          <a href="/microphones" class="block px-4 py-2 text-sm font-heading font-semibold text-gray-300 hover:text-brand-orange transition-colors">Microphones</a>
+          <a href="/microphones/milton" class="block pl-8 py-2 text-sm font-heading font-semibold text-gray-300 hover:text-brand-orange transition-colors">Milton</a>
+          <a href="/microphones/chester" class="block pl-8 py-2 text-sm font-heading font-semibold text-gray-300 hover:text-brand-orange transition-colors">Chester</a>
+          <a href="/pedals" class="block px-4 py-2 text-sm font-heading font-semibold text-gray-300 hover:text-brand-orange transition-colors">Guitar Pedals</a>
+          <a href="/about" class="block px-4 py-2 text-sm font-heading font-semibold text-gray-300 hover:text-brand-orange transition-colors">About</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="flex-1">
+      <slot />
+    </main>
+
+    <footer class="bg-brand-dark text-gray-400 py-10">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+        <div class="flex justify-center mb-4">
+          <img src="/images/logo-icon.png" alt="Molinello Music" class="h-10 w-10 opacity-80" />
+        </div>
+        <p class="text-sm mb-2">
+          Contact: <a href="mailto:info@molinellomusic.com" class="text-brand-orange hover:underline">info@molinellomusic.com</a>
+        </p>
+        <p class="text-xs text-gray-500">&copy; 2024-2025 Molinello Music. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      const btn = document.getElementById('mobile-menu-btn');
+      const menu = document.getElementById('mobile-menu');
+      btn?.addEventListener('click', () => {
+        menu?.classList.toggle('hidden');
+      });
+    </script>
+
+  </body>
+</html>

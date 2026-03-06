@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Guitar Pedals - Molinello Music" description="Q-Tune DIY tuner pedal and The Flick reverb/tremolo/delay pedal.">
+  <!-- Hero -->
+  <section class="bg-brand-dark text-white py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <h1 class="font-heading font-extrabold text-4xl md:text-5xl mb-4">Guitar Pedals</h1>
+    </div>
+  </section>
+
+  <!-- Intro video -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="aspect-video rounded-xl overflow-hidden shadow-lg">
+        <iframe src="https://www.youtube.com/embed/gKlhl48I9eU" title="Guitar Pedals overview" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Q-Tune -->
+  <section class="py-16 md:py-24 bg-brand-warm" id="q-tune">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="md:flex gap-12 items-center">
+        <div class="md:w-2/5 mb-8 md:mb-0">
+          <img src="/images/pedals/q-tune.jpg" alt="Q-Tune DIY tuner pedal" class="rounded-xl shadow-lg w-full max-w-sm mx-auto" />
+        </div>
+        <div class="md:w-3/5">
+          <h2 class="font-heading font-extrabold text-3xl md:text-4xl mb-2">Q-Tune</h2>
+          <p class="text-brand-orange font-heading font-bold text-lg mb-4">The tuner made for builders and players</p>
+          <p class="text-gray-600 text-lg mb-4 leading-relaxed">
+            The world's first true DIY guitar/bass tuner pedal. A high-precision chromatic tuner with a 2.8" color LCD touchscreen, delivered as a build-it-yourself kit in a rugged stompbox enclosure. Uses an ESP32 module with an advanced pitch-detection engine.
+          </p>
+          <p class="text-gray-600 mb-4 leading-relaxed">
+            Ships with all components on a custom PCB, painted aluminum enclosure (125B or 1590B), and full assembly instructions. Features buffered-bypass or true-bypass, top-mounted jacks, and multiple display styles (meter, strobe-inspired, big-letter, etc.).
+          </p>
+          <a href="https://www.q-tune.com/" target="_blank" rel="noopener noreferrer" class="inline-block bg-brand-orange text-white font-heading font-bold px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors">
+            Visit the Q-Tune Website &rarr;
+          </a>
+        </div>
+      </div>
+      <!-- Q-Tune video -->
+      <div class="mt-12 max-w-3xl mx-auto">
+        <div class="aspect-video rounded-xl overflow-hidden shadow-lg">
+          <iframe src="https://www.youtube.com/embed/pWW68mqj2iQ" title="Q-Tune demo" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Flick -->
+  <section class="py-16 md:py-24" id="flick">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="md:flex gap-12 items-center">
+        <div class="md:w-3/5 mb-8 md:mb-0 order-2 md:order-1">
+          <h2 class="font-heading font-extrabold text-3xl md:text-4xl mb-2">The Flick</h2>
+          <p class="text-brand-orange font-heading font-bold text-lg mb-4">Reverb, Tremolo & Delay in One Musical Box</p>
+          <p class="text-gray-600 text-lg mb-4 leading-relaxed">
+            Built on the Daisy Seed platform. Offers bias-style tremolo, atmospheric stereo reverb, and slapback delay. Features edit mode for decay, diffusion, modulation, and high-cut shaping. Supports mono-to-stereo for dual-amp spreads.
+          </p>
+          <a href="https://github.com/joulupukki/FunBox/tree/joulupukki/add-flick/software/Flick" target="_blank" rel="noopener noreferrer" class="inline-block border-2 border-brand-dark text-brand-dark font-heading font-bold px-6 py-3 rounded-lg hover:bg-brand-dark hover:text-white transition-colors">
+            View Open-Source Firmware &rarr;
+          </a>
+        </div>
+        <div class="md:w-2/5 order-1 md:order-2">
+          <img src="/images/pedals/flick-pedals.jpg" alt="The Flick and Funbox pedals" class="rounded-xl shadow-lg w-full" />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

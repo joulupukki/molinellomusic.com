@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Molinello Music">
+  <!-- Hero -->
+  <section class="relative bg-brand-dark text-white overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-dark via-brand-charcoal to-brand-dark"></div>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-20 md:py-32 text-center">
+      <img src="/images/logo-full.jpg" alt="Molinello Music" class="mx-auto h-32 md:h-44 mb-8 rounded-xl shadow-2xl" />
+      <h1 class="font-heading font-extrabold text-4xl md:text-6xl tracking-tight mb-4">
+        MOLINELLO <span class="text-brand-orange">MUSIC</span>
+      </h1>
+      <p class="text-gray-400 font-body text-lg max-w-xl mx-auto">
+        Hand-built microphones, guitar pedals, and original music.
+      </p>
+    </div>
+  </section>
+
+  <!-- Featured: Basin & Grange -->
+  <section class="py-16 md:py-24 bg-brand-warm">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="md:flex items-center gap-12">
+        <div class="md:w-1/2 mb-8 md:mb-0">
+          <img
+            src="/images/home/basin-and-grange-album.jpg"
+            alt="Basin & Grange - Walk You Down the Road album cover"
+            class="rounded-xl shadow-lg w-full max-w-md mx-auto"
+          />
+        </div>
+        <div class="md:w-1/2">
+          <p class="text-brand-orange font-heading font-bold text-sm uppercase tracking-widest mb-2">Debut Album</p>
+          <h2 class="font-heading font-bold text-3xl md:text-4xl text-brand-dark mb-4">Basin & Grange</h2>
+          <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+            Head on over to the Basin & Grange website for more information about their debut album (released June 5, 2024), <em>Walk You Down the Road</em>. Or listen now on all major streaming platforms.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="https://www.basinandgrange.com/albums"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block bg-brand-orange text-white font-heading font-bold px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors"
+            >
+              Visit Website
+            </a>
+            <a
+              href="https://lnkfi.re/bng-walkalbum"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block border-2 border-brand-dark text-brand-dark font-heading font-bold px-6 py-3 rounded-lg hover:bg-brand-dark hover:text-white transition-colors"
+            >
+              Listen Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product highlights -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="font-heading font-bold text-3xl text-center mb-12">What We Make</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <a href="/microphones/milton" class="group block bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow overflow-hidden">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="/images/milton/milton-on-stand.jpg" alt="Milton microphone" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div class="p-6">
+            <h3 class="font-heading font-bold text-xl mb-1">Milton</h3>
+            <p class="text-gray-500 text-sm">Large-diaphragm condenser with vintage character</p>
+          </div>
+        </a>
+        <a href="/microphones/chester" class="group block bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow overflow-hidden">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="/images/chester/chester-closeup.jpg" alt="Chester microphone" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div class="p-6">
+            <h3 class="font-heading font-bold text-xl mb-1">Chester</h3>
+            <p class="text-gray-500 text-sm">The upright bass mic that captures your true tone</p>
+          </div>
+        </a>
+        <a href="/pedals" class="group block bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow overflow-hidden">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="/images/pedals/q-tune.jpg" alt="Q-Tune guitar pedal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div class="p-6">
+            <h3 class="font-heading font-bold text-xl mb-1">Guitar Pedals</h3>
+            <p class="text-gray-500 text-sm">Q-Tune, The Flick, and more</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

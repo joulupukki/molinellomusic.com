@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="News - Molinello Music" description="Latest news from Molinello Music.">
+  <section class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <h1 class="font-heading font-extrabold text-4xl md:text-5xl mb-12 text-center">News</h1>
+
+      <article class="bg-white rounded-xl shadow-md overflow-hidden md:flex">
+        <div class="md:w-2/5">
+          <img src="/images/news/bng-news.jpg" alt="Basin & Grange - Walk You Down the Road" class="w-full h-full object-cover" />
+        </div>
+        <div class="p-8 md:w-3/5 flex flex-col justify-center">
+          <p class="text-brand-orange font-heading font-bold text-sm uppercase tracking-widest mb-2">June 5, 2024</p>
+          <h2 class="font-heading font-bold text-2xl mb-4">Basin & Grange Release Debut Album</h2>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Basin & Grange have released their debut album, <em>Walk You Down the Road</em>. Head over to the Basin & Grange website for more information or listen now on all major streaming platforms.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="https://www.basinandgrange.com/albums" target="_blank" rel="noopener noreferrer" class="text-brand-orange font-heading font-bold hover:underline">
+              Learn more &rarr;
+            </a>
+            <a href="https://lnkfi.re/bng-walkalbum" target="_blank" rel="noopener noreferrer" class="text-brand-orange font-heading font-bold hover:underline">
+              Listen now &rarr;
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

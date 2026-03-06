@@ -1,0 +1,185 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Microphones - Molinello Music" description="Hand-built microphones for musicians who crave natural, honest tone.">
+  <!-- Hero -->
+  <section class="bg-brand-dark text-white py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <h1 class="font-heading font-extrabold text-4xl md:text-5xl mb-4">Microphones</h1>
+      <p class="text-xl md:text-2xl text-gray-300 font-heading mb-2">Hand-Built Microphones for Musicians Who Crave Natural, Honest Tone</p>
+      <p class="text-gray-400 max-w-2xl mx-auto">
+        Crafted one at a time by a musician obsessed with capturing the sound you actually make&mdash;warm, woody, detailed, and alive.
+      </p>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Milton -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+          <img src="/images/microphones/milton-overview.jpg" alt="Milton condenser microphone" class="w-full aspect-[4/3] object-cover" />
+          <div class="p-8">
+            <h2 class="font-heading font-bold text-2xl mb-2">Milton</h2>
+            <p class="text-gray-600 mb-4">
+              A large-diaphragm condenser mic ready to make your acoustic instruments sound their best. Also an excellent option for clear vocals or as a single mic to relay your authentic sound to your audience.
+            </p>
+            <p class="font-heading font-bold text-2xl text-brand-orange mb-4">$299</p>
+            <a href="/microphones/milton" class="inline-block bg-brand-orange text-white font-heading font-bold px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors">
+              Explore the Milton &rarr;
+            </a>
+          </div>
+        </div>
+        <!-- Chester -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+          <img src="/images/microphones/chester-overview.jpg" alt="Chester condenser microphone for upright bass" class="w-full aspect-[4/3] object-cover" />
+          <div class="p-8">
+            <h2 class="font-heading font-bold text-2xl mb-2">Chester</h2>
+            <p class="text-gray-600 mb-4">
+              A warm, detailed, and incredibly natural large-diaphragm condenser microphone ready to deliver the pure, authentic, low-end sound of your upright bass capturing every nuance.
+            </p>
+            <p class="font-heading font-bold text-2xl text-brand-orange mb-4">$299</p>
+            <a href="/microphones/chester" class="inline-block bg-brand-orange text-white font-heading font-bold px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors">
+              Explore the Chester &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why these mics -->
+  <section class="py-16 md:py-24 bg-brand-warm">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <h2 class="font-heading font-bold text-3xl mb-8 text-center">For Acoustic Players Who Don't Want to Sound Plugged In</h2>
+      <p class="text-gray-600 text-lg text-center max-w-2xl mx-auto mb-12">
+        Pickups don't capture the real sound of your instrument. Clip-on mics are flimsy. Cheap condensers sound thin. Studio mics sound great&mdash;unless you're moving. These mics solve all of that.
+      </p>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {[
+          'Authentic acoustic tone',
+          'Low handling noise & excellent feedback management',
+          'Hand-built capsules tuned for acoustic instruments',
+          'Light, compact, musician-friendly design',
+          'Crafted by an acoustic musician',
+          'Not a factory. Not a replicated SKU.',
+        ].map(item => (
+          <div class="bg-white rounded-lg p-5 shadow-sm">
+            <p class="font-heading font-semibold text-brand-dark">{item}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Video demo -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="font-heading font-bold text-3xl mb-4">Hear Some Miltons and a Chester in Action</h2>
+      <p class="text-gray-500 mb-8">Basin & Grange @ The Gandy in Ogden, UT</p>
+      <div class="aspect-video rounded-xl overflow-hidden shadow-lg">
+        <iframe
+          src="https://www.youtube.com/embed/LWgeRZLm08I"
+          title="Basin & Grange live demo with Molinello microphones"
+          class="w-full h-full"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ordering process -->
+  <section class="py-16 md:py-24 bg-brand-charcoal text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <h2 class="font-heading font-bold text-3xl mb-10 text-center">Hand-Built, Made-to-Order</h2>
+      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="text-brand-orange font-heading font-bold text-4xl mb-2">1</div>
+          <p class="font-heading font-semibold mb-1">Reserve</p>
+          <p class="text-gray-400 text-sm">Place a deposit to reserve your build slot</p>
+        </div>
+        <div>
+          <div class="text-brand-orange font-heading font-bold text-4xl mb-2">2</div>
+          <p class="font-heading font-semibold mb-1">Build</p>
+          <p class="text-gray-400 text-sm">Less than a week to a few weeks</p>
+        </div>
+        <div>
+          <div class="text-brand-orange font-heading font-bold text-4xl mb-2">3</div>
+          <p class="font-heading font-semibold mb-1">Pay Balance</p>
+          <p class="text-gray-400 text-sm">Private payment link for the remaining balance</p>
+        </div>
+        <div>
+          <div class="text-brand-orange font-heading font-bold text-4xl mb-2">4</div>
+          <p class="font-heading font-semibold mb-1">Ship</p>
+          <p class="text-gray-400 text-sm">Ships with tracking</p>
+        </div>
+      </div>
+      <div class="text-center mt-10">
+        <a href="https://buy.stripe.com/aFaeVd66pbZL7DVdTe8og0c" target="_blank" rel="noopener noreferrer" class="inline-block bg-brand-orange text-white font-heading font-bold px-8 py-4 rounded-lg hover:bg-orange-600 transition-colors text-lg">
+          Reserve Your Build Slot
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <h2 class="font-heading font-bold text-3xl mb-10 text-center">Frequently Asked Questions</h2>
+      <div class="space-y-6">
+        <details class="group border-b border-gray-200 pb-4">
+          <summary class="font-heading font-bold text-lg cursor-pointer list-none flex items-center justify-between">
+            Do they work with phantom power?
+            <span class="text-brand-orange group-open:rotate-45 transition-transform text-2xl">+</span>
+          </summary>
+          <p class="text-gray-600 mt-3">Yes, 48V phantom power is required.</p>
+        </details>
+        <details class="group border-b border-gray-200 pb-4">
+          <summary class="font-heading font-bold text-lg cursor-pointer list-none flex items-center justify-between">
+            What if I don't like it?
+            <span class="text-brand-orange group-open:rotate-45 transition-transform text-2xl">+</span>
+          </summary>
+          <p class="text-gray-600 mt-3">30-day return policy. Buyer covers return shipping. Full refund upon receipt.</p>
+        </details>
+        <details class="group border-b border-gray-200 pb-4">
+          <summary class="font-heading font-bold text-lg cursor-pointer list-none flex items-center justify-between">
+            Where are they made?
+            <span class="text-brand-orange group-open:rotate-45 transition-transform text-2xl">+</span>
+          </summary>
+          <p class="text-gray-600 mt-3">By hand in Highland, Utah (40 min south of Salt Lake City).</p>
+        </details>
+        <details class="group border-b border-gray-200 pb-4">
+          <summary class="font-heading font-bold text-lg cursor-pointer list-none flex items-center justify-between">
+            How long will it take?
+            <span class="text-brand-orange group-open:rotate-45 transition-transform text-2xl">+</span>
+          </summary>
+          <p class="text-gray-600 mt-3">Built-to-order, often less than a week if parts are on hand. Occasionally delayed by parts availability.</p>
+        </details>
+        <details class="group border-b border-gray-200 pb-4">
+          <summary class="font-heading font-bold text-lg cursor-pointer list-none flex items-center justify-between">
+            Is there a warranty?
+            <span class="text-brand-orange group-open:rotate-45 transition-transform text-2xl">+</span>
+          </summary>
+          <p class="text-gray-600 mt-3">Lifetime manufacturing/parts warranty. 30-day audition period. I will repair or make it right.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-24 bg-brand-warm">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="font-heading font-bold text-3xl mb-4">If You Love Your Acoustic Tone, You'll Love These Microphones</h2>
+      <p class="text-gray-500 mb-2">Hand-made and assembled in the U.S.A.</p>
+      <p class="text-gray-600 mb-8">
+        Contact: <a href="mailto:info@molinellomusic.com" class="text-brand-orange hover:underline">info@molinellomusic.com</a>
+        &middot; <a href="tel:801-893-1171" class="text-brand-orange hover:underline">801-893-1171</a>
+      </p>
+      <p class="font-heading font-bold text-brand-dark">&mdash; Boyd</p>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-orange: #ff9500;
+  --color-brand-dark: #1f1f1f;
+  --color-brand-charcoal: #3a3a3a;
+  --color-brand-warm: #f5f0eb;
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Bitter', serif;
+}

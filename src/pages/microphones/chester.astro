@@ -1,0 +1,183 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Chester - Molinello Music" description="The microphone that makes your Upright Bass sound like YOUR bass.">
+  <!-- Hero -->
+  <section class="bg-brand-dark text-white py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <h1 class="font-heading font-extrabold text-5xl md:text-6xl mb-4">Chester</h1>
+      <p class="text-xl md:text-2xl text-brand-orange font-heading mb-2">The Microphone That Makes Your Upright Bass Sound Like YOUR Bass!</p>
+      <p class="text-gray-400 max-w-2xl mx-auto">
+        Built for acoustic musicians who want warm, woody, natural tone&mdash;on stage or in the studio.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main product + pitch -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="md:flex gap-12 items-center">
+        <div class="md:w-1/2 mb-8 md:mb-0">
+          <img src="/images/chester/chester-mounted-closeup.jpg" alt="Chester microphone mounted on upright bass" class="rounded-xl shadow-lg w-full" />
+        </div>
+        <div class="md:w-1/2">
+          <h2 class="font-heading font-bold text-3xl mb-4">Built by an Upright Bassist Who Got Tired of Compromising</h2>
+          <p class="text-gray-600 text-lg mb-4 leading-relaxed">
+            Every bassist knows the struggle: Pickups don't sound natural and quack. Clip-on mics are flimsy. Cheap condensers sound thin. Studio mics sound great&mdash;unless you're moving.
+          </p>
+          <p class="text-brand-dark font-heading font-bold text-xl mb-4">Chester solves all of that.</p>
+          <p class="text-gray-600 text-lg leading-relaxed mb-6">
+            I built Chester because I wanted to hear the bass I actually play&mdash;the body resonance, the wood, the fullness&mdash;without fighting the gear. If that sounds like you, Chester was built for your style of musicianship.
+          </p>
+          <a href="https://buy.stripe.com/aFaeVd66pbZL7DVdTe8og0c" target="_blank" rel="noopener noreferrer" class="inline-block bg-brand-orange text-white font-heading font-bold px-8 py-3 rounded-lg hover:bg-orange-600 transition-colors">
+            Reserve Your Build Slot
+          </a>
+          <p class="text-sm text-gray-500 mt-2">with free shipping</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tone section -->
+  <section class="py-16 md:py-24 bg-brand-warm">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <h2 class="font-heading font-bold text-3xl mb-8 text-center">The Natural Tone You've Been Chasing</h2>
+      <p class="text-gray-600 text-lg text-center mb-8">You've searched for a great bass, why not share that sound with your audience?</p>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
+        {[
+          'The fundamental warmth of the bass',
+          'The wooden resonance',
+          'The growl and air',
+          'The clarity without harshness',
+          'The fullness without boom',
+        ].map(item => (
+          <div class="bg-white rounded-lg p-4 shadow-sm text-center">
+            <p class="text-gray-700 font-heading font-semibold text-sm">{item}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-center text-gray-700 font-heading font-semibold mt-8 italic">
+        "This is the closest thing to 'studio mic tone' you can use on stage."
+      </p>
+    </div>
+  </section>
+
+  <!-- Videos -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <h2 class="font-heading font-bold text-3xl mb-10 text-center">Chester in a Live Mix</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="aspect-video rounded-xl overflow-hidden shadow-lg">
+          <iframe src="https://www.youtube.com/embed/LWgeRZLm08I" title="Chester live demo 1" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="aspect-video rounded-xl overflow-hidden shadow-lg">
+          <iframe src="https://www.youtube.com/embed/iQT9kJUMJqY" title="Chester live demo 2" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Simple to use -->
+  <section class="py-16 md:py-24 bg-brand-warm">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="md:flex gap-12 items-center">
+        <div class="md:w-1/2 mb-8 md:mb-0">
+          <img src="/images/chester/chester-mounted-bass.jpg" alt="Chester mounted below the bridge of an upright bass" class="rounded-xl shadow-lg w-full" />
+        </div>
+        <div class="md:w-1/2">
+          <h2 class="font-heading font-bold text-3xl mb-6">Simple to Mount. Simple to Use.</h2>
+          <ul class="space-y-3 text-gray-600 text-lg">
+            <li class="flex items-start gap-2"><span class="text-brand-orange font-bold mt-1">&#9679;</span> Mounts to upright bass right below the bridge, between the strings, in just a few seconds</li>
+            <li class="flex items-start gap-2"><span class="text-brand-orange font-bold mt-1">&#9679;</span> Works with standard 48V phantom power</li>
+            <li class="flex items-start gap-2"><span class="text-brand-orange font-bold mt-1">&#9679;</span> Low profile, lightweight, and stage-friendly</li>
+            <li class="flex items-start gap-2"><span class="text-brand-orange font-bold mt-1">&#9679;</span> No complicated pre-amp chain required</li>
+          </ul>
+          <p class="text-gray-700 font-heading font-semibold mt-6 italic">You focus on playing&mdash;Chester handles the tone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial feel -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="font-heading font-bold text-3xl mb-8">Musicians Tell Me the Same Thing</h2>
+      <div class="space-y-4 text-gray-600 text-xl leading-relaxed">
+        <p>They stop fighting their sound.</p>
+        <p>They relax.</p>
+        <p>They play better because they hear themselves clearly.</p>
+        <p>There's a moment&mdash;usually on the first note&mdash;where they smile.</p>
+      </div>
+      <p class="text-brand-dark font-heading font-bold text-xl mt-8 italic">That moment is what this mic was built for.</p>
+    </div>
+  </section>
+
+  <!-- Photo gallery -->
+  <section class="py-16 md:py-24 bg-brand-warm">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <h2 class="font-heading font-bold text-3xl mb-6 text-center">Made by Hand. Tuned by Ear.</h2>
+      <p class="text-gray-600 text-center max-w-2xl mx-auto mb-10">
+        Every Chester microphone is individually assembled with a high-quality condenser capsule, custom-designed circuit and board, hand-soldered circuitry, special RFI-resistant layout, lightweight body, and a clean, elegant, vintage aesthetic. Built in small batches. Each mic is built by hand and one of a kind.
+      </p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <img src="/images/chester/chester-full.jpg" alt="Chester full view" class="rounded-lg shadow-md w-full aspect-square object-cover" />
+        <img src="/images/chester/chester-closeup.jpg" alt="Chester head basket closeup" class="rounded-lg shadow-md w-full aspect-square object-cover" />
+        <img src="/images/chester/chester-xlr.jpg" alt="Chester XLR connector" class="rounded-lg shadow-md w-full aspect-square object-cover" />
+        <img src="/images/chester/chester-case.jpg" alt="Chester in flight case" class="rounded-lg shadow-md w-full aspect-square object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Specs -->
+  <section class="py-16 md:py-24 bg-brand-charcoal text-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <h2 class="font-heading font-bold text-3xl mb-10 text-center">Chester Technical Specs</h2>
+      <div class="grid sm:grid-cols-2 gap-x-12 gap-y-4">
+        {[
+          ['Body', '~3 inches long, housed in a 3/4" copper pipe'],
+          ['Mounting', 'Below the bridge between the two middle strings, with included velcro strap'],
+          ['Capsule', 'Large diaphragm condenser (26mm)'],
+          ['Pattern', 'Cardioid'],
+          ['Frequency Response', '~50Hz - 20kHz'],
+          ['Noise', 'Low noise circuit design'],
+          ['RFI Rejection', 'Modern circuitry (including cell phones)'],
+          ['Power', '48V phantom power required'],
+          ['Weight', '8.6 oz (245g)'],
+          ['Includes', 'Mic, hard flight case, o-rings, and velcro strap'],
+        ].map(([label, value]) => (
+          <div class="border-b border-white/10 pb-3">
+            <p class="text-brand-orange font-heading font-semibold text-sm">{label}</p>
+            <p class="text-gray-300">{value}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Ordering -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <h2 class="font-heading font-bold text-3xl mb-8 text-center">Built to Order, Made for Creators</h2>
+      <div class="space-y-4 text-gray-600 text-lg max-w-xl mx-auto">
+        <p>&#10003; Reserve with a deposit</p>
+        <p>&#10003; I build your mic in the order received</p>
+        <p>&#10003; Final payment when it's ready</p>
+        <p>&#10003; Ships with tracking</p>
+        <p>&#10003; 30-day audition period</p>
+      </div>
+      <p class="text-center text-gray-700 font-heading font-semibold mt-6 italic">Your mic is built by hand&mdash;not pulled off a shelf.</p>
+    </div>
+  </section>
+
+  <!-- Bottom CTA -->
+  <section class="py-16 md:py-24 bg-brand-dark text-white text-center">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <h2 class="font-heading font-bold text-3xl mb-4">Your Bass Has a Voice. Chester Lets It Speak.</h2>
+      <p class="text-gray-400 mb-8">If you're ready to finally hear your upright the way you always wished it sounded:</p>
+      <a href="https://buy.stripe.com/aFaeVd66pbZL7DVdTe8og0c" target="_blank" rel="noopener noreferrer" class="inline-block bg-brand-orange text-white font-heading font-bold px-10 py-4 rounded-lg hover:bg-orange-600 transition-colors text-lg">
+        Reserve Your Chester Today!
+      </a>
+    </div>
+  </section>
+</BaseLayout>
