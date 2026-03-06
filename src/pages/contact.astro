@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact Us - Molinello Music" description="Get in touch with Molinello Music. Questions about microphones, pedals, or just want to say hello?">
+  <section class="py-16 md:py-24">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6">
+      <h1 class="font-heading font-extrabold text-4xl md:text-5xl mb-4 text-center">Contact Us</h1>
+      <p class="text-gray-600 text-lg text-center mb-10">
+        Have a question about a microphone, pedal, or just want to say hello? Fill out the form below and we'll get back to you as soon as we can.
+      </p>
+
+      <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+        <input type="hidden" name="access_key" value="3f1095d4-aab6-4ae9-9a9d-f210b1c51404" />
+        <input type="hidden" name="redirect" value="https://web3forms.com/success" />
+        <input type="checkbox" name="botcheck" class="hidden" />
+
+        <div>
+          <label for="name" class="block font-heading font-semibold text-brand-dark mb-2">Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            required
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 bg-white text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-brand-orange"
+          />
+        </div>
+
+        <div>
+          <label for="email" class="block font-heading font-semibold text-brand-dark mb-2">Email</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            required
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 bg-white text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-brand-orange"
+          />
+        </div>
+
+        <div>
+          <label for="message" class="block font-heading font-semibold text-brand-dark mb-2">Message</label>
+          <textarea
+            name="message"
+            id="message"
+            rows="5"
+            required
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 bg-white text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-brand-orange resize-y"
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="inline-block bg-brand-orange text-white font-heading font-bold px-8 py-3 rounded-lg hover:bg-orange-600 transition-colors"
+        >
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+</BaseLayout>
