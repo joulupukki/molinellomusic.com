@@ -1,8 +1,65 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const priceValidUntil = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+
+const productSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'Milton Condenser Microphone',
+  description: 'A hand-built large-diaphragm condenser microphone with vintage character, clarity, and warmth. For acoustic instruments, vocals, and live performance.',
+  image: 'https://www.molinellomusic.com/images/milton/milton-on-stand.jpg',
+  brand: {
+    '@type': 'Brand',
+    name: 'Molinello Music',
+  },
+  offers: {
+    '@type': 'Offer',
+    price: '449.00',
+    priceCurrency: 'USD',
+    availability: 'https://schema.org/InStock',
+    url: 'https://www.molinellomusic.com/microphones/milton',
+    priceValidUntil,
+    hasMerchantReturnPolicy: {
+      '@type': 'MerchantReturnPolicy',
+      applicableCountry: 'US',
+      returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+      merchantReturnDays: 30,
+      returnMethod: 'https://schema.org/ReturnByMail',
+      returnFees: 'https://schema.org/ReturnShippingFees',
+    },
+    shippingDetails: {
+      '@type': 'OfferShippingDetails',
+      shippingRate: {
+        '@type': 'MonetaryAmount',
+        value: '0',
+        currency: 'USD',
+      },
+      shippingDestination: {
+        '@type': 'DefinedRegion',
+        addressCountry: 'US',
+      },
+      deliveryTime: {
+        '@type': 'ShippingDeliveryTime',
+        handlingTime: {
+          '@type': 'QuantitativeValue',
+          minValue: 3,
+          maxValue: 14,
+          unitCode: 'DAY',
+        },
+        transitTime: {
+          '@type': 'QuantitativeValue',
+          minValue: 3,
+          maxValue: 7,
+          unitCode: 'DAY',
+        },
+      },
+    },
+  },
+};
 ---
 
-<BaseLayout title="Milton - Molinello Music" description="A hand-built condenser with vintage character, clarity, and warmth. For musicians and creators.">
+<BaseLayout title="Milton - Molinello Music" description="A hand-built condenser with vintage character, clarity, and warmth. For musicians and creators." ogImage="/images/milton/milton-on-stand.jpg" structuredData={productSchema}>
   <!-- Hero -->
   <section class="bg-brand-dark text-white py-16 md:py-24">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">

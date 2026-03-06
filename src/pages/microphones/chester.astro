@@ -1,8 +1,65 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const priceValidUntil = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOString().split('T')[0];
+
+const productSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'Chester Condenser Microphone for Upright Bass',
+  description: 'A hand-built large-diaphragm condenser microphone designed specifically for upright bass. Warm, woody, natural tone on stage or in the studio.',
+  image: 'https://www.molinellomusic.com/images/chester/chester-mounted-closeup.jpg',
+  brand: {
+    '@type': 'Brand',
+    name: 'Molinello Music',
+  },
+  offers: {
+    '@type': 'Offer',
+    price: '299.00',
+    priceCurrency: 'USD',
+    availability: 'https://schema.org/InStock',
+    url: 'https://www.molinellomusic.com/microphones/chester',
+    priceValidUntil,
+    hasMerchantReturnPolicy: {
+      '@type': 'MerchantReturnPolicy',
+      applicableCountry: 'US',
+      returnPolicyCategory: 'https://schema.org/MerchantReturnFiniteReturnWindow',
+      merchantReturnDays: 30,
+      returnMethod: 'https://schema.org/ReturnByMail',
+      returnFees: 'https://schema.org/ReturnShippingFees',
+    },
+    shippingDetails: {
+      '@type': 'OfferShippingDetails',
+      shippingRate: {
+        '@type': 'MonetaryAmount',
+        value: '0',
+        currency: 'USD',
+      },
+      shippingDestination: {
+        '@type': 'DefinedRegion',
+        addressCountry: 'US',
+      },
+      deliveryTime: {
+        '@type': 'ShippingDeliveryTime',
+        handlingTime: {
+          '@type': 'QuantitativeValue',
+          minValue: 3,
+          maxValue: 14,
+          unitCode: 'DAY',
+        },
+        transitTime: {
+          '@type': 'QuantitativeValue',
+          minValue: 3,
+          maxValue: 7,
+          unitCode: 'DAY',
+        },
+      },
+    },
+  },
+};
 ---
 
-<BaseLayout title="Chester - Molinello Music" description="The microphone that makes your Upright Bass sound like YOUR bass.">
+<BaseLayout title="Chester - Molinello Music" description="The microphone that makes your Upright Bass sound like YOUR bass." ogImage="/images/chester/chester-mounted-closeup.jpg" structuredData={productSchema}>
   <!-- Hero -->
   <section class="bg-brand-dark text-white py-16 md:py-24">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
