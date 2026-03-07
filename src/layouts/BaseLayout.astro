@@ -8,7 +8,7 @@ interface Props {
   structuredData?: object;
 }
 
-const { title, description = 'Hand-built microphones, guitar pedals, and original music by Boyd Timothy.', ogImage = '/images/logo-full.jpg', structuredData } = Astro.props;
+const { title, description = 'Hand-built microphones, guitar pedals, audio software, and original music by Boyd Timothy.', ogImage = '/images/logo-full.jpg', structuredData } = Astro.props;
 const currentPath = Astro.url.pathname;
 const canonicalURL = new URL(currentPath, Astro.site);
 ---
@@ -81,6 +81,14 @@ const canonicalURL = new URL(currentPath, Astro.site);
               </div>
             </div>
             <a href="/pedals" class:list={["px-3 py-2 text-sm font-heading font-semibold transition-colors rounded", currentPath.startsWith('/pedals') ? "text-brand-orange" : "text-gray-300 hover:text-brand-orange"]}>Guitar Pedals</a>
+            <div class="relative group">
+              <a href="/software" class:list={["px-3 py-2 text-sm font-heading font-semibold transition-colors rounded", currentPath.startsWith('/software') ? "text-brand-orange" : "text-gray-300 hover:text-brand-orange"]}>Software</a>
+              <div class="absolute left-0 top-full pt-1 hidden group-hover:block">
+                <div class="bg-brand-charcoal rounded-lg shadow-xl py-2 min-w-[160px]">
+                  <a href="/software/acoustimatch" class="block px-4 py-2 text-sm text-gray-300 hover:text-brand-orange hover:bg-white/5 transition-colors">AcoustiMatch</a>
+                </div>
+              </div>
+            </div>
             <a href="/about" class:list={["px-3 py-2 text-sm font-heading font-semibold transition-colors rounded", currentPath === '/about/' || currentPath === '/about' ? "text-brand-orange" : "text-gray-300 hover:text-brand-orange"]}>About</a>
             <a href="/contact" class:list={["px-3 py-2 text-sm font-heading font-semibold transition-colors rounded", currentPath === '/contact/' || currentPath === '/contact' ? "text-brand-orange" : "text-gray-300 hover:text-brand-orange"]}>Contact</a>
           </div>
@@ -101,6 +109,8 @@ const canonicalURL = new URL(currentPath, Astro.site);
           <a href="/microphones/milton" class="block pl-8 py-2 text-sm font-heading font-semibold text-gray-300 hover:text-brand-orange transition-colors">Milton</a>
           <a href="/microphones/chester" class="block pl-8 py-2 text-sm font-heading font-semibold text-gray-300 hover:text-brand-orange transition-colors">Chester</a>
           <a href="/pedals" class="block px-4 py-2 text-sm font-heading font-semibold text-gray-300 hover:text-brand-orange transition-colors">Guitar Pedals</a>
+          <a href="/software" class="block px-4 py-2 text-sm font-heading font-semibold text-gray-300 hover:text-brand-orange transition-colors">Software</a>
+          <a href="/software/acoustimatch" class="block pl-8 py-2 text-sm font-heading font-semibold text-gray-300 hover:text-brand-orange transition-colors">AcoustiMatch</a>
           <a href="/about" class="block px-4 py-2 text-sm font-heading font-semibold text-gray-300 hover:text-brand-orange transition-colors">About</a>
           <a href="/contact" class="block px-4 py-2 text-sm font-heading font-semibold text-gray-300 hover:text-brand-orange transition-colors">Contact</a>
         </div>

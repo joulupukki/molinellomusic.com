@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Software - Molinello Music" description="Audio software and DAW plugins by Molinello Music." ogImage="/images/acoustimatch/icon.png">
+  <!-- Hero -->
+  <section class="bg-brand-dark text-white py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <h1 class="font-heading font-extrabold text-4xl md:text-5xl mb-4">Software</h1>
+      <p class="text-gray-400 text-lg">Audio tools and DAW plugins</p>
+    </div>
+  </section>
+
+  <!-- AcoustiMatch card -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <a href="/software/acoustimatch" class="group block bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow overflow-hidden md:flex items-center gap-10">
+        <div class="md:w-2/5 p-8 flex justify-center">
+          <img src="/images/acoustimatch/icon.png" alt="AcoustiMatch app icon" class="w-48 h-48 rounded-2xl shadow-lg group-hover:scale-105 transition-transform duration-300" />
+        </div>
+        <div class="md:w-3/5 p-8 pt-0 md:pt-8">
+          <h2 class="font-heading font-bold text-3xl mb-2">AcoustiMatch</h2>
+          <p class="text-brand-orange font-heading font-bold text-sm uppercase tracking-widest mb-3">Standalone App & DAW Plugin</p>
+          <p class="text-gray-600 text-lg leading-relaxed">
+            Create impulse responses for acoustic instrument pickups so they sound as close as possible to a real microphone. EQ matching is free — export IR with a license key.
+          </p>
+          <span class="inline-block mt-4 text-brand-orange font-heading font-bold group-hover:underline">Learn More &rarr;</span>
+        </div>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

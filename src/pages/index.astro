@@ -12,7 +12,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         MOLINELLO <span class="text-brand-orange">MUSIC</span>
       </h1>
       <p class="text-gray-400 font-body text-lg max-w-xl mx-auto">
-        Hand-built microphones, guitar pedals, and original music.
+        Hand-built microphones, guitar pedals, audio software, and original music.
       </p>
     </div>
   </section>
@@ -61,7 +61,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="py-16 md:py-24">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <h2 class="font-heading font-bold text-3xl text-center mb-12">What We Make</h2>
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         <a href="/microphones/milton" class="group block bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow overflow-hidden">
           <div class="aspect-[4/3] overflow-hidden">
             <img src="/images/milton/milton-on-stand.jpg" alt="Milton microphone" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
@@ -87,6 +87,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="p-6">
             <h3 class="font-heading font-bold text-xl mb-1">Guitar Pedals</h3>
             <p class="text-gray-500 text-sm">Q-Tune, The Flick, and more</p>
+          </div>
+        </a>
+        <a href="/software/acoustimatch" class="group block bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow overflow-hidden">
+          <div class="aspect-[4/3] overflow-hidden bg-gradient-to-br from-blue-900 to-blue-600 flex items-center justify-center">
+            <img src="/images/acoustimatch/icon.png" alt="AcoustiMatch" class="w-3/5 rounded-xl group-hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div class="p-6">
+            <h3 class="font-heading font-bold text-xl mb-1">AcoustiMatch</h3>
+            <p class="text-gray-500 text-sm">Make your pickup sound like a real microphone</p>
           </div>
         </a>
       </div>
