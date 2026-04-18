@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Gamma PreQ - Acoustic Guitar Preamp, EQ & Boost"
+  description="The Gamma PreQ is a DIY acoustic guitar preamp, EQ, and boost pedal designed by Ryan Schultz. Plenty of clean gain, flexible EQ, and a dedicated boost."
+  ogImage="/images/pedals/gamma-preq.png"
+  noindex={true}
+>
+  <!-- Hero -->
+  <section class="bg-brand-dark text-white py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <h1 class="font-heading font-extrabold text-4xl md:text-5xl mb-3">Gamma PreQ</h1>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+        Acoustic Guitar Preamp, EQ &amp; Boost
+      </p>
+    </div>
+  </section>
+
+  <!-- Image + description -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="md:flex gap-12 items-center">
+        <div class="md:w-3/5 mb-8 md:mb-0">
+          <img src="/images/pedals/gamma-preq.png" alt="Gamma PreQ acoustic guitar preamp pedal" class="rounded-xl shadow-lg w-full" />
+        </div>
+        <div class="md:w-2/5">
+          <h2 class="font-heading font-bold text-2xl md:text-3xl mb-4">Designed for Acoustic Guitar</h2>
+          <p class="text-gray-600 text-lg mb-4 leading-relaxed">
+            The Gamma PreQ was designed specifically for acoustic guitar, although it will work for any acoustic instrument (but not bass). It has plenty of clean gain as a preamp, a plethora of EQ options, and a dedicated boost.
+          </p>
+          <p class="text-gray-600 mb-4 leading-relaxed">
+            It's quieter than most acoustic preamps and offers more EQ options. It's not as great as Grace Designs' ALiX (which is awesome), but it's close!
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            This is a <strong>DIY assembly</strong> you put together yourself. While this shouldn't be your first build, there's nothing particularly challenging about it other than its size (~150 total parts). Read the BOM and Build Notes carefully to comprehend the scope of this project.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-16 md:py-24 bg-brand-warm">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <h2 class="font-heading font-bold text-3xl text-center mb-12">Features</h2>
+      <div class="bg-white rounded-xl shadow-lg p-8 md:p-10">
+        <ul class="space-y-3 text-gray-700 leading-relaxed">
+          <li><strong>Gain, Volume, Boost:</strong> +25 dBu, +17 dBu, +6 dBu respectively</li>
+          <li>
+            <strong>HPF / Notch:</strong> 68–440 Hz (Butterworth 2nd order)
+            <ul class="list-disc pl-6 mt-2 space-y-1 text-gray-600">
+              <li>High Pass @ -12 dB/octave</li>
+              <li>Notch: 5 &lt; Q &lt; 15</li>
+            </ul>
+          </li>
+          <li><strong>Low Control:</strong> @ 100 Hz +/- 12 dB, +/- 3 dB corner frequency</li>
+          <li><strong>High Shelf:</strong> @ 4 kHz +/- 12 dB, +/- 3 dB corner frequency</li>
+          <li>
+            <strong>Parametric Mid:</strong> +/- 9 dB
+            <ul class="list-disc pl-6 mt-2 space-y-1 text-gray-600">
+              <li>Low Range: 103 – 880 Hz, 0.5 &lt; Q &lt; 5</li>
+              <li>High Range: 435 – 3700 Hz, 2 &lt; Q &lt; 20</li>
+            </ul>
+          </li>
+          <li><strong>THD:</strong> &lt; 0.02 %</li>
+          <li><strong>Frequency Response:</strong> 68 Hz – 20 kHz</li>
+          <li><strong>Input Power:</strong> &lt; 200 mA @ 9 VDC</li>
+          <li><strong>Internal:</strong> +/-15 VDC — for plenty of headroom</li>
+          <li><strong>Input Impedance:</strong> 1 MΩ</li>
+          <li><strong>Bypass</strong> (internal switch): True Bypass or Mute</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="font-heading font-bold text-3xl mb-8">Pricing</h2>
+      <div class="bg-white rounded-xl shadow-lg p-8 md:p-10 text-left">
+        <ul class="space-y-4 text-gray-700 leading-relaxed">
+          <li>
+            <strong>PCBs only:</strong> $25 + $8 shipping
+          </li>
+          <li>
+            <strong>Parts kit</strong> (no enclosure/knobs): $100 + $10 shipping
+            <ul class="list-disc pl-6 mt-2 space-y-1 text-gray-600">
+              <li>+$10 for 1 LM4562</li>
+              <li>+$10 for 3 OPA4134's</li>
+            </ul>
+          </li>
+          <li>Payment via Venmo or PayPal</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Documentation / Files -->
+  <section class="py-16 md:py-24 bg-brand-warm">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <h2 class="font-heading font-bold text-3xl mb-4 text-center">Documentation</h2>
+      <p class="text-gray-600 text-lg text-center mb-10">
+        Reference documents for building and tuning the Gamma PreQ.
+      </p>
+      <div class="bg-white rounded-xl shadow-lg p-8 md:p-10">
+        <ul class="space-y-4 text-gray-700 leading-relaxed">
+          <li>
+            <a
+              href="https://docs.google.com/document/d/120yCgvy48Y_ZRaOrTaf3OyHzmIOkdRPylhfyLCV6xtw/edit?tab=t.0"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-brand-orange font-heading font-bold hover:underline"
+            >
+              Circuit Notes &amp; Performance Plots &rarr;
+            </a>
+          </li>
+          <li class="text-gray-600">Additional files available on request: BOM &amp; Cost Estimate, Build Notes &amp; Schematics, Tayda Drill Template, Tayda UV file (PDF).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Order -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="font-heading font-bold text-3xl mb-4">Interested?</h2>
+      <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+        To order PCBs or a parts kit, or if you have any questions about the build, get in touch.
+      </p>
+      <a
+        href="/contact"
+        class="inline-block bg-brand-orange text-white font-heading font-bold px-8 py-3 rounded-lg hover:bg-orange-600 transition-colors text-lg"
+      >
+        Contact Us
+      </a>
+    </div>
+  </section>
+</BaseLayout>
