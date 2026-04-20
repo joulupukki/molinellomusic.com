@@ -88,19 +88,21 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
       <h2 class="font-heading font-bold text-3xl mb-8">Pricing</h2>
       <div class="bg-white rounded-xl shadow-lg p-8 md:p-10 text-left">
-        <ul class="space-y-4 text-gray-700 leading-relaxed">
-          <li>
-            <strong>PCB set only:</strong> $25 + $8 shipping
-          </li>
-          <li>
-            <strong>Parts kit</strong> (no enclosure/knobs): $100 + $10 shipping
-            <ul class="list-disc pl-6 mt-2 space-y-1 text-gray-600">
-              <li>+ $10 for 1 - LM4562</li>
-              <li>+ $10 for 3 - OPA4134's</li>
-            </ul>
-          </li>
-          <li>Payment via Venmo or PayPal</li>
 
+<ul class="space-y-4 text-gray-700 leading-relaxed">
+  <li>
+    <strong>PCB set only:</strong> $25 + $8 shipping
+  </li>
+
+  <li>
+    <strong>Parts kit</strong> (no enclosure/knobs): $100 + $10 shipping
+    <ul class="list-disc pl-6 mt-2 space-y-1 text-gray-600">
+      <li>+ $10 for 1 - LM4562</li>
+      <li>+ $10 for 3 - OPA4134's</li>
+    </ul>
+  </li>
+
+  <!-- Image -->
   <li class="pt-2">
     <img
       src="/images/pedals/gamma-pcb-set.jpeg"
@@ -110,7 +112,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     />
   </li>
 
-        </ul>
+  <li>Payment via Venmo or PayPal</li>
+</ul>
+
       </div>
     </div>
   </section>
