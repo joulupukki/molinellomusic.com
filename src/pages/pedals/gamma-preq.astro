@@ -2,19 +2,17 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<link
-  rel="stylesheet"
-   Pellentesque
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-
 <BaseLayout
   title="Gamma PreQ - Acoustic Guitar Preamp, EQ & Boost"
   description="The Gamma PreQ is a DIY acoustic guitar preamp, EQ, and boost pedal designed by Ryan Schultz. Plenty of clean gain, flexible EQ, and a dedicated boost."
   ogImage="/images/pedals/gamma-preq2.jpeg"
   noindex={true}
 >
-  <!-- Hero -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+
   <section class="bg-brand-dark text-white py-16 md:py-24">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
       <h1 class="font-heading font-extrabold text-4xl md:text-5xl mb-3">Gamma PreQ</h1>
@@ -24,29 +22,25 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- Image + description -->
   <section class="py-16 md:py-24">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="md:flex gap-12 items-center">
-
-<div class="md:w-3/5 mb-8 md:mb-0">
-  <div class="swiper rounded-xl shadow-lg w-full">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img src="/images/pedals/gamma-preq2.jpeg" alt="Gamma PreQ" class="w-full" />
-      </div>
-      <div class="swiper-slide">
-        <img src="/images/pedals/gamma-pcb-set.jpeg" alt="PCB Set" class="w-full" />
-      </div>
-    </div>
-    <div class="swiper-pagination"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  </div>
-</div>
-
-    <img src="/images/pedals/gamma-preq2.jpeg" alt="Gamma PreQ acoustic guitar preamp pedal" class="rounded-xl shadow-lg w-full" />
+        <div class="md:w-3/5 mb-8 md:mb-0">
+          <div class="swiper rounded-xl shadow-lg w-full overflow-hidden">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="/images/pedals/gamma-preq2.jpeg" alt="Gamma PreQ" class="w-full h-auto" />
+              </div>
+              <div class="swiper-slide">
+                <img src="/images/pedals/gamma-pcb-set.jpeg" alt="PCB Set" class="w-full h-auto" />
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
         </div>
+
         <div class="md:w-2/5">
           <h2 class="font-heading font-bold text-2xl md:text-3xl mb-4">Designed for Acoustic Guitar</h2>
           <p class="text-gray-600 text-lg mb-4 leading-relaxed">
@@ -63,183 +57,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- Features -->
-  <section class="py-16 md:py-24 bg-brand-warm">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      <h2 class="font-heading font-bold text-3xl text-center mb-12">Features</h2>
-      <div class="bg-white rounded-xl shadow-lg p-8 md:p-10">
-        <ul class="space-y-3 text-gray-700 leading-relaxed">
-          <li><strong>Gain, Volume, Boost:</strong> +25 dBu, +17 dBu, +6 dBu respectively
-          <ul class="list-disc pl-6 mt-2 space-y-1 text-gray-600">
-              <li>-&infin; for Gain , Volume</li>
-          </ul>
-          </li>
-          <li>
-            <strong>HPF / Notch:</strong> 68–440 Hz (Butterworth 2nd order)
-            <ul class="list-disc pl-6 mt-2 space-y-1 text-gray-600">
-              <li>High Pass @ -12 dB/octave</li>
-              <li>Notch: 5 &lt; Q &lt; 15</li>
-            </ul>
-          </li>
-          <li><strong>Low Control:</strong> @ 100 Hz +/- 12 dB</li>
-          <li><strong>High Shelf:</strong> @ 4 kHz +/- 12 dB</li>
-          <li>
-            <strong>Parametric Mid:</strong> +/- 9 dB
-            <ul class="list-disc pl-6 mt-2 space-y-1 text-gray-600">
-              <li>Low Range: 103 – 880 Hz, 0.5 &lt; Q &lt; 5</li>
-              <li>High Range: 435 – 3700 Hz, 2 &lt; Q &lt; 20</li>
-            </ul>
-          </li>
-          <li><strong>Frequency Response:</strong> 68 Hz – 20 kHz</li>
-          <li><strong>THD:</strong> &lt; 0.02 %</li>
-          <li><strong>Input Power:</strong> &lt; 200 mA @ 9 VDC</li>
-          <li><strong>Internal:</strong> +/-15 VDC — for plenty of headroom</li>
-          <li><strong>Input Impedance:</strong> 1 MΩ</li>
-          <li><strong>Bypass</strong>: True Bypass or Mute
-          <ul class="list-disc pl-6 mt-2 space-y-1 text-gray-600">
-              <li>Internal switch</li>
-          </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing -->
-  <section class="py-16 md:py-24">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-      <h2 class="font-heading font-bold text-3xl mb-8">Pricing</h2>
-      <div class="bg-white rounded-xl shadow-lg p-8 md:p-10 text-left">
-
-<ul class="space-y-4 text-gray-700 leading-relaxed">
-  <li>
-    <strong>PCB set only</strong> (pictured below): $25 + $8 shipping
-  </li>
-
-  <li>
-    <strong>Parts kit</strong> (no enclosure/knobs): $100 + $10 shipping
-    <ul class="list-disc pl-6 mt-2 space-y-1 text-gray-600">
-      <li>+ $10 for 1 - LM4562</li>
-      <li>+ $10 for 3 - OPA4134's</li>
-    </ul>
-  </li>
-
-  <!-- Image -->
-  <li class="pt-2">
-    <img
-      src="/images/pedals/gamma-pcb-set.jpeg"
-      alt="Gamma PCB set"
-      class="w-full max-w-md mx-auto rounded-lg shadow"
-      loading="lazy"
-    />
-  </li>
-
-  <li>Payment via Venmo or PayPal</li>
-</ul>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Documentation / Files -->
-  <section class="py-16 md:py-24 bg-brand-warm">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6">
-      <h2 class="font-heading font-bold text-3xl mb-4 text-center">Documentation</h2>
-      <p class="text-gray-600 text-lg text-center mb-10">
-        Reference documents for building and tuning the Gamma PreQ.
-      </p>
-      <div class="bg-white rounded-xl shadow-lg p-8 md:p-10">
-        <ul class="space-y-4 text-gray-700 leading-relaxed">
-
-          <li>
-            <a
-              href="https://docs.google.com/spreadsheets/d/10XZUnoFiJfJFFmuHVIBVKQknY2kPwP4MDt2C2y5dbGs/edit?usp=drivesdk"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-brand-orange font-heading font-bold hover:underline"
-            >
-              BOM and Cost Estimate &rarr;
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="https://docs.google.com/document/d/1bflPHyCgo-yc2phnAm6ZhRAkko28YN4nTb_pg0rxkQM/edit?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-brand-orange font-heading font-bold hover:underline"
-            >
-              Build Notes & Schematics &rarr;
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="https://docs.google.com/document/d/120yCgvy48Y_ZRaOrTaf3OyHzmIOkdRPylhfyLCV6xtw/edit?tab=t.0"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-brand-orange font-heading font-bold hover:underline"
-            >
-              Circuit Notes &amp; Performance Plots &rarr;
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="https://drill.taydakits.com/box-designs/new?public_key=a2M0amFFNkFqWEhDTTY2elQ0RmE5UT09Cg=="
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-brand-orange font-heading font-bold hover:underline"
-            >
-              Tayda Drill Template &rarr;
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="https://raw.githubusercontent.com/joulupukki/molinellomusic.com/main/src/pages/pedals/gamma-preq/GammaPreamp-v4.3-c.pdf"
-              download="GammaPreamp-v4.3-c.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-brand-orange font-heading font-bold hover:underline"
-            >
-              Tayda UV Template &rarr;
-            </a>
-          </li>
-
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact / Order -->
-  <section class="py-16 md:py-24">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-      <h2 class="font-heading font-bold text-3xl mb-4">Interested?</h2>
-      <p class="text-gray-600 text-lg mb-8 leading-relaxed">
-        If you have any questions about the build, get in touch.<br>
-        To order PCB set or a parts kit:<br>
-          <span class="text-sm leading-snug">
-            - Specify what you want<br>
-            - Paypal/Venmo address to invoice<br>
-          </span>
-      </p>
-
-      <a
-        href="/contact"
-        class="inline-block bg-brand-orange text-white font-heading font-bold px-8 py-3 rounded-lg hover:bg-orange-600 transition-colors text-lg"
-      >
-        Contact Us
-      </a>
-    </div>
-  </section>
-</BaseLayout>
+  </BaseLayout>
 
 <script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script is:inline>
-  // Wait for the script to load
-  document.addEventListener('DOMContentLoaded', function () {
+  // Use a slight delay to ensure the DOM is fully ready for the JS library
+  window.addEventListener('load', function () {
     new Swiper('.swiper', {
       loop: true,
       pagination: {
@@ -255,7 +79,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 </script>
 
 <style>
-  /* Ensure the swiper has a height and buttons are visible */
-  .swiper { width: 100%; height: auto; }
-  :root { --swiper-navigation-size: 24px; --swiper-theme-color: #ff5a1f; }
+  .swiper { width: 100%; height: auto; position: relative; }
+  /* Make sure navigation arrows are visible over images */
+  :root { 
+    --swiper-navigation-size: 24px; 
+    --swiper-theme-color: #ff5a1f; 
+  }
+  .swiper-button-next, .swiper-button-prev {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 50%;
+    transform: scale(0.6);
+  }
 </style>
