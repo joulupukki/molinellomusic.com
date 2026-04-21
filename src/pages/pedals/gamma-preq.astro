@@ -25,7 +25,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section class="py-16 md:py-24">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="md:flex gap-12 items-center">
-
         <div class="md:w-3/5 mb-8 md:mb-0">
 
           <div class="swiper rounded-xl shadow-lg w-full overflow-hidden">
@@ -64,8 +63,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <div class="swiper-pagination"></div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
-
           </div>
+
         </div>
 
         <div class="md:w-2/5">
@@ -85,7 +84,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             This is a <strong>DIY assembly</strong> you put together yourself. While this shouldn't be your first build, there's nothing particularly challenging about it other than its size (~150 total parts). Read the BOM and Build Notes carefully to comprehend the scope of this project.
           </p>
         </div>
-
       </div>
     </div>
   </section>
@@ -146,6 +144,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
   <section class="py-16 md:py-24">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+
       <h2 class="font-heading font-bold text-3xl mb-8">Pricing</h2>
 
       <div class="bg-white rounded-xl shadow-lg p-8 md:p-10 text-left">
@@ -237,27 +236,27 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 </BaseLayout>
 
-<!-- ===================================================== -->
-<!-- FIXED SWIPER (THIS IS THE ONLY CHANGE THAT MATTERS) -->
-<!-- ===================================================== -->
+<!-- =============================== -->
+<!-- SWIPER FIX (THIS IS THE ONLY CHANGE) -->
+<!-- =============================== -->
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const swiperEl = document.querySelector('.swiper');
+  function initSwiper() {
+    const el = document.querySelector('.swiper');
 
-    if (!swiperEl) {
+    if (!el) {
       console.error('Swiper element not found');
       return;
     }
 
     if (!window.Swiper) {
-      console.error('Swiper library failed to load');
+      console.error('Swiper library not loaded');
       return;
     }
 
-    new Swiper(swiperEl, {
+    new Swiper(el, {
       loop: true,
 
       pagination: {
@@ -270,7 +269,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         prevEl: '.swiper-button-prev',
       },
     });
-  });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSwiper);
+  } else {
+    initSwiper();
+  }
 </script>
 
 <style>
