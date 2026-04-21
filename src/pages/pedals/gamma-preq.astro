@@ -25,39 +25,38 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section class="py-16 md:py-24">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="md:flex gap-12 items-center">
+
         <div class="md:w-3/5 mb-8 md:mb-0">
 
-          <!-- Swiper -->
-          <div class="swiper rounded-xl shadow-lg w-full overflow-hidden h-[420px]">
-
+          <div class="swiper rounded-xl shadow-lg w-full overflow-hidden">
             <div class="swiper-wrapper">
 
               <div class="swiper-slide">
-                <img src="/images/pedals/gamma-top-no-lights-r.PNG" alt="Gamma PreQ Top View" class="w-full h-full object-contain" />
+                <img src="/images/pedals/gamma-top-no-lights-r.PNG" alt="Gamma PreQ Top View" class="w-full h-auto" />
               </div>
 
               <div class="swiper-slide">
-                <img src="/images/pedals/gamma-off-side-r.png" alt="Gamma PreQ Side View 1" class="w-full h-full object-contain" />
+                <img src="/images/pedals/gamma-off-side-r.png" alt="Gamma PreQ Side View 1" class="w-full h-auto" />
               </div>
 
               <div class="swiper-slide">
-                <img src="/images/pedals/gamma-off-side-2r.png" alt="Gamma PreQ Side View 2" class="w-full h-full object-contain" />
+                <img src="/images/pedals/gamma-off-side-2r.png" alt="Gamma PreQ Side View 2" class="w-full h-auto" />
               </div>
 
               <div class="swiper-slide">
-                <img src="/images/pedals/gamma-front-low-r.png" alt="Gamma PreQ Front Low" class="w-full h-full object-contain" />
+                <img src="/images/pedals/gamma-front-low-r.png" alt="Gamma PreQ Front Low" class="w-full h-auto" />
               </div>
 
               <div class="swiper-slide">
-                <img src="/images/pedals/gamma-back-r.png" alt="Gamma PreQ Back View" class="w-full h-full object-contain" />
+                <img src="/images/pedals/gamma-back-r.png" alt="Gamma PreQ Back View" class="w-full h-auto" />
               </div>
 
               <div class="swiper-slide">
-                <img src="/images/pedals/gamma-inside-r.png" alt="Gamma Inside View" class="w-full h-full object-contain" />
+                <img src="/images/pedals/gamma-inside-r.png" alt="Gamma Inside View" class="w-full h-auto" />
               </div>
 
               <div class="swiper-slide">
-                <img src="/images/pedals/gamma-boards-r.png" alt="Gamma PCB Set" class="w-full h-full object-contain" />
+                <img src="/images/pedals/gamma-boards-r.png" alt="Gamma PCB Set" class="w-full h-auto" />
               </div>
 
             </div>
@@ -86,6 +85,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             This is a <strong>DIY assembly</strong> you put together yourself. While this shouldn't be your first build, there's nothing particularly challenging about it other than its size (~150 total parts). Read the BOM and Build Notes carefully to comprehend the scope of this project.
           </p>
         </div>
+
       </div>
     </div>
   </section>
@@ -93,8 +93,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section class="py-16 md:py-24 bg-brand-warm">
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
       <h2 class="font-heading font-bold text-3xl text-center mb-12">Features</h2>
+
       <div class="bg-white rounded-xl shadow-lg p-8 md:p-10">
         <ul class="space-y-3 text-gray-700 leading-relaxed">
+
           <li><strong>Gain, Volume, Boost:</strong> +25 dBu, +17 dBu, +6 dBu respectively
             <ul class="list-disc pl-6 mt-2 space-y-1 text-gray-600">
               <li>-&infin; for Gain , Volume</li>
@@ -110,6 +112,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           </li>
 
           <li><strong>Low Control:</strong> @ 100 Hz +/- 12 dB</li>
+
           <li><strong>High Shelf:</strong> @ 4 kHz +/- 12 dB</li>
 
           <li>
@@ -121,9 +124,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           </li>
 
           <li><strong>Frequency Response:</strong> 68 Hz – 20 kHz</li>
+
           <li><strong>THD:</strong> &lt; 0.02 %</li>
+
           <li><strong>Input Power:</strong> &lt; 200 mA @ 9 VDC</li>
+
           <li><strong>Internal:</strong> +/-15 VDC — for plenty of headroom</li>
+
           <li><strong>Input Impedance:</strong> 1 MΩ</li>
 
           <li><strong>Bypass</strong>: True Bypass or Mute
@@ -131,6 +138,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               <li>Internal switch</li>
             </ul>
           </li>
+
         </ul>
       </div>
     </div>
@@ -139,8 +147,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section class="py-16 md:py-24">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
       <h2 class="font-heading font-bold text-3xl mb-8">Pricing</h2>
+
       <div class="bg-white rounded-xl shadow-lg p-8 md:p-10 text-left">
         <ul class="space-y-4 text-gray-700 leading-relaxed">
+
           <li><strong>PCB set only</strong> (see pictures above): $25 + $8 shipping</li>
 
           <li>
@@ -152,6 +162,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           </li>
 
           <li>Payment via Venmo or PayPal</li>
+
         </ul>
       </div>
     </div>
@@ -159,18 +170,46 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
   <section class="py-16 md:py-24 bg-brand-warm">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
+
       <h2 class="font-heading font-bold text-3xl mb-4 text-center">Documentation</h2>
+
       <p class="text-gray-600 text-lg text-center mb-10">
         Reference documents for building and tuning the Gamma PreQ.
       </p>
 
       <div class="bg-white rounded-xl shadow-lg p-8 md:p-10">
         <ul class="space-y-4 text-gray-700 leading-relaxed">
-          <li><a href="https://docs.google.com/spreadsheets/d/10XZUnoFiJfJFFmuHVIBVKQknY2kPwP4MDt2C2y5dbGs/edit?usp=drivesdk" class="text-brand-orange font-heading font-bold hover:underline">BOM and Cost Estimate →</a></li>
-          <li><a href="https://docs.google.com/document/d/1bflPHyCgo-yc2phnAm6ZhRAkko28YN4nTb_pg0rxkQM/edit?usp=sharing" class="text-brand-orange font-heading font-bold hover:underline">Build Notes & Schematics →</a></li>
-          <li><a href="https://docs.google.com/document/d/120yCgvy48Y_ZRaOrTaf3OyHzmIOkdRPylhfyLCV6xtw/edit?tab=t.0" class="text-brand-orange font-heading font-bold hover:underline">Circuit Notes & Performance Plots →</a></li>
-          <li><a href="https://drill.taydakits.com/box-designs/new?public_key=a2M0amFFNkFqWEhDTTY2elQ0RmE5UT09Cg==" class="text-brand-orange font-heading font-bold hover:underline">Tayda Drill Template →</a></li>
-          <li><a href="https://raw.githubusercontent.com/joulupukki/molinellomusic.com/main/src/pages/pedals/gamma-preq/GammaPreamp-v4.3-c.pdf" class="text-brand-orange font-heading font-bold hover:underline">Tayda UV Template →</a></li>
+
+          <li>
+            <a href="https://docs.google.com/spreadsheets/d/10XZUnoFiJfJFFmuHVIBVKQknY2kPwP4MDt2C2y5dbGs/edit?usp=drivesdk" class="text-brand-orange font-heading font-bold hover:underline">
+              BOM and Cost Estimate →
+            </a>
+          </li>
+
+          <li>
+            <a href="https://docs.google.com/document/d/1bflPHyCgo-yc2phnAm6ZhRAkko28YN4nTb_pg0rxkQM/edit?usp=sharing" class="text-brand-orange font-heading font-bold hover:underline">
+              Build Notes & Schematics →
+            </a>
+          </li>
+
+          <li>
+            <a href="https://docs.google.com/document/d/120yCgvy48Y_ZRaOrTaf3OyHzmIOkdRPylhfyLCV6xtw/edit?tab=t.0" class="text-brand-orange font-heading font-bold hover:underline">
+              Circuit Notes & Performance Plots →
+            </a>
+          </li>
+
+          <li>
+            <a href="https://drill.taydakits.com/box-designs/new?public_key=a2M0amFFNkFqWEhDTTY2elQ0RmE5UT09Cg==" class="text-brand-orange font-heading font-bold hover:underline">
+              Tayda Drill Template →
+            </a>
+          </li>
+
+          <li>
+            <a href="https://raw.githubusercontent.com/joulupukki/molinellomusic.com/main/src/pages/pedals/gamma-preq/GammaPreamp-v4.3-c.pdf" class="text-brand-orange font-heading font-bold hover:underline">
+              Tayda UV Template →
+            </a>
+          </li>
+
         </ul>
       </div>
     </div>
@@ -178,7 +217,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
   <section class="py-16 md:py-24">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+
       <h2 class="font-heading font-bold text-3xl mb-4">Interested?</h2>
+
       <p class="text-gray-600 text-lg mb-8 leading-relaxed">
         If you have any questions about the build, OR<br>
         To order PCB set or a parts kit:
@@ -190,21 +231,40 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       >
         Contact Us
       </a>
+
     </div>
   </section>
+
 </BaseLayout>
 
-<!-- Swiper JS -->
-<script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<!-- ===================================================== -->
+<!-- FIXED SWIPER (THIS IS THE ONLY CHANGE THAT MATTERS) -->
+<!-- ===================================================== -->
 
-<script is:inline>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
   document.addEventListener('DOMContentLoaded', () => {
-    new Swiper('.swiper', {
+    const swiperEl = document.querySelector('.swiper');
+
+    if (!swiperEl) {
+      console.error('Swiper element not found');
+      return;
+    }
+
+    if (!window.Swiper) {
+      console.error('Swiper library failed to load');
+      return;
+    }
+
+    new Swiper(swiperEl, {
       loop: true,
+
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
       },
+
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -213,7 +273,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   });
 </script>
 
-<!-- 🔧 REQUIRED FIX (THIS IS WHAT MAKES IT WORK) -->
 <style>
   .swiper {
     width: 100%;
