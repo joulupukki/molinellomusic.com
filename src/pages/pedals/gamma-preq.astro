@@ -37,36 +37,36 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
               <div class="overflow-hidden rounded-xl shadow-lg bg-black/5">
                 <div
-                  class="flex transition-transform duration-500 ease-out"
+                  class="flex transition-transform duration-500 ease-out will-change-transform"
                   id="gamma-carousel-track"
                 >
 
                   <div class="flex-[0_0_100%] min-w-0">
-                    <img src="/images/pedals/gamma-top-no-lights-r.PNG" alt="Gamma PreQ Top View" class="w-full h-auto object-contain" />
+                    <img src="/images/pedals/gamma-top-no-lights-r.PNG" alt="Gamma PreQ Top View" class="w-full h-auto object-contain" loading="eager" />
                   </div>
 
                   <div class="flex-[0_0_100%] min-w-0">
-                    <img src="/images/pedals/gamma-off-side-r.PNG" alt="Gamma PreQ Side View 1" class="w-full h-auto object-contain" />
+                    <img src="/images/pedals/gamma-off-side-r.PNG" alt="Gamma PreQ Side View 1" class="w-full h-auto object-contain" loading="lazy" />
                   </div>
 
                   <div class="flex-[0_0_100%] min-w-0">
-                    <img src="/images/pedals/gamma-off-side-2r.PNG" alt="Gamma PreQ Side View 2" class="w-full h-auto object-contain" />
+                    <img src="/images/pedals/gamma-off-side-2r.PNG" alt="Gamma PreQ Side View 2" class="w-full h-auto object-contain" loading="lazy" />
                   </div>
 
                   <div class="flex-[0_0_100%] min-w-0">
-                    <img src="/images/pedals/gamma-front-low-r.PNG" alt="Gamma PreQ Front Low" class="w-full h-auto object-contain" />
+                    <img src="/images/pedals/gamma-front-low-r.PNG" alt="Gamma PreQ Front Low" class="w-full h-auto object-contain" loading="lazy" />
                   </div>
 
                   <div class="flex-[0_0_100%] min-w-0">
-                    <img src="/images/pedals/gamma-back-r.PNG" alt="Gamma PreQ Back View" class="w-full h-auto object-contain" />
+                    <img src="/images/pedals/gamma-back-r.PNG" alt="Gamma PreQ Back View" class="w-full h-auto object-contain" loading="lazy" />
                   </div>
 
                   <div class="flex-[0_0_100%] min-w-0">
-                    <img src="/images/pedals/gamma-inside-r.PNG" alt="Gamma Inside View" class="w-full h-auto object-contain" />
+                    <img src="/images/pedals/gamma-inside-r.PNG" alt="Gamma Inside View" class="w-full h-auto object-contain" loading="lazy" />
                   </div>
 
                   <div class="flex-[0_0_100%] min-w-0">
-                    <img src="/images/pedals/gamma-boards-r.PNG" alt="Gamma PCB Set" class="w-full h-auto object-contain" />
+                    <img src="/images/pedals/gamma-boards-r.PNG" alt="Gamma PCB Set" class="w-full h-auto object-contain" loading="lazy" />
                   </div>
 
                 </div>
@@ -324,13 +324,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       goTo(current - 1);
     }
 
-    function autoplay() {
+    function startAutoplay() {
       timer = setInterval(next, 5000);
     }
 
-    function reset() {
+    function stopAutoplay() {
       clearInterval(timer);
-      autoplay();
+    }
+
+    function resetAutoplay() {
+      stopAutoplay();
+      startAutoplay();
     }
 
     prevBtn.onclick = prev;
