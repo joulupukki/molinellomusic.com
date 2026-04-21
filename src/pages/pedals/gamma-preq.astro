@@ -25,37 +25,39 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section class="py-16 md:py-24">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="md:flex gap-12 items-center">
-
         <div class="md:w-3/5 mb-8 md:mb-0">
-          <div class="swiper rounded-xl shadow-lg w-full overflow-hidden">
+
+          <!-- Swiper -->
+          <div class="swiper rounded-xl shadow-lg w-full overflow-hidden h-[420px]">
+
             <div class="swiper-wrapper">
 
               <div class="swiper-slide">
-                <img src="/images/pedals/gamma-top-no-lights-r.PNG" alt="Gamma PreQ Top View" class="w-full h-auto" />
+                <img src="/images/pedals/gamma-top-no-lights-r.PNG" alt="Gamma PreQ Top View" class="w-full h-full object-contain" />
               </div>
 
               <div class="swiper-slide">
-                <img src="/images/pedals/gamma-off-side-r.png" alt="Gamma PreQ Side View 1" class="w-full h-auto" />
+                <img src="/images/pedals/gamma-off-side-r.png" alt="Gamma PreQ Side View 1" class="w-full h-full object-contain" />
               </div>
 
               <div class="swiper-slide">
-                <img src="/images/pedals/gamma-off-side-2r.png" alt="Gamma PreQ Side View 2" class="w-full h-auto" />
+                <img src="/images/pedals/gamma-off-side-2r.png" alt="Gamma PreQ Side View 2" class="w-full h-full object-contain" />
               </div>
 
               <div class="swiper-slide">
-                <img src="/images/pedals/gamma-front-low-r.png" alt="Gamma PreQ Front Low" class="w-full h-auto" />
+                <img src="/images/pedals/gamma-front-low-r.png" alt="Gamma PreQ Front Low" class="w-full h-full object-contain" />
               </div>
 
               <div class="swiper-slide">
-                <img src="/images/pedals/gamma-back-r.png" alt="Gamma PreQ Back View" class="w-full h-auto" />
+                <img src="/images/pedals/gamma-back-r.png" alt="Gamma PreQ Back View" class="w-full h-full object-contain" />
               </div>
 
               <div class="swiper-slide">
-                <img src="/images/pedals/gamma-inside-r.png" alt="Gamma Inside View" class="w-full h-auto" />
+                <img src="/images/pedals/gamma-inside-r.png" alt="Gamma Inside View" class="w-full h-full object-contain" />
               </div>
 
               <div class="swiper-slide">
-                <img src="/images/pedals/gamma-boards-r.png" alt="Gamma PCB Set" class="w-full h-auto" />
+                <img src="/images/pedals/gamma-boards-r.png" alt="Gamma PCB Set" class="w-full h-full object-contain" />
               </div>
 
             </div>
@@ -63,11 +65,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <div class="swiper-pagination"></div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
+
           </div>
         </div>
 
         <div class="md:w-2/5">
-          <h2 class="font-heading font-bold text-2xl md:text-3xl mb-4">Designed for Acoustic Guitar</h2>
+          <h2 class="font-heading font-bold text-2xl md:text-3xl mb-4">
+            Designed for Acoustic Guitar
+          </h2>
 
           <p class="text-gray-600 text-lg mb-4 leading-relaxed">
             The Gamma PreQ was designed specifically for acoustic guitar, although it will work for any acoustic instrument (but not bass). It has plenty of clean gain as a preamp, a plethora of EQ options, and a dedicated boost.
@@ -81,7 +86,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             This is a <strong>DIY assembly</strong> you put together yourself. While this shouldn't be your first build, there's nothing particularly challenging about it other than its size (~150 total parts). Read the BOM and Build Notes carefully to comprehend the scope of this project.
           </p>
         </div>
-
       </div>
     </div>
   </section>
@@ -89,7 +93,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section class="py-16 md:py-24 bg-brand-warm">
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
       <h2 class="font-heading font-bold text-3xl text-center mb-12">Features</h2>
-
       <div class="bg-white rounded-xl shadow-lg p-8 md:p-10">
         <ul class="space-y-3 text-gray-700 leading-relaxed">
           <li><strong>Gain, Volume, Boost:</strong> +25 dBu, +17 dBu, +6 dBu respectively
@@ -107,7 +110,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           </li>
 
           <li><strong>Low Control:</strong> @ 100 Hz +/- 12 dB</li>
-
           <li><strong>High Shelf:</strong> @ 4 kHz +/- 12 dB</li>
 
           <li>
@@ -137,7 +139,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section class="py-16 md:py-24">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
       <h2 class="font-heading font-bold text-3xl mb-8">Pricing</h2>
-
       <div class="bg-white rounded-xl shadow-lg p-8 md:p-10 text-left">
         <ul class="space-y-4 text-gray-700 leading-relaxed">
           <li><strong>PCB set only</strong> (see pictures above): $25 + $8 shipping</li>
@@ -159,7 +160,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section class="py-16 md:py-24 bg-brand-warm">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
       <h2 class="font-heading font-bold text-3xl mb-4 text-center">Documentation</h2>
-
       <p class="text-gray-600 text-lg text-center mb-10">
         Reference documents for building and tuning the Gamma PreQ.
       </p>
@@ -179,7 +179,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section class="py-16 md:py-24">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
       <h2 class="font-heading font-bold text-3xl mb-4">Interested?</h2>
-
       <p class="text-gray-600 text-lg mb-8 leading-relaxed">
         If you have any questions about the build, OR<br>
         To order PCB set or a parts kit:
@@ -198,7 +197,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <!-- Swiper JS -->
 <script is:inline src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<!-- INIT -->
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
     new Swiper('.swiper', {
@@ -215,7 +213,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   });
 </script>
 
-<!-- 🔥 ONLY REAL FIX -->
+<!-- 🔧 REQUIRED FIX (THIS IS WHAT MAKES IT WORK) -->
 <style>
   .swiper {
     width: 100%;
@@ -228,18 +226,5 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   .swiper-slide {
     flex-shrink: 0;
     width: 100%;
-  }
-
-  :root {
-    --swiper-navigation-size: 24px;
-    --swiper-theme-color: #ff5a1f;
-  }
-
-  .swiper-button-next,
-  .swiper-button-prev {
-    background: rgba(255,255,255,0.7);
-    padding: 25px;
-    border-radius: 50%;
-    transform: scale(0.7);
   }
 </style>
