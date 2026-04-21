@@ -15,7 +15,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
   <section class="bg-brand-dark text-white py-16 md:py-24">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-      <h1 class="font-heading font-extrabold text-4xl md:text-5xl mb-3">Gamma PreQ</h1>
+      <h1 class="font-heading font-extrabold text-4xl md:text-5xl mb-3">
+        Gamma PreQ
+      </h1>
       <p class="text-gray-400 text-lg max-w-2xl mx-auto">
         Acoustic Guitar Preamp, EQ &amp; Boost
       </p>
@@ -25,48 +27,76 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section class="py-16 md:py-24">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="md:flex gap-12 items-center">
+
+        <!-- ========================= -->
+        <!-- CAROUSEL (REPLACEMENT)    -->
+        <!-- ========================= -->
         <div class="md:w-3/5 mb-8 md:mb-0">
+          <section class="py-4">
+            <div class="relative">
 
-          <div class="swiper rounded-xl shadow-lg w-full overflow-hidden">
-            <div class="swiper-wrapper">
+              <div class="overflow-hidden rounded-xl shadow-lg bg-black/5">
+                <div
+                  class="flex transition-transform duration-500 ease-out"
+                  id="gamma-carousel-track"
+                >
 
-              <div class="swiper-slide">
-                <img src="/images/pedals/gamma-top-no-lights-r.PNG" alt="Gamma PreQ Top View" class="w-full h-auto" />
+                  <div class="flex-[0_0_100%] min-w-0">
+                    <img src="/images/pedals/gamma-top-no-lights-r.PNG" alt="Gamma PreQ Top View" class="w-full h-auto object-contain" />
+                  </div>
+
+                  <div class="flex-[0_0_100%] min-w-0">
+                    <img src="/images/pedals/gamma-off-side-r.png" alt="Gamma PreQ Side View 1" class="w-full h-auto object-contain" />
+                  </div>
+
+                  <div class="flex-[0_0_100%] min-w-0">
+                    <img src="/images/pedals/gamma-off-side-2r.png" alt="Gamma PreQ Side View 2" class="w-full h-auto object-contain" />
+                  </div>
+
+                  <div class="flex-[0_0_100%] min-w-0">
+                    <img src="/images/pedals/gamma-front-low-r.png" alt="Gamma PreQ Front Low" class="w-full h-auto object-contain" />
+                  </div>
+
+                  <div class="flex-[0_0_100%] min-w-0">
+                    <img src="/images/pedals/gamma-back-r.png" alt="Gamma PreQ Back View" class="w-full h-auto object-contain" />
+                  </div>
+
+                  <div class="flex-[0_0_100%] min-w-0">
+                    <img src="/images/pedals/gamma-inside-r.png" alt="Gamma Inside View" class="w-full h-auto object-contain" />
+                  </div>
+
+                  <div class="flex-[0_0_100%] min-w-0">
+                    <img src="/images/pedals/gamma-boards-r.png" alt="Gamma PCB Set" class="w-full h-auto object-contain" />
+                  </div>
+
+                </div>
               </div>
 
-              <div class="swiper-slide">
-                <img src="/images/pedals/gamma-off-side-r.png" alt="Gamma PreQ Side View 1" class="w-full h-auto" />
-              </div>
+              <!-- NAV -->
+              <button
+                id="gamma-carousel-prev"
+                class="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/80 border hover:bg-orange-500 hover:text-white shadow"
+              >
+                ‹
+              </button>
 
-              <div class="swiper-slide">
-                <img src="/images/pedals/gamma-off-side-2r.png" alt="Gamma PreQ Side View 2" class="w-full h-auto" />
-              </div>
+              <button
+                id="gamma-carousel-next"
+                class="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/80 border hover:bg-orange-500 hover:text-white shadow"
+              >
+                ›
+              </button>
 
-              <div class="swiper-slide">
-                <img src="/images/pedals/gamma-front-low-r.png" alt="Gamma PreQ Front Low" class="w-full h-auto" />
-              </div>
-
-              <div class="swiper-slide">
-                <img src="/images/pedals/gamma-back-r.png" alt="Gamma PreQ Back View" class="w-full h-auto" />
-              </div>
-
-              <div class="swiper-slide">
-                <img src="/images/pedals/gamma-inside-r.png" alt="Gamma Inside View" class="w-full h-auto" />
-              </div>
-
-              <div class="swiper-slide">
-                <img src="/images/pedals/gamma-boards-r.png" alt="Gamma PCB Set" class="w-full h-auto" />
-              </div>
+              <!-- DOTS -->
+              <div class="flex justify-center gap-2 mt-4" id="gamma-carousel-dots"></div>
 
             </div>
-
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-          </div>
-
+          </section>
         </div>
 
+        <!-- ========================= -->
+        <!-- TEXT CONTENT              -->
+        <!-- ========================= -->
         <div class="md:w-2/5">
           <h2 class="font-heading font-bold text-2xl md:text-3xl mb-4">
             Designed for Acoustic Guitar
@@ -84,64 +114,50 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             This is a <strong>DIY assembly</strong> you put together yourself. While this shouldn't be your first build, there's nothing particularly challenging about it other than its size (~150 total parts). Read the BOM and Build Notes carefully to comprehend the scope of this project.
           </p>
         </div>
+
       </div>
     </div>
   </section>
 
+  <!-- Features -->
   <section class="py-16 md:py-24 bg-brand-warm">
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      <h2 class="font-heading font-bold text-3xl text-center mb-12">Features</h2>
+      <h2 class="font-heading font-bold text-3xl text-center mb-12">
+        Features
+      </h2>
 
       <div class="bg-white rounded-xl shadow-lg p-8 md:p-10">
         <ul class="space-y-3 text-gray-700 leading-relaxed">
 
           <li><strong>Gain, Volume, Boost:</strong> +25 dBu, +17 dBu, +6 dBu respectively
-            <ul class="list-disc pl-6 mt-2 space-y-1 text-gray-600">
+            <ul class="list-disc pl-6 mt-2 text-gray-600">
               <li>-&infin; for Gain , Volume</li>
             </ul>
           </li>
 
           <li>
             <strong>HPF / Notch:</strong> 68–440 Hz (Butterworth 2nd order)
-            <ul class="list-disc pl-6 mt-2 space-y-1 text-gray-600">
-              <li>High Pass @ -12 dB/octave</li>
-              <li>Notch: 5 &lt; Q &lt; 15</li>
-            </ul>
           </li>
 
           <li><strong>Low Control:</strong> @ 100 Hz +/- 12 dB</li>
 
           <li><strong>High Shelf:</strong> @ 4 kHz +/- 12 dB</li>
 
-          <li>
-            <strong>Parametric Mid:</strong> +/- 9 dB
-            <ul class="list-disc pl-6 mt-2 space-y-1 text-gray-600">
-              <li>Low Range: 103 – 880 Hz, 0.5 &lt; Q &lt; 5</li>
-              <li>High Range: 435 – 3700 Hz, 2 &lt; Q &lt; 20</li>
-            </ul>
-          </li>
+          <li><strong>Parametric Mid:</strong> +/- 9 dB</li>
 
           <li><strong>Frequency Response:</strong> 68 Hz – 20 kHz</li>
-
           <li><strong>THD:</strong> &lt; 0.02 %</li>
-
           <li><strong>Input Power:</strong> &lt; 200 mA @ 9 VDC</li>
-
-          <li><strong>Internal:</strong> +/-15 VDC — for plenty of headroom</li>
-
+          <li><strong>Internal:</strong> +/-15 VDC</li>
           <li><strong>Input Impedance:</strong> 1 MΩ</li>
-
-          <li><strong>Bypass</strong>: True Bypass or Mute
-            <ul class="list-disc pl-6 mt-2 space-y-1 text-gray-600">
-              <li>Internal switch</li>
-            </ul>
-          </li>
+          <li><strong>Bypass:</strong> True Bypass or Mute</li>
 
         </ul>
       </div>
     </div>
   </section>
 
+  <!-- Pricing -->
   <section class="py-16 md:py-24">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
 
@@ -150,15 +166,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <div class="bg-white rounded-xl shadow-lg p-8 md:p-10 text-left">
         <ul class="space-y-4 text-gray-700 leading-relaxed">
 
-          <li><strong>PCB set only</strong> (see pictures above): $25 + $8 shipping</li>
+          <li><strong>PCB set only</strong>: $25 + $8 shipping</li>
 
-          <li>
-            <strong>Parts kit</strong> (no enclosure/knobs): $100 + $10 shipping
-            <ul class="list-disc pl-6 mt-2 space-y-1 text-gray-600">
-              <li>+ $10 for 1 - LM4562</li>
-              <li>+ $10 for 3 - OPA4134's</li>
-            </ul>
-          </li>
+          <li><strong>Parts kit</strong>: $100 + $10 shipping</li>
 
           <li>Payment via Venmo or PayPal</li>
 
@@ -167,66 +177,43 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </div>
   </section>
 
+  <!-- Documentation -->
   <section class="py-16 md:py-24 bg-brand-warm">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
 
-      <h2 class="font-heading font-bold text-3xl mb-4 text-center">Documentation</h2>
+      <h2 class="font-heading font-bold text-3xl mb-4 text-center">
+        Documentation
+      </h2>
 
       <p class="text-gray-600 text-lg text-center mb-10">
         Reference documents for building and tuning the Gamma PreQ.
       </p>
 
       <div class="bg-white rounded-xl shadow-lg p-8 md:p-10">
-        <ul class="space-y-4 text-gray-700 leading-relaxed">
+        <ul class="space-y-4 text-gray-700">
 
-          <li>
-            <a href="https://docs.google.com/spreadsheets/d/10XZUnoFiJfJFFmuHVIBVKQknY2kPwP4MDt2C2y5dbGs/edit?usp=drivesdk" class="text-brand-orange font-heading font-bold hover:underline">
-              BOM and Cost Estimate →
-            </a>
-          </li>
-
-          <li>
-            <a href="https://docs.google.com/document/d/1bflPHyCgo-yc2phnAm6ZhRAkko28YN4nTb_pg0rxkQM/edit?usp=sharing" class="text-brand-orange font-heading font-bold hover:underline">
-              Build Notes & Schematics →
-            </a>
-          </li>
-
-          <li>
-            <a href="https://docs.google.com/document/d/120yCgvy48Y_ZRaOrTaf3OyHzmIOkdRPylhfyLCV6xtw/edit?tab=t.0" class="text-brand-orange font-heading font-bold hover:underline">
-              Circuit Notes & Performance Plots →
-            </a>
-          </li>
-
-          <li>
-            <a href="https://drill.taydakits.com/box-designs/new?public_key=a2M0amFFNkFqWEhDTTY2elQ0RmE5UT09Cg==" class="text-brand-orange font-heading font-bold hover:underline">
-              Tayda Drill Template →
-            </a>
-          </li>
-
-          <li>
-            <a href="https://raw.githubusercontent.com/joulupukki/molinellomusic.com/main/src/pages/pedals/gamma-preq/GammaPreamp-v4.3-c.pdf" class="text-brand-orange font-heading font-bold hover:underline">
-              Tayda UV Template →
-            </a>
-          </li>
+          <li><a href="#" class="text-brand-orange font-bold">BOM & Cost Estimate</a></li>
+          <li><a href="#" class="text-brand-orange font-bold">Build Notes</a></li>
+          <li><a href="#" class="text-brand-orange font-bold">Circuit Notes</a></li>
 
         </ul>
       </div>
     </div>
   </section>
 
+  <!-- CTA -->
   <section class="py-16 md:py-24">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
 
       <h2 class="font-heading font-bold text-3xl mb-4">Interested?</h2>
 
-      <p class="text-gray-600 text-lg mb-8 leading-relaxed">
-        If you have any questions about the build, OR<br>
-        To order PCB set or a parts kit:
+      <p class="text-gray-600 text-lg mb-8">
+        Contact us for PCB sets or kits.
       </p>
 
       <a
         href="/pedals/gamma-preq/order"
-        class="inline-block bg-brand-orange text-white font-heading font-bold px-8 py-3 rounded-lg hover:bg-orange-600 transition-colors text-lg"
+        class="inline-block bg-brand-orange text-white font-bold px-8 py-3 rounded-lg"
       >
         Contact Us
       </a>
@@ -236,59 +223,76 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 </BaseLayout>
 
-<!-- =============================== -->
-<!-- SWIPER FIX (THIS IS THE ONLY CHANGE) -->
-<!-- =============================== -->
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+<!-- ========================= -->
+<!-- CAROUSEL SCRIPT           -->
+<!-- ========================= -->
 <script>
-  function initSwiper() {
-    const el = document.querySelector('.swiper');
+  (function () {
+    const track = document.getElementById('gamma-carousel-track');
+    const prevBtn = document.getElementById('gamma-carousel-prev');
+    const nextBtn = document.getElementById('gamma-carousel-next');
+    const dotsContainer = document.getElementById('gamma-carousel-dots');
 
-    if (!el) {
-      console.error('Swiper element not found');
-      return;
+    if (!track) return;
+
+    const slides = track.children;
+    const total = slides.length;
+    let current = 0;
+    let timer;
+
+    const dots = [];
+
+    for (let i = 0; i < total; i++) {
+      const dot = document.createElement('button');
+      dot.className = 'w-2.5 h-2.5 rounded-full bg-gray-300';
+      dot.onclick = () => goTo(i);
+      dotsContainer.appendChild(dot);
+      dots.push(dot);
     }
 
-    if (!window.Swiper) {
-      console.error('Swiper library not loaded');
-      return;
+    function update() {
+      track.style.transform = `translateX(-${current * 100}%)`;
+
+      dots.forEach((d, i) => {
+        d.classList.toggle('bg-orange-500', i === current);
+        d.classList.toggle('bg-gray-300', i !== current);
+      });
     }
 
-    new Swiper(el, {
-      loop: true,
+    function goTo(i) {
+      current = (i + total) % total;
+      update();
+      reset();
+    }
 
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
+    function next() {
+      goTo(current + 1);
+    }
 
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
+    function prev() {
+      goTo(current - 1);
+    }
+
+    function autoplay() {
+      timer = setInterval(next, 5000);
+    }
+
+    function reset() {
+      clearInterval(timer);
+      autoplay();
+    }
+
+    prevBtn.onclick = prev;
+    nextBtn.onclick = next;
+
+    let startX = 0;
+    track.addEventListener('touchstart', (e) => startX = e.touches[0].clientX);
+    track.addEventListener('touchend', (e) => {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 50) diff > 0 ? next() : prev();
     });
-  }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initSwiper);
-  } else {
-    initSwiper();
-  }
+    update();
+    autoplay();
+  })();
 </script>
-
-<style>
-  .swiper {
-    width: 100%;
-  }
-
-  .swiper-wrapper {
-    display: flex !important;
-  }
-
-  .swiper-slide {
-    flex-shrink: 0;
-    width: 100%;
-  }
-</style>
