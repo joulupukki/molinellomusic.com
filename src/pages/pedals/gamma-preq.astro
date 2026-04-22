@@ -333,35 +333,34 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   }
 
   function next() {
-    goTo(index + 1);
+    index = (index + 1) % total;
+    render();
   }
 
   function start() {
-    if (timer) return;
-    timer = setInterval(next, 5000);
+    stop(); // ALWAYS reset first (fixes single-tick bug)
+    timer = setInterval(next, 4000); // ✅ 4 seconds
   }
 
   function stop() {
-    clearInterval(timer);
+    if (timer) clearInterval(timer);
     timer = null;
   }
 
   function restart() {
-    stop();
     start();
   }
 
-  // IMPORTANT FIX:
-  // Don’t rely on observer alone — start immediately too
-  start();
+  // init
   render();
+  start();
 
+  // pause when off-screen (safe version)
   const observer = new IntersectionObserver(([entry]) => {
     if (entry.isIntersecting) start();
     else stop();
   }, { threshold: 0.2 });
 
   observer.observe(track);
-
 })();
 </script>
