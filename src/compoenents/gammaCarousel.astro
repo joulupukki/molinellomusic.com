@@ -1,1 +1,117 @@
+---
+const { images = [], base = "/images/pedals", autoplay = true } = Astro.props;
+---
 
+<section class="relative">
+
+  <!-- TRACK -->
+  <div
+    id="carousel-track"
+    class="flex overflow-x-auto scroll-smooth snap-x snap-mandatory rounded-xl shadow-lg bg-black/5"
+  >
+    {images.map((img) => (
+      <div class="flex-[0_0_100%] snap-center">
+        <img
+          src={`${base}/${img}`}
+          class="w-full h-auto object-contain"
+          loading="lazy"
+        />
+      </div>
+    ))}
+  </div>
+
+  <!-- NAV -->
+  <button id="prev"
+    class="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 rounded-full shadow">
+    ‹
+  </button>
+
+  <button id="next"
+    class="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 rounded-full shadow">
+    ›
+  </button>
+
+  <!-- DOTS -->
+  <div id="dots" class="flex justify-center gap-2 mt-4"></div>
+
+</section>
+
+<script is:inline>
+(() => {
+  const track = document.getElementById('carousel-track');
+  if (!track) return;
+
+  const slides = [...track.children];
+  const total = slides.length;
+
+  const prev = document.getElementById('prev');
+  const next = document.getElementById('next');
+  const dotsContainer = document.getElementById('dots');
+
+  let index = 0;
+  let timer = null;
+  let isVisible = true;
+
+  // build dots
+  const dots = [];
+
+  slides.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'w-2.5 h-2.5 rounded-full bg-gray-300';
+    d.onclick = () => goTo(i);
+    dotsContainer.appendChild(d);
+    dots.push(d);
+  });
+
+  function updateDots() {
+    dots.forEach((d, i) => {
+      d.classList.toggle('bg-orange-500', i === index);
+    });
+  }
+
+  function goTo(i) {
+    index = (i + total) % total;
+    slides[index].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+    updateDots();
+  }
+
+  function nextSlide() {
+    goTo(index + 1);
+  }
+
+  function prevSlide() {
+    goTo(index - 1);
+  }
+
+  function start() {
+    if (!timer && isVisible) {
+      timer = setInterval(nextSlide, 5000);
+    }
+  }
+
+  function stop() {
+    clearInterval(timer);
+    timer = null;
+  }
+
+  function restart() {
+    stop();
+    start();
+  }
+
+  prev.onclick = () => { prevSlide(); restart(); };
+  next.onclick = () => { nextSlide(); restart(); };
+
+  // detect visibility (pause when off-screen)
+  const observer = new IntersectionObserver(([entry]) => {
+    isVisible = entry.isIntersecting;
+    if (isVisible) start();
+    else stop();
+  }, { threshold: 0.2 });
+
+  observer.observe(track);
+
+  updateDots();
+  start();
+})();
+</script>
