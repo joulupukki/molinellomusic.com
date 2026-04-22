@@ -307,8 +307,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   const total = slides.length;
 
   let index = 0;
-  let timer;
+  let timer = null;
 
+  // =========================
+  // DOTS
+  // =========================
   const dots = slides.map((_, i) => {
     const d = document.createElement('button');
     d.className = 'w-2.5 h-2.5 rounded-full bg-gray-300';
@@ -317,6 +320,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     return d;
   });
 
+  // =========================
+  // RENDER
+  // =========================
   function render() {
     track.style.transform = `translateX(-${index * 100}%)`;
 
@@ -337,6 +343,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     render();
   }
 
+  // =========================
+  // AUTOPLAY (4s)
+  // =========================
   function start() {
     if (timer) return;
     timer = setInterval(next, 4000);
@@ -352,7 +361,43 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     start();
   }
 
-  // init
+  // =========================
+  // HOVER PAUSE (desktop)
+  // =========================
+  track.addEventListener('mouseenter', stop);
+  track.addEventListener('mouseleave', start);
+
+  // =========================
+  // SWIPE (mobile)
+  // =========================
+  let startX = 0;
+  let isSwiping = false;
+
+  track.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    isSwiping = true;
+  });
+
+  track.addEventListener('touchend', (e) => {
+    if (!isSwiping) return;
+    isSwiping = false;
+
+    const diff = startX - e.changedTouches[0].clientX;
+
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) {
+        next();
+      } else {
+        index = (index - 1 + total) % total;
+        render();
+        restart();
+      }
+    }
+  });
+
+  // =========================
+  // INIT
+  // =========================
   render();
   start();
 })();
