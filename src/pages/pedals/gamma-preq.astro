@@ -308,11 +308,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
   let index = 0;
   let timer = null;
+  let isActive = false;
 
   const dots = slides.map((_, i) => {
     const d = document.createElement('button');
     d.className = 'w-2.5 h-2.5 rounded-full bg-gray-300';
-    d.onclick = () => goTo(i);
+    d.onclick = () => goTo(i, true);
     dotsContainer.appendChild(d);
     return d;
   });
@@ -326,10 +327,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     });
   }
 
-  function goTo(i) {
+  function goTo(i, userAction = false) {
     index = (i + total) % total;
     render();
-    restart();
+
+    // only reset autoplay if user clicked
+    if (userAction) restart();
   }
 
   function next() {
@@ -338,27 +341,35 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   }
 
   function start() {
-    stop(); // ALWAYS reset first (fixes single-tick bug)
+    if (timer) return;
     timer = setInterval(next, 4000); // ✅ 4 seconds
   }
 
   function stop() {
-    if (timer) clearInterval(timer);
+    clearInterval(timer);
     timer = null;
   }
 
   function restart() {
+    stop();
     start();
   }
 
-  // init
+  // Start immediately
   render();
   start();
 
-  // pause when off-screen (safe version)
+  // Pause when offscreen (but DO NOT restart here)
   const observer = new IntersectionObserver(([entry]) => {
-    if (entry.isIntersecting) start();
-    else stop();
+    if (entry.isIntersecting) {
+      if (!isActive) {
+        start();
+        isActive = true;
+      }
+    } else {
+      stop();
+      isActive = false;
+    }
   }, { threshold: 0.2 });
 
   observer.observe(track);
