@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Carousel from '../../components/Carousel.astro';
 ---
 
 <BaseLayout
@@ -28,48 +29,20 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="md:flex gap-12 items-center">
 
-        <!-- ========================= -->
-        <!-- CAROUSEL (REPLACEMENT)    -->
-        <!-- ========================= -->
-        <div class="md:w-3/5 mb-8 md:mb-0">
-<section class="py-4">
-  <div class="relative">
-
-    <!-- TRACK (scroll snap) -->
-    <div
-      id="gamma-carousel"
-      class="flex overflow-x-auto scroll-smooth snap-x snap-mandatory rounded-xl shadow-lg bg-black/5"
-    >
-
-      <div class="flex-[0_0_100%] snap-center">
-        <img src="/images/pedals/gamma-top-no-lights-r.PNG" class="w-full h-auto object-contain" />
-      </div>
-
-      <div class="flex-[0_0_100%] snap-center">
-        <img src="/images/pedals/gamma-off-side-r.PNG" class="w-full h-auto object-contain" />
-      </div>
-
-      <div class="flex-[0_0_100%] snap-center">
-        <img src="/images/pedals/gamma-off-side-2r.PNG" class="w-full h-auto object-contain" />
-      </div>
-
-      <div class="flex-[0_0_100%] snap-center">
-        <img src="/images/pedals/gamma-front-low-r.PNG" class="w-full h-auto object-contain" />
-      </div>
-
-      <div class="flex-[0_0_100%] snap-center">
-        <img src="/images/pedals/gamma-back-r.PNG" class="w-full h-auto object-contain" />
-      </div>
-
-      <div class="flex-[0_0_100%] snap-center">
-        <img src="/images/pedals/gamma-inside-r.PNG" class="w-full h-auto object-contain" />
-      </div>
-
-      <div class="flex-[0_0_100%] snap-center">
-        <img src="/images/pedals/gamma-boards-r.PNG" class="w-full h-auto object-contain" />
-      </div>
-
-    </div>
+<div class="md:w-3/5 mb-8 md:mb-0">
+  <Carousel
+    images={[
+      "gamma-top-no-lights-r.PNG",
+      "gamma-off-side-r.PNG",
+      "gamma-off-side-2r.PNG",
+      "gamma-front-low-r.PNG",
+      "gamma-back-r.PNG",
+      "gamma-inside-r.PNG",
+      "gamma-boards-r.PNG"
+    ]}
+    base="/images/pedals"
+  />
+</div>
 
     <!-- BUTTONS -->
     <button id="prev"
