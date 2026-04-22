@@ -1,6 +1,5 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import Carousel from '../../components/Carousel.astro';
 ---
 
 <BaseLayout
@@ -30,33 +29,51 @@ import Carousel from '../../components/Carousel.astro';
       <div class="md:flex gap-12 items-center">
 
 <div class="md:w-3/5 mb-8 md:mb-0">
-  <Carousel
-    images={[
-      "gamma-top-no-lights-r.PNG",
-      "gamma-off-side-r.PNG",
-      "gamma-off-side-2r.PNG",
-      "gamma-front-low-r.PNG",
-      "gamma-back-r.PNG",
-      "gamma-inside-r.PNG",
-      "gamma-boards-r.PNG"
-    ]}
-    base="/images/pedals"
-  />
+  <div class="relative">
+
+    <!-- TRACK -->
+    <div
+      id="gamma-track"
+      class="flex overflow-hidden rounded-xl shadow-lg bg-black/5"
+    >
+      <div class="flex-[0_0_100%]">
+        <img src="/images/pedals/gamma-top-no-lights-r.PNG" class="w-full h-auto object-contain" />
+      </div>
+
+      <div class="flex-[0_0_100%]">
+        <img src="/images/pedals/gamma-off-side-r.PNG" class="w-full h-auto object-contain" />
+      </div>
+
+      <div class="flex-[0_0_100%]">
+        <img src="/images/pedals/gamma-off-side-2r.PNG" class="w-full h-auto object-contain" />
+      </div>
+
+      <div class="flex-[0_0_100%]">
+        <img src="/images/pedals/gamma-front-low-r.PNG" class="w-full h-auto object-contain" />
+      </div>
+
+      <div class="flex-[0_0_100%]">
+        <img src="/images/pedals/gamma-back-r.PNG" class="w-full h-auto object-contain" />
+      </div>
+
+      <div class="flex-[0_0_100%]">
+        <img src="/images/pedals/gamma-inside-r.PNG" class="w-full h-auto object-contain" />
+      </div>
+
+      <div class="flex-[0_0_100%]">
+        <img src="/images/pedals/gamma-boards-r.PNG" class="w-full h-auto object-contain" />
+      </div>
+    </div>
+
+    <!-- DOTS -->
+    <div id="gamma-dots" class="flex justify-center gap-2 mt-4"></div>
+
+  </div>
 </div>
 
     <!-- BUTTONS -->
-    <button id="prev"
-      class="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 rounded-full shadow">
-      ‹
-    </button>
-
-    <button id="next"
-      class="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 rounded-full shadow">
-      ›
-    </button>
 
     <!-- DOTS -->
-    <div id="dots" class="flex justify-center gap-2 mt-4"></div>
 
   </div>
 </section>
@@ -282,3 +299,70 @@ import Carousel from '../../components/Carousel.astro';
 </section>
 
 </BaseLayout>
+
+<script>
+(() => {
+  const track = document.getElementById('gamma-track');
+  const dotsContainer = document.getElementById('gamma-dots');
+
+  if (!track || !dotsContainer) return;
+
+  const slides = [...track.children];
+  const total = slides.length;
+
+  let index = 0;
+  let timer = null;
+
+  const dots = slides.map((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'w-2.5 h-2.5 rounded-full bg-gray-300';
+    d.onclick = () => goTo(i);
+    dotsContainer.appendChild(d);
+    return d;
+  });
+
+  function render() {
+    track.style.transform = `translateX(-${index * 100}%)`;
+
+    dots.forEach((d, i) => {
+      d.classList.toggle('bg-orange-500', i === index);
+      d.classList.toggle('bg-gray-300', i !== index);
+    });
+  }
+
+  function goTo(i) {
+    index = (i + total) % total;
+    render();
+    restart();
+  }
+
+  function next() {
+    goTo(index + 1);
+  }
+
+  function start() {
+    if (timer) return;
+    timer = setInterval(next, 5000);
+  }
+
+  function stop() {
+    clearInterval(timer);
+    timer = null;
+  }
+
+  function restart() {
+    stop();
+    start();
+  }
+
+  // pause when not visible
+  const observer = new IntersectionObserver(([entry]) => {
+    entry.isIntersecting ? start() : stop();
+  }, { threshold: 0.2 });
+
+  observer.observe(track);
+
+  render();
+  start();
+})();
+</script>
