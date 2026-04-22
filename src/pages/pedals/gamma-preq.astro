@@ -325,15 +325,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     const nextBtn = document.getElementById('gamma-carousel-next');
     const dotsContainer = document.getElementById('gamma-carousel-dots');
 
-    if (!track) return;
+    if (!track || !dotsContainer) return;
 
     const slides = track.children;
     const total = slides.length;
+
     let current = 0;
-    let timer;
+    let timer = null;
+    let startX = 0;
 
     const dots = [];
 
+    // Build dots
     for (let i = 0; i < total; i++) {
       const dot = document.createElement('button');
       dot.className = 'w-2.5 h-2.5 rounded-full bg-gray-300';
@@ -354,7 +357,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     function goTo(i) {
       current = (i + total) % total;
       update();
-      reset();
+      resetAutoplay();
     }
 
     function next() {
@@ -366,29 +369,39 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     }
 
     function startAutoplay() {
+      stopAutoplay();
       timer = setInterval(next, 5000);
     }
 
     function stopAutoplay() {
-      clearInterval(timer);
+      if (timer) {
+        clearInterval(timer);
+        timer = null;
+      }
     }
 
     function resetAutoplay() {
-      stopAutoplay();
       startAutoplay();
     }
 
-    prevBtn.onclick = prev;
-    nextBtn.onclick = next;
+    // Buttons
+    prevBtn && (prevBtn.onclick = prev);
+    nextBtn && (nextBtn.onclick = next);
 
-    let startX = 0;
-    track.addEventListener('touchstart', (e) => startX = e.touches[0].clientX);
+    // Swipe
+    track.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+
     track.addEventListener('touchend', (e) => {
       const diff = startX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 50) diff > 0 ? next() : prev();
+      if (Math.abs(diff) > 50) {
+        diff > 0 ? next() : prev();
+      }
     });
 
+    // Init
     update();
-    autoplay();
+    startAutoplay();
   })();
 </script>
