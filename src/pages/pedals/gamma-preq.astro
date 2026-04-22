@@ -32,66 +32,61 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <!-- CAROUSEL (REPLACEMENT)    -->
         <!-- ========================= -->
         <div class="md:w-3/5 mb-8 md:mb-0">
-          <section class="py-4">
-            <div class="relative">
+<section class="py-4">
+  <div class="relative">
 
-              <div class="overflow-hidden rounded-xl shadow-lg bg-black/5">
-                <div
-                  class="flex transition-transform duration-500 ease-out will-change-transform"
-                  id="gamma-carousel-track"
-                >
+    <!-- TRACK (scroll snap) -->
+    <div
+      id="gamma-carousel"
+      class="flex overflow-x-auto scroll-smooth snap-x snap-mandatory rounded-xl shadow-lg bg-black/5"
+    >
 
-                  <div class="flex-[0_0_100%] min-w-0">
-                    <img src="/images/pedals/gamma-top-no-lights-r.PNG" alt="Gamma PreQ Top View" class="w-full h-auto object-contain" loading="eager" />
-                  </div>
+      <div class="flex-[0_0_100%] snap-center">
+        <img src="/images/pedals/gamma-top-no-lights-r.PNG" class="w-full h-auto object-contain" />
+      </div>
 
-                  <div class="flex-[0_0_100%] min-w-0">
-                    <img src="/images/pedals/gamma-off-side-r.PNG" alt="Gamma PreQ Side View 1" class="w-full h-auto object-contain" loading="lazy" />
-                  </div>
+      <div class="flex-[0_0_100%] snap-center">
+        <img src="/images/pedals/gamma-off-side-r.PNG" class="w-full h-auto object-contain" />
+      </div>
 
-                  <div class="flex-[0_0_100%] min-w-0">
-                    <img src="/images/pedals/gamma-off-side-2r.PNG" alt="Gamma PreQ Side View 2" class="w-full h-auto object-contain" loading="lazy" />
-                  </div>
+      <div class="flex-[0_0_100%] snap-center">
+        <img src="/images/pedals/gamma-off-side-2r.PNG" class="w-full h-auto object-contain" />
+      </div>
 
-                  <div class="flex-[0_0_100%] min-w-0">
-                    <img src="/images/pedals/gamma-front-low-r.PNG" alt="Gamma PreQ Front Low" class="w-full h-auto object-contain" loading="lazy" />
-                  </div>
+      <div class="flex-[0_0_100%] snap-center">
+        <img src="/images/pedals/gamma-front-low-r.PNG" class="w-full h-auto object-contain" />
+      </div>
 
-                  <div class="flex-[0_0_100%] min-w-0">
-                    <img src="/images/pedals/gamma-back-r.PNG" alt="Gamma PreQ Back View" class="w-full h-auto object-contain" loading="lazy" />
-                  </div>
+      <div class="flex-[0_0_100%] snap-center">
+        <img src="/images/pedals/gamma-back-r.PNG" class="w-full h-auto object-contain" />
+      </div>
 
-                  <div class="flex-[0_0_100%] min-w-0">
-                    <img src="/images/pedals/gamma-inside-r.PNG" alt="Gamma Inside View" class="w-full h-auto object-contain" loading="lazy" />
-                  </div>
+      <div class="flex-[0_0_100%] snap-center">
+        <img src="/images/pedals/gamma-inside-r.PNG" class="w-full h-auto object-contain" />
+      </div>
 
-                  <div class="flex-[0_0_100%] min-w-0">
-                    <img src="/images/pedals/gamma-boards-r.PNG" alt="Gamma PCB Set" class="w-full h-auto object-contain" loading="lazy" />
-                  </div>
+      <div class="flex-[0_0_100%] snap-center">
+        <img src="/images/pedals/gamma-boards-r.PNG" class="w-full h-auto object-contain" />
+      </div>
 
-                </div>
-              </div>
+    </div>
 
-              <!-- NAV -->
-              <button
-                id="gamma-carousel-prev"
-                class="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/80 border hover:bg-orange-500 hover:text-white shadow"
-              >
-                ‹
-              </button>
+    <!-- BUTTONS -->
+    <button id="prev"
+      class="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 rounded-full shadow">
+      ‹
+    </button>
 
-              <button
-                id="gamma-carousel-next"
-                class="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full bg-white/80 border hover:bg-orange-500 hover:text-white shadow"
-              >
-                ›
-              </button>
+    <button id="next"
+      class="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/80 rounded-full shadow">
+      ›
+    </button>
 
-              <!-- DOTS -->
-              <div class="flex justify-center gap-2 mt-4" id="gamma-carousel-dots"></div>
+    <!-- DOTS -->
+    <div id="dots" class="flex justify-center gap-2 mt-4"></div>
 
-            </div>
-          </section>
+  </div>
+</section>
         </div>
 
         <!-- ========================= -->
@@ -370,7 +365,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
     function startAutoplay() {
       stopAutoplay();
-      timer = setInterval(next, 5000);
+      timer = setInterval(next, 4000);
     }
 
     function stopAutoplay() {
