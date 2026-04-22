@@ -24,95 +24,81 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <section class="py-16 md:py-24">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6">
-      <div class="md:flex gap-12 items-center">
+<section class="py-16 md:py-24">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6">
 
-<div class="md:w-3/5 mb-8 md:mb-0">
-  <div class="relative">
+    <div class="md:flex md:gap-12 md:items-center">
 
-    <!-- VIEWPORT -->
-    <div class="overflow-hidden rounded-xl shadow-lg bg-black/5">
-      
-      <!-- TRACK -->
-      <div
-        id="gamma-track"
-        class="flex transition-transform duration-500 ease-out will-change-transform"
-      >
-        <div class="flex-[0_0_100%]">
-          <img src="/images/pedals/gamma-top-no-lights-r.PNG" class="w-full h-auto object-contain" />
-        </div>
+      <!-- LEFT: CAROUSEL -->
+      <div class="md:w-3/5 mb-8 md:mb-0">
+        <div class="relative">
 
-        <div class="flex-[0_0_100%]">
-          <img src="/images/pedals/gamma-off-side-r.PNG" class="w-full h-auto object-contain" />
-        </div>
+          <!-- VIEWPORT -->
+          <div class="overflow-hidden rounded-xl shadow-lg bg-black/5">
 
-        <div class="flex-[0_0_100%]">
-          <img src="/images/pedals/gamma-off-side-2r.PNG" class="w-full h-auto object-contain" />
-        </div>
+            <!-- TRACK -->
+            <div
+              id="gamma-track"
+              class="flex transition-transform duration-500 ease-out will-change-transform"
+            >
+              <div class="flex-[0_0_100%]">
+                <img src="/images/pedals/gamma-top-no-lights-r.PNG" class="w-full h-auto object-contain" />
+              </div>
 
-        <div class="flex-[0_0_100%]">
-          <img src="/images/pedals/gamma-front-low-r.PNG" class="w-full h-auto object-contain" />
-        </div>
+              <div class="flex-[0_0_100%]">
+                <img src="/images/pedals/gamma-off-side-r.PNG" class="w-full h-auto object-contain" />
+              </div>
 
-        <div class="flex-[0_0_100%]">
-          <img src="/images/pedals/gamma-back-r.PNG" class="w-full h-auto object-contain" />
-        </div>
+              <div class="flex-[0_0_100%]">
+                <img src="/images/pedals/gamma-off-side-2r.PNG" class="w-full h-auto object-contain" />
+              </div>
 
-        <div class="flex-[0_0_100%]">
-          <img src="/images/pedals/gamma-inside-r.PNG" class="w-full h-auto object-contain" />
-        </div>
+              <div class="flex-[0_0_100%]">
+                <img src="/images/pedals/gamma-front-low-r.PNG" class="w-full h-auto object-contain" />
+              </div>
 
-        <div class="flex-[0_0_100%]">
-          <img src="/images/pedals/gamma-boards-r.PNG" class="w-full h-auto object-contain" />
+              <div class="flex-[0_0_100%]">
+                <img src="/images/pedals/gamma-back-r.PNG" class="w-full h-auto object-contain" />
+              </div>
+
+              <div class="flex-[0_0_100%]">
+                <img src="/images/pedals/gamma-inside-r.PNG" class="w-full h-auto object-contain" />
+              </div>
+
+              <div class="flex-[0_0_100%]">
+                <img src="/images/pedals/gamma-boards-r.PNG" class="w-full h-auto object-contain" />
+              </div>
+            </div>
+          </div>
+
+          <!-- DOTS (ONLY ONCE) -->
+          <div id="gamma-dots" class="flex justify-center gap-2 mt-4"></div>
+
         </div>
       </div>
+
+      <!-- RIGHT: TEXT -->
+      <div class="md:w-2/5">
+        <h2 class="font-heading font-bold text-2xl md:text-3xl mb-4">
+          Designed for Acoustic Guitar
+        </h2>
+
+        <p class="text-gray-600 text-lg mb-4 leading-relaxed">
+          The Gamma PreQ was designed specifically for acoustic guitar, although it will work for any acoustic instrument (but not bass). It has plenty of clean gain as a preamp, a plethora of EQ options, and a dedicated boost.
+        </p>
+
+        <p class="text-gray-600 mb-4 leading-relaxed">
+          It's quieter than most acoustic preamps and offers more EQ options. It's not as great as Grace Designs' ALiX (which is awesome), but it's close!
+        </p>
+
+        <p class="text-gray-600 leading-relaxed">
+          This is a <strong>DIY assembly</strong> you put together yourself. While this shouldn't be your first build, there's nothing particularly challenging about it other than its size (~150 total parts). Read the BOM and Build Notes carefully to comprehend the scope of this project.
+        </p>
+      </div>
+
     </div>
-
-    <!-- DOTS -->
-    <div id="gamma-dots" class="flex justify-center gap-2 mt-4"></div>
-
-  </div>
-</div>
-
-    <!-- DOTS -->
-    <div id="gamma-dots" class="flex justify-center gap-2 mt-4"></div>
-
-  </div>
-</div>
-
-    <!-- BUTTONS -->
-
-    <!-- DOTS -->
-
   </div>
 </section>
-        </div>
-
-        <!-- ========================= -->
-        <!-- TEXT CONTENT              -->
-        <!-- ========================= -->
-        <div class="md:w-2/5">
-          <h2 class="font-heading font-bold text-2xl md:text-3xl mb-4">
-            Designed for Acoustic Guitar
-          </h2>
-
-          <p class="text-gray-600 text-lg mb-4 leading-relaxed">
-            The Gamma PreQ was designed specifically for acoustic guitar, although it will work for any acoustic instrument (but not bass). It has plenty of clean gain as a preamp, a plethora of EQ options, and a dedicated boost.
-          </p>
-
-          <p class="text-gray-600 mb-4 leading-relaxed">
-            It's quieter than most acoustic preamps and offers more EQ options. It's not as great as Grace Designs' ALiX (which is awesome), but it's close!
-          </p>
-
-          <p class="text-gray-600 leading-relaxed">
-            This is a <strong>DIY assembly</strong> you put together yourself. While this shouldn't be your first build, there's nothing particularly challenging about it other than its size (~150 total parts). Read the BOM and Build Notes carefully to comprehend the scope of this project.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
 
 <!-- Features -->
 <section class="py-16 md:py-24 bg-brand-warm">
