@@ -31,39 +31,49 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 <div class="md:w-3/5 mb-8 md:mb-0">
   <div class="relative">
 
-    <!-- TRACK -->
-    <div
-      id="gamma-track"
-      class="flex overflow-hidden rounded-xl shadow-lg bg-black/5"
-    >
-      <div class="flex-[0_0_100%]">
-        <img src="/images/pedals/gamma-top-no-lights-r.PNG" class="w-full h-auto object-contain" />
-      </div>
+    <!-- VIEWPORT -->
+    <div class="overflow-hidden rounded-xl shadow-lg bg-black/5">
+      
+      <!-- TRACK -->
+      <div
+        id="gamma-track"
+        class="flex transition-transform duration-500 ease-out will-change-transform"
+      >
+        <div class="flex-[0_0_100%]">
+          <img src="/images/pedals/gamma-top-no-lights-r.PNG" class="w-full h-auto object-contain" />
+        </div>
 
-      <div class="flex-[0_0_100%]">
-        <img src="/images/pedals/gamma-off-side-r.PNG" class="w-full h-auto object-contain" />
-      </div>
+        <div class="flex-[0_0_100%]">
+          <img src="/images/pedals/gamma-off-side-r.PNG" class="w-full h-auto object-contain" />
+        </div>
 
-      <div class="flex-[0_0_100%]">
-        <img src="/images/pedals/gamma-off-side-2r.PNG" class="w-full h-auto object-contain" />
-      </div>
+        <div class="flex-[0_0_100%]">
+          <img src="/images/pedals/gamma-off-side-2r.PNG" class="w-full h-auto object-contain" />
+        </div>
 
-      <div class="flex-[0_0_100%]">
-        <img src="/images/pedals/gamma-front-low-r.PNG" class="w-full h-auto object-contain" />
-      </div>
+        <div class="flex-[0_0_100%]">
+          <img src="/images/pedals/gamma-front-low-r.PNG" class="w-full h-auto object-contain" />
+        </div>
 
-      <div class="flex-[0_0_100%]">
-        <img src="/images/pedals/gamma-back-r.PNG" class="w-full h-auto object-contain" />
-      </div>
+        <div class="flex-[0_0_100%]">
+          <img src="/images/pedals/gamma-back-r.PNG" class="w-full h-auto object-contain" />
+        </div>
 
-      <div class="flex-[0_0_100%]">
-        <img src="/images/pedals/gamma-inside-r.PNG" class="w-full h-auto object-contain" />
-      </div>
+        <div class="flex-[0_0_100%]">
+          <img src="/images/pedals/gamma-inside-r.PNG" class="w-full h-auto object-contain" />
+        </div>
 
-      <div class="flex-[0_0_100%]">
-        <img src="/images/pedals/gamma-boards-r.PNG" class="w-full h-auto object-contain" />
+        <div class="flex-[0_0_100%]">
+          <img src="/images/pedals/gamma-boards-r.PNG" class="w-full h-auto object-contain" />
+        </div>
       </div>
     </div>
+
+    <!-- DOTS -->
+    <div id="gamma-dots" class="flex justify-center gap-2 mt-4"></div>
+
+  </div>
+</div>
 
     <!-- DOTS -->
     <div id="gamma-dots" class="flex justify-center gap-2 mt-4"></div>
@@ -307,7 +317,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
   if (!track || !dotsContainer) return;
 
-  const slides = [...track.children];
+  const slides = Array.from(track.children);
   const total = slides.length;
 
   let index = 0;
@@ -355,14 +365,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     start();
   }
 
-  // pause when not visible
+  // IMPORTANT FIX:
+  // Don’t rely on observer alone — start immediately too
+  start();
+  render();
+
   const observer = new IntersectionObserver(([entry]) => {
-    entry.isIntersecting ? start() : stop();
+    if (entry.isIntersecting) start();
+    else stop();
   }, { threshold: 0.2 });
 
   observer.observe(track);
 
-  render();
-  start();
 })();
 </script>
