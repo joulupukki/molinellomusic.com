@@ -147,9 +147,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
         <li><strong>Input Power:</strong> &lt; 200 mA @ 9 VDC</li>
 
-        <li><strong>Internal:</strong> +/-15 VDC — for plenty of headroom</li>
+        <li><strong>Internal Power:</strong> +/-15 VDC — for plenty of headroom</li>
 
-        <li><strong>Input Impedance:</strong> 3.3 MΩ (user defined)</li>
+    <!--    <li><strong>Input Impedance:</strong> 3.3 MΩ (user defined)</li>   -->
+
+        <li>
+          <strong>Input Signal:</strong>
+          <ul class="list-disc pl-6 mt-2 space-y-1 text-gray-600">
+            <li>Discreet JFET</li>
+            <li>3.3 MΩ Impedance (user defined)</li>
+            <li>Works well with most passive pickups and all active pickups</li>
+          </ul>
+        </li>
 
         <li>
           <strong>Bypass:</strong> True Bypass or Mute
