@@ -6,16 +6,16 @@ const priceValidUntil = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOSt
 const productSchema = {
   '@context': 'https://schema.org',
   '@type': 'Product',
-  name: 'Chester Condenser Microphone for Upright Bass',
-  description: 'A hand-built large-diaphragm condenser microphone designed specifically for upright bass. Warm, woody, natural tone on stage or in the studio.',
-  image: 'https://www.molinellomusic.com/images/chester/chester-mounted-closeup.jpg',
+  name: 'Chester Condenser Microphone for Upright Bass (V2)',
+  description: 'A hand-built cardioid condenser microphone tuned specifically for upright bass. Lightweight, installs in seconds, and ready to plug into 48V phantom power.',
+  image: 'https://www.molinellomusic.com/images/chester/chester-v2-mounted-front.jpg',
   brand: {
     '@type': 'Brand',
     name: 'Molinello Music',
   },
   offers: {
     '@type': 'Offer',
-    price: '449.00',
+    price: '650.00',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
     url: 'https://www.molinellomusic.com/microphones/chester',
@@ -43,7 +43,7 @@ const productSchema = {
         '@type': 'ShippingDeliveryTime',
         handlingTime: {
           '@type': 'QuantitativeValue',
-          minValue: 3,
+          minValue: 1,
           maxValue: 14,
           unitCode: 'DAY',
         },
@@ -57,16 +57,19 @@ const productSchema = {
     },
   },
 };
+
+const buyNowUrl = 'https://buy.stripe.com/4gM7sL9iB6Fr0bt9CY8og0n';
 ---
 
-<BaseLayout title="Chester - Molinello Music" description="The microphone that makes your Upright Bass sound like YOUR bass." ogImage="/images/chester/chester-mounted-closeup.jpg" structuredData={productSchema}>
+<BaseLayout title="Chester - Molinello Music" description="The microphone that makes your upright bass sound like YOUR bass. Lighter, faster to install, and tuned specifically for upright." ogImage="/images/chester/chester-v2-mounted-front.jpg" structuredData={productSchema}>
   <!-- Hero -->
   <section class="bg-brand-dark text-white py-16 md:py-24">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <p class="inline-block bg-brand-orange/20 text-brand-orange font-heading font-semibold text-xs tracking-wider uppercase px-3 py-1 rounded-full mb-4">New: Version 2</p>
       <h1 class="font-heading font-extrabold text-5xl md:text-6xl mb-4">Chester</h1>
       <p class="text-xl md:text-2xl text-brand-orange font-heading mb-2">The Microphone That Makes Your Upright Bass Sound Like YOUR Bass!</p>
       <p class="text-gray-400 max-w-2xl mx-auto">
-        Built for acoustic musicians who want warm, woody, natural tone&mdash;on stage or in the studio.
+        Lighter. Faster to install. Tuned specifically for upright bass, on stage or in the studio.
       </p>
     </div>
   </section>
@@ -76,26 +79,87 @@ const productSchema = {
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="md:flex gap-12 items-center">
         <div class="md:w-1/2 mb-8 md:mb-0">
-          <img src="/images/chester/chester-mounted-closeup.jpg" alt="Chester microphone mounted on upright bass" class="rounded-xl shadow-lg w-full" />
+          <img src="/images/chester/chester-v2-mounted-front.jpg" alt="Chester V2 microphone mounted between the strings of an upright bass" class="rounded-xl shadow-lg w-full" />
         </div>
         <div class="md:w-1/2">
           <h2 class="font-heading font-bold text-3xl mb-4">Built by an Upright Bassist Who Got Tired of Compromising</h2>
           <p class="text-gray-600 text-lg mb-4 leading-relaxed">
-            Every bassist knows the struggle: Pickups don't sound natural and quack. Clip-on mics are flimsy. Cheap condensers sound thin. Studio mics sound great&mdash;unless you're moving.
+            Every bassist knows the struggle. Pickups don't sound natural and they quack. Clip-on mics are flimsy. Cheap condensers sound thin. Studio mics sound great, unless you're moving.
           </p>
-          <p class="text-brand-dark font-heading font-bold text-xl mb-4">Chester solves all of that.</p>
+          <p class="text-brand-dark font-heading font-bold text-xl mb-4">Chester V2 solves all of that. In under 30 seconds.</p>
           <p class="text-gray-600 text-lg leading-relaxed mb-6">
-            I built Chester because I wanted to hear the bass I actually play&mdash;the body resonance, the wood, the fullness&mdash;without fighting the gear. If that sounds like you, Chester was built for your style of musicianship.
+            I rebuilt Chester to be lighter, faster to install, and tuned with a flat response specifically for the upright bass. The 40 Hz low cut and a natural high cut are built into the circuit, so all you need is 48V phantom power. It's plug and play and ready for the stage.
           </p>
+
           <div class="bg-brand-warm rounded-xl p-6 mb-4">
-            <p class="text-gray-500 line-through text-lg">$499</p>
-            <p class="font-heading font-extrabold text-4xl text-brand-dark mb-1">$449</p>
-            <p class="text-sm text-gray-500 mb-4">with free shipping</p>
-            <a href="https://buy.stripe.com/aFaeVd66pbZL7DVdTe8og0c" target="_blank" rel="noopener noreferrer" class="inline-block bg-brand-orange text-white font-heading font-bold px-8 py-3 rounded-lg hover:bg-orange-600 transition-colors w-full text-center">
-              Reserve Your Build Slot
+            <div class="flex items-baseline gap-3 mb-1">
+              <p class="font-heading font-extrabold text-4xl text-brand-dark">$650</p>
+              <p class="text-sm text-gray-500">with free shipping</p>
+            </div>
+            <p class="text-sm text-brand-orange font-heading font-semibold mb-4">2 in stock, ready to ship today</p>
+            <a href={buyNowUrl} target="_blank" rel="noopener noreferrer" class="block bg-brand-orange text-white font-heading font-bold px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors text-center">
+              Buy Now
             </a>
+            <p class="text-xs text-gray-500 mt-3">When the in-stock units are gone, <a href="#get-notified" class="text-brand-orange hover:underline">get on the list</a> and I'll let you know when the next batch is ready.</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's new in V2 -->
+  <section class="py-16 md:py-24 bg-brand-charcoal text-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <p class="text-brand-orange font-heading font-semibold tracking-wider uppercase text-sm mb-2">What's New</p>
+        <h2 class="font-heading font-bold text-3xl md:text-4xl mb-4">What Changed in V2</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">Every change came from gigging the original Chester and listening to bassists who actually use one.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          {
+            title: '190 grams',
+            body: 'Just under 7 oz. About half the weight of most stage condensers. Your bass barely notices it.',
+          },
+          {
+            title: 'Installs in Under 30 Seconds',
+            body: 'No more velcro strap. No bulky body. It mounts between the strings below the bridge in seconds.',
+          },
+          {
+            title: 'Tuned for Upright Bass',
+            body: 'The circuit is tuned to upright bass. Flat response through the fundamentals, with a gentle high cut after 7k. No surprise EQ peaks.',
+          },
+          {
+            title: '40 Hz Low Cut',
+            body: 'A built-in filter cuts stage rumble before it hits the board. Cleaner low end. More gain before feedback.',
+          },
+          {
+            title: 'Keyed Swivel',
+            body: 'Aim the capsule wherever you want it. Set the angle once and it stays put.',
+          },
+          {
+            title: 'Medium Cardioid Capsule',
+            body: 'A medium-size cardioid capsule resists stage feedback better than a large-diaphragm condenser, while staying round and even across the whole register of the bass.',
+          },
+          {
+            title: 'Neutrik XLR Connector',
+            body: 'A high-quality Neutrik male XLR connector. The included clip secures the cable directly to the mic, so it stays put through the gig with nothing extra touching the tailpiece.',
+          },
+          {
+            title: 'Plug and Play',
+            body: 'The low and high cut filters live inside the circuit, so all you need is 48V phantom power. No fancy preamps. No drastic EQ tweaks at the board.',
+          },
+          {
+            title: 'Air-Tight Hard Case',
+            body: 'Every Chester ships in an air-tight hard-shell carrying case.',
+          },
+        ].map(item => (
+          <div class="bg-brand-dark/50 border border-white/10 rounded-lg p-6">
+            <h3 class="font-heading font-bold text-lg text-brand-orange mb-2">{item.title}</h3>
+            <p class="text-gray-300 leading-relaxed text-sm">{item.body}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -104,7 +168,7 @@ const productSchema = {
   <section class="py-16 md:py-24 bg-brand-warm">
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
       <h2 class="font-heading font-bold text-3xl mb-8 text-center">The Natural Tone You've Been Chasing</h2>
-      <p class="text-gray-600 text-lg text-center mb-8">You've searched for a great bass, why not share that sound with your audience?</p>
+      <p class="text-gray-600 text-lg text-center mb-8">A balanced, consistent, round sound of your bass. No hidden EQ tricks.</p>
       <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
         {[
           'The fundamental warmth of the bass',
@@ -112,6 +176,7 @@ const productSchema = {
           'The growl and air',
           'The clarity without harshness',
           'The fullness without boom',
+          'The same tone every night',
         ].map(item => (
           <div class="bg-white rounded-lg p-4 shadow-sm text-center">
             <p class="text-gray-700 font-heading font-semibold text-sm">{item}</p>
@@ -144,17 +209,18 @@ const productSchema = {
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
       <div class="md:flex gap-12 items-center">
         <div class="md:w-1/2 mb-8 md:mb-0">
-          <img src="/images/chester/chester-mounted-bass.jpg" alt="Chester mounted below the bridge of an upright bass" class="rounded-xl shadow-lg w-full" />
+          <img src="/images/chester/chester-v2-mounted-side.jpg" alt="Chester V2 mounted between the strings of an upright bass with XLR cable clip" class="rounded-xl shadow-lg w-full" />
         </div>
         <div class="md:w-1/2">
           <h2 class="font-heading font-bold text-3xl mb-6">Simple to Mount. Simple to Use.</h2>
           <ul class="space-y-3 text-gray-600 text-lg">
-            <li class="flex items-start gap-2"><span class="text-brand-orange font-bold mt-1">&#9679;</span> Mounts to upright bass right below the bridge, between the strings, in just a few seconds</li>
-            <li class="flex items-start gap-2"><span class="text-brand-orange font-bold mt-1">&#9679;</span> Works with standard 48V phantom power</li>
-            <li class="flex items-start gap-2"><span class="text-brand-orange font-bold mt-1">&#9679;</span> Low profile, lightweight, and stage-friendly</li>
-            <li class="flex items-start gap-2"><span class="text-brand-orange font-bold mt-1">&#9679;</span> No complicated pre-amp chain required</li>
+            <li class="flex items-start gap-2"><span class="text-brand-orange font-bold mt-1">&#9679;</span> Mounts between the strings below the bridge. No velcro strap. No bulky body.</li>
+            <li class="flex items-start gap-2"><span class="text-brand-orange font-bold mt-1">&#9679;</span> Installed in less than 30 seconds, every time</li>
+            <li class="flex items-start gap-2"><span class="text-brand-orange font-bold mt-1">&#9679;</span> Keyed swivel locks in your favorite mic angle</li>
+            <li class="flex items-start gap-2"><span class="text-brand-orange font-bold mt-1">&#9679;</span> Included cable clip secures the cable to the mic itself. Nothing extra touches the tailpiece.</li>
+            <li class="flex items-start gap-2"><span class="text-brand-orange font-bold mt-1">&#9679;</span> Just needs 48V phantom power. No fancy preamps or board EQ tweaking.</li>
           </ul>
-          <p class="text-gray-700 font-heading font-semibold mt-6 italic">You focus on playing&mdash;Chester handles the tone.</p>
+          <p class="text-gray-700 font-heading font-semibold mt-6 italic">You play. Chester handles the tone.</p>
         </div>
       </div>
     </div>
@@ -168,9 +234,17 @@ const productSchema = {
         <p>They stop fighting their sound.</p>
         <p>They relax.</p>
         <p>They play better because they hear themselves clearly.</p>
-        <p>There's a moment&mdash;usually on the first note&mdash;where they smile.</p>
+        <p>There's a moment, usually on the first note, where they smile.</p>
       </div>
-      <p class="text-brand-dark font-heading font-bold text-xl mt-8 italic">That moment is what this mic was built for.</p>
+
+      <figure class="mt-12 bg-brand-warm rounded-xl p-8 md:p-10 relative text-left">
+        <span aria-hidden="true" class="font-heading text-7xl md:text-8xl text-brand-orange leading-none absolute -top-2 left-4 opacity-25 select-none">&ldquo;</span>
+        <blockquote class="text-brand-dark text-lg md:text-xl font-heading italic leading-relaxed relative">
+          It sounded so good I didn't want to stop playing. So much so that when the concert was over I stayed playing alone in the hall just to listen more.
+        </blockquote>
+      </figure>
+
+      <p class="text-brand-dark font-heading font-bold text-xl mt-10 italic">That moment is what this mic was built for.</p>
     </div>
   </section>
 
@@ -179,13 +253,17 @@ const productSchema = {
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <h2 class="font-heading font-bold text-3xl mb-6 text-center">Made by Hand. Tuned by Ear.</h2>
       <p class="text-gray-600 text-center max-w-2xl mx-auto mb-10">
-        Every Chester microphone is individually assembled with a high-quality condenser capsule, custom-designed circuit and board, hand-soldered circuitry, special RFI-resistant layout, lightweight body, and a clean, elegant, vintage aesthetic. Built in small batches. Each mic is built by hand and one of a kind.
+        Every Chester is assembled by hand. Medium cardioid capsule, custom-tuned circuit, and a copper and brass body with a brass mesh grille. I tune each one individually so the sound is consistent from one mic to the next. Only the body itself may vary slightly, because it's built by hand.
       </p>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <img src="/images/chester/chester-full.jpg" alt="Chester full view" class="rounded-lg shadow-md w-full aspect-square object-cover" />
-        <img src="/images/chester/chester-closeup.jpg" alt="Chester head basket closeup" class="rounded-lg shadow-md w-full aspect-square object-cover" />
-        <img src="/images/chester/chester-xlr.jpg" alt="Chester XLR connector" class="rounded-lg shadow-md w-full aspect-square object-cover" />
-        <img src="/images/chester/chester-case.jpg" alt="Chester in flight case" class="rounded-lg shadow-md w-full aspect-square object-cover" />
+        <img src="/images/chester/chester-v2-kit.jpg" alt="Chester V2 with included XLR cable clip" class="rounded-lg shadow-md w-full aspect-square object-cover" />
+        <img src="/images/chester/chester-v2-swivel.jpg" alt="Chester V2 keyed swivel detail" class="rounded-lg shadow-md w-full aspect-square object-cover" />
+        <img src="/images/chester/chester-v2-back.jpg" alt="Chester V2 back showing Neutrik XLR connector" class="rounded-lg shadow-md w-full aspect-square object-cover" />
+        <img src="/images/chester/chester-v2-weight.jpg" alt="Chester V2 weighing in at 190 grams" class="rounded-lg shadow-md w-full aspect-square object-cover" />
+        <img src="/images/chester/chester-v2-mounted-front.jpg" alt="Chester V2 mounted front view on upright bass" class="rounded-lg shadow-md w-full aspect-square object-cover" />
+        <img src="/images/chester/chester-v2-mounted-top.jpg" alt="Chester V2 top-down mounted between strings" class="rounded-lg shadow-md w-full aspect-square object-cover" />
+        <img src="/images/chester/chester-v2-mounted-angle.jpg" alt="Chester V2 mounted on a Kay upright bass" class="rounded-lg shadow-md w-full aspect-square object-cover" />
+        <img src="/images/chester/chester-v2-mounted-side.jpg" alt="Chester V2 side view with cable clip installed" class="rounded-lg shadow-md w-full aspect-square object-cover" />
       </div>
     </div>
   </section>
@@ -193,19 +271,21 @@ const productSchema = {
   <!-- Specs -->
   <section class="py-16 md:py-24 bg-brand-charcoal text-white">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
-      <h2 class="font-heading font-bold text-3xl mb-10 text-center">Chester Technical Specs</h2>
+      <h2 class="font-heading font-bold text-3xl mb-10 text-center">Chester V2 Technical Specs</h2>
       <div class="grid sm:grid-cols-2 gap-x-12 gap-y-4">
         {[
-          ['Body', '~3 inches long, housed in a 3/4" copper pipe'],
-          ['Mounting', 'Below the bridge between the two middle strings, with included velcro strap'],
-          ['Capsule', 'Large diaphragm condenser (26mm)'],
+          ['Capsule', 'Medium-size cardioid condenser'],
           ['Pattern', 'Cardioid'],
-          ['Frequency Response', '~50Hz - 20kHz'],
-          ['Noise', 'Low noise circuit design'],
-          ['RFI Rejection', 'Modern circuitry (including cell phones)'],
+          ['Tuning', 'Flat upright-bass response with a gentle high cut after 7k'],
+          ['Low Cut', 'Built-in 40 Hz filter to prevent stage rumble'],
+          ['Mounting', 'Mounts between the strings below the bridge with a keyed swivel for precise angle'],
+          ['Install Time', 'Under 30 seconds'],
+          ['Connector', 'Neutrik male XLR'],
           ['Power', '48V phantom power required'],
-          ['Weight', '8.6 oz (245g)'],
-          ['Includes', 'Mic, hard flight case, o-rings, and velcro strap'],
+          ['Weight', '190 g (just under 7 oz)'],
+          ['Build', 'Hand-built copper and brass body with a brass mesh grille'],
+          ['Includes', 'Mic, XLR cable clip, and air-tight hard-shell carrying case'],
+          ['Warranty', 'Lifetime manufacturing. 30-day audition.'],
         ].map(([label, value]) => (
           <div class="border-b border-white/10 pb-3">
             <p class="text-brand-orange font-heading font-semibold text-sm">{label}</p>
@@ -219,15 +299,69 @@ const productSchema = {
   <!-- Ordering -->
   <section class="py-16 md:py-24">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
-      <h2 class="font-heading font-bold text-3xl mb-8 text-center">Built to Order, Made for Creators</h2>
-      <div class="space-y-4 text-gray-600 text-lg max-w-xl mx-auto">
-        <p>&#10003; Reserve with a deposit</p>
-        <p>&#10003; I build your mic in the order received</p>
-        <p>&#10003; Final payment when it's ready</p>
-        <p>&#10003; Ships with tracking</p>
-        <p>&#10003; 30-day audition period</p>
+      <h2 class="font-heading font-bold text-3xl mb-10 text-center">Ready to Get a Chester?</h2>
+
+      <div class="max-w-md mx-auto mb-16">
+        <div class="bg-brand-warm rounded-xl p-6 shadow-sm">
+          <p class="font-heading font-bold text-xl mb-2">Buy One Today</p>
+          <p class="text-gray-600 mb-4 text-sm">2 Chesters are built and ready to ship. First come, first served.</p>
+          <ul class="text-gray-600 text-sm space-y-1 mb-4">
+            <li>&#10003; Ships within 1 to 3 business days</li>
+            <li>&#10003; Free U.S. shipping with tracking</li>
+            <li>&#10003; 30-day audition period</li>
+          </ul>
+          <a href={buyNowUrl} target="_blank" rel="noopener noreferrer" class="block bg-brand-orange text-white font-heading font-bold px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors text-center">
+            Buy Now
+          </a>
+        </div>
       </div>
-      <p class="text-center text-gray-700 font-heading font-semibold mt-6 italic">Your mic is built by hand&mdash;not pulled off a shelf.</p>
+
+      <div class="flex items-center gap-4 max-w-md mx-auto mb-10">
+        <div class="flex-1 h-px bg-gray-200"></div>
+        <p class="text-gray-500 font-heading font-semibold text-sm uppercase tracking-wider">Sold out?</p>
+        <div class="flex-1 h-px bg-gray-200"></div>
+      </div>
+
+      <div id="get-notified" class="max-w-2xl mx-auto scroll-mt-20">
+        <script async data-uid="560de3bcb1" src="https://molinello-music.kit.com/560de3bcb1/index.js" is:inline></script>
+      </div>
+
+      <p class="text-center text-gray-700 font-heading font-semibold mt-12 italic">Built by hand, not pulled off a shelf.</p>
+    </div>
+  </section>
+
+  <!-- V1 Closeout -->
+  <section class="py-16 md:py-24 bg-brand-warm border-t-4 border-brand-orange">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10">
+        <p class="text-brand-orange font-heading font-semibold tracking-wider uppercase text-sm mb-2">Final Units. While Supplies Last.</p>
+        <h2 class="font-heading font-bold text-3xl md:text-4xl mb-3">Original Chester (V1): $299</h2>
+        <p class="text-gray-600 max-w-2xl mx-auto">
+          The Chester that started it all. Same warm, woody tone. Mounted under the bridge with the original velcro tailpiece strap. Chester V1 has been sunset, but I still have a small number left at a closeout price.
+        </p>
+      </div>
+      <div class="md:flex gap-10 items-center bg-white rounded-xl shadow-md p-6 md:p-10">
+        <div class="md:w-1/2 mb-6 md:mb-0">
+          <img src="/images/chester/chester-mounted-closeup.jpg" alt="Original Chester V1 microphone mounted on upright bass" class="rounded-lg shadow-sm w-full" />
+        </div>
+        <div class="md:w-1/2">
+          <div class="flex items-baseline gap-3 mb-2">
+            <p class="text-gray-400 line-through text-xl">$499</p>
+            <p class="font-heading font-extrabold text-4xl text-brand-dark">$299</p>
+          </div>
+          <p class="text-sm text-brand-orange font-heading font-semibold mb-4">Only 2 or 3 units remain</p>
+          <ul class="text-gray-600 text-sm space-y-2 mb-6">
+            <li>&#10003; Large-diaphragm condenser (26mm) in a 3" copper-pipe body</li>
+            <li>&#10003; Mounts below the bridge with included velcro tailpiece strap</li>
+            <li>&#10003; 48V phantom power. Ships with a hard flight case.</li>
+            <li>&#10003; Same 30-day audition period and lifetime build warranty</li>
+          </ul>
+          <a href="https://buy.stripe.com/3cI6oH66p3tfaQ7bL68og0k" target="_blank" rel="noopener noreferrer" class="inline-block bg-brand-orange text-white font-heading font-bold px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors w-full text-center">
+            Buy a Chester V1
+          </a>
+          <p class="text-xs text-gray-500 mt-3 text-center">Only 2 or 3 left at this price. When they're gone, they're gone.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -236,9 +370,10 @@ const productSchema = {
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
       <h2 class="font-heading font-bold text-3xl mb-4">Your Bass Has a Voice. Chester Lets It Speak.</h2>
       <p class="text-gray-400 mb-8">If you're ready to finally hear your upright the way you always wished it sounded:</p>
-      <a href="https://buy.stripe.com/aFaeVd66pbZL7DVdTe8og0c" target="_blank" rel="noopener noreferrer" class="inline-block bg-brand-orange text-white font-heading font-bold px-10 py-4 rounded-lg hover:bg-orange-600 transition-colors text-lg">
-        Reserve Your Chester Today!
+      <a href={buyNowUrl} target="_blank" rel="noopener noreferrer" class="inline-block bg-brand-orange text-white font-heading font-bold px-8 py-4 rounded-lg hover:bg-orange-600 transition-colors text-lg">
+        Buy a Chester V2
       </a>
+      <p class="text-gray-500 text-sm mt-6">Sold out? <a href="#get-notified" class="text-brand-orange hover:underline">Get on the list</a> and I'll email you when the next batch ships.</p>
     </div>
   </section>
 </BaseLayout>

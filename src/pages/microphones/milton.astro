@@ -15,7 +15,7 @@ const productSchema = {
   },
   offers: {
     '@type': 'Offer',
-    price: '449.00',
+    price: '500.00',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
     url: 'https://www.molinellomusic.com/microphones/milton',
@@ -57,6 +57,8 @@ const productSchema = {
     },
   },
 };
+
+const buyNowUrl = 'https://buy.stripe.com/9B600jdyR2pb2jB5mI8og0o';
 ---
 
 <BaseLayout title="Milton - Molinello Music" description="A hand-built condenser with vintage character, clarity, and warmth. For musicians and creators." ogImage="/images/milton/milton-on-stand.jpg" structuredData={productSchema}>
@@ -81,19 +83,21 @@ const productSchema = {
         <div class="md:w-1/2">
           <h2 class="font-heading font-bold text-3xl mb-4">For Creators Who Want Their Recordings to <em>Feel</em> Like Music</h2>
           <p class="text-gray-600 text-lg mb-6 leading-relaxed">
-            There are thousands of generic condensers. Most look the same&mdash;no character, too hyped in the high frequencies, and generally not great. Milton is natural, clean, and captures the dimension of your acoustic instrument. This is for musicians who want to have an excellent <em>vibe</em> in addition to warm and pure sound.
+            There are thousands of generic condensers. Most look the same, with no character, too much hype in the high frequencies, and a generally underwhelming sound. Milton is natural, clean, and captures the dimension of your acoustic instrument. This is for musicians who want to have an excellent <em>vibe</em> in addition to warm and pure sound.
           </p>
           <!-- Pricing -->
           <div class="bg-brand-warm rounded-xl p-6 mb-6">
-            <p class="text-gray-500 line-through text-lg">$499</p>
-            <p class="font-heading font-extrabold text-4xl text-brand-dark mb-1">$449</p>
-            <p class="text-sm text-gray-500 mb-3">with free shipping</p>
-            <a href="https://buy.stripe.com/9B6bJ1eCVbZL9M33eA8og0j" target="_blank" rel="noopener noreferrer" class="inline-block bg-brand-orange text-white font-heading font-bold px-8 py-3 rounded-lg hover:bg-orange-600 transition-colors w-full text-center">
+            <div class="flex items-baseline gap-3 mb-1">
+              <p class="font-heading font-extrabold text-4xl text-brand-dark">$500</p>
+              <p class="text-sm text-gray-500">with free shipping</p>
+            </div>
+            <p class="text-sm text-brand-orange font-heading font-semibold mb-4">1 in stock, ready to ship today</p>
+            <a href={buyNowUrl} target="_blank" rel="noopener noreferrer" class="block bg-brand-orange text-white font-heading font-bold px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors text-center">
               Buy Now
             </a>
           </div>
           <p class="text-sm text-gray-500">
-            Or, if the "Buy Now" mics sell out, <a href="https://buy.stripe.com/aFaeVd66pbZL7DVdTe8og0c" target="_blank" rel="noopener noreferrer" class="text-brand-orange hover:underline">reserve a build slot</a>.
+            Sold out? <a href="#get-notified" class="text-brand-orange hover:underline">Get on the list</a> and I'll let you know when the next batch is ready.
           </p>
         </div>
       </div>
@@ -129,7 +133,7 @@ const productSchema = {
     <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
       <h2 class="font-heading font-bold text-3xl mb-6">The Feeling of Hearing a Mic You Instantly Trust</h2>
       <p class="text-gray-600 text-lg leading-relaxed">
-        There's a clarity that makes you want to keep recording. A tone that makes you play differently&mdash;because it inspires you back. A simplicity that lets you forget the gear and focus on your music.
+        There's a clarity that makes you want to keep recording. A tone that makes you play differently, because it inspires you back. A simplicity that lets you forget the gear and focus on your music.
       </p>
     </div>
   </section>
@@ -199,15 +203,34 @@ const productSchema = {
   <!-- Ordering -->
   <section class="py-16 md:py-24">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
-      <h2 class="font-heading font-bold text-3xl mb-8 text-center">Built to Order, Made for Creators</h2>
-      <div class="space-y-4 text-gray-600 text-lg max-w-xl mx-auto">
-        <p>&#10003; Reserve with a deposit</p>
-        <p>&#10003; I build your mic in the order received</p>
-        <p>&#10003; Final payment when it's ready</p>
-        <p>&#10003; Ships with tracking</p>
-        <p>&#10003; 30-day audition period</p>
+      <h2 class="font-heading font-bold text-3xl mb-10 text-center">Ready to Get a Milton?</h2>
+
+      <div class="max-w-md mx-auto mb-16">
+        <div class="bg-brand-warm rounded-xl p-6 shadow-sm">
+          <p class="font-heading font-bold text-xl mb-2">Buy One Today</p>
+          <p class="text-gray-600 mb-4 text-sm">1 Milton is built and ready to ship. First come, first served.</p>
+          <ul class="text-gray-600 text-sm space-y-1 mb-4">
+            <li>&#10003; Ships within 1 to 3 business days</li>
+            <li>&#10003; Free U.S. shipping with tracking</li>
+            <li>&#10003; 30-day audition period</li>
+          </ul>
+          <a href={buyNowUrl} target="_blank" rel="noopener noreferrer" class="block bg-brand-orange text-white font-heading font-bold px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors text-center">
+            Buy Now
+          </a>
+        </div>
       </div>
-      <p class="text-center text-gray-700 font-heading font-semibold mt-6 italic">Your mic is built by hand&mdash;not pulled off a shelf.</p>
+
+      <div class="flex items-center gap-4 max-w-md mx-auto mb-10">
+        <div class="flex-1 h-px bg-gray-200"></div>
+        <p class="text-gray-500 font-heading font-semibold text-sm uppercase tracking-wider">Sold out?</p>
+        <div class="flex-1 h-px bg-gray-200"></div>
+      </div>
+
+      <div id="get-notified" class="max-w-2xl mx-auto scroll-mt-20">
+        <script async data-uid="682e70e93c" src="https://molinello-music.kit.com/682e70e93c/index.js" is:inline></script>
+      </div>
+
+      <p class="text-center text-gray-700 font-heading font-semibold mt-12 italic">Built by hand, not pulled off a shelf.</p>
     </div>
   </section>
 
@@ -216,9 +239,10 @@ const productSchema = {
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
       <h2 class="font-heading font-bold text-3xl mb-4">Milton Gives You Live Performance Sound You're Proud Of</h2>
       <p class="text-gray-400 mb-8">If you want a microphone with clear, natural sound, with exceptional stage presence:</p>
-      <a href="https://buy.stripe.com/aFaeVd66pbZL7DVdTe8og0c" target="_blank" rel="noopener noreferrer" class="inline-block bg-brand-orange text-white font-heading font-bold px-10 py-4 rounded-lg hover:bg-orange-600 transition-colors text-lg">
-        Reserve Your Milton
+      <a href={buyNowUrl} target="_blank" rel="noopener noreferrer" class="inline-block bg-brand-orange text-white font-heading font-bold px-10 py-4 rounded-lg hover:bg-orange-600 transition-colors text-lg">
+        Buy a Milton
       </a>
+      <p class="text-gray-500 text-sm mt-6">Sold out? <a href="#get-notified" class="text-brand-orange hover:underline">Get on the list</a> and I'll email you when more are ready.</p>
     </div>
   </section>
 </BaseLayout>
