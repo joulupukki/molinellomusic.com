@@ -264,18 +264,69 @@ const buyNowUrl = 'https://buy.stripe.com/4gM7sL9iB6Fr0bt9CY8og0n';
       <p class="text-gray-600 text-center max-w-2xl mx-auto mb-10">
         Every Chester is assembled by hand. Medium cardioid capsule, custom-tuned circuit, and a copper and brass body with a brass mesh grille. I tune each one individually so the sound is consistent from one mic to the next. Only the body itself may vary slightly, because it's built by hand.
       </p>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <img src="/images/chester/chester-v2-kit.jpg" alt="Chester V2 with included XLR cable clip" class="rounded-lg shadow-md w-full aspect-square object-cover" />
-        <img src="/images/chester/chester-v2-swivel.jpg" alt="Chester V2 keyed swivel detail" class="rounded-lg shadow-md w-full aspect-square object-cover" />
-        <img src="/images/chester/chester-v2-back.jpg" alt="Chester V2 back showing Neutrik XLR connector" class="rounded-lg shadow-md w-full aspect-square object-cover" />
-        <img src="/images/chester/chester-v2-weight.jpg" alt="Chester V2 weighing in at 190 grams" class="rounded-lg shadow-md w-full aspect-square object-cover" />
-        <img src="/images/chester/chester-v2-mounted-front.jpg" alt="Chester V2 mounted front view on upright bass" class="rounded-lg shadow-md w-full aspect-square object-cover" />
-        <img src="/images/chester/chester-v2-mounted-top.jpg" alt="Chester V2 top-down mounted between strings" class="rounded-lg shadow-md w-full aspect-square object-cover" />
-        <img src="/images/chester/chester-v2-mounted-angle.jpg" alt="Chester V2 mounted on a Kay upright bass" class="rounded-lg shadow-md w-full aspect-square object-cover" />
-        <img src="/images/chester/chester-v2-mounted-side.jpg" alt="Chester V2 side view with cable clip installed" class="rounded-lg shadow-md w-full aspect-square object-cover" />
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {[
+          ['chester-v2-kit.jpg', 'Chester V2 with included XLR cable clip'],
+          ['chester-v2-swivel.jpg', 'Chester V2 keyed swivel detail'],
+          ['chester-v2-back.jpg', 'Chester V2 back showing Neutrik XLR connector'],
+          ['chester-v2-weight.jpg', 'Chester V2 weighing in at 190 grams'],
+          ['chester-v2-mounted-front.jpg', 'Chester V2 mounted between the strings'],
+          ['chester-v2-mounted-side.jpg', 'Chester V2 side view with cable clip installed'],
+        ].map(([file, alt]) => (
+          <button type="button" class="block group cursor-zoom-in p-0 border-0 bg-transparent" data-lightbox-trigger aria-label={`View ${alt}`}>
+            <img src={`/images/chester/${file}`} alt={alt} loading="lazy" class="rounded-lg shadow-md w-full aspect-square object-cover transition-opacity group-hover:opacity-90" />
+          </button>
+        ))}
       </div>
     </div>
   </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/90 p-4 cursor-zoom-out" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <img id="lightbox-image" src="" alt="" class="max-w-full max-h-full rounded-lg shadow-2xl" />
+    <button id="lightbox-close" type="button" class="absolute top-4 right-4 text-white text-4xl leading-none hover:text-brand-orange transition-colors" aria-label="Close image viewer">&times;</button>
+  </div>
+
+  <script>
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightbox-image') as HTMLImageElement | null;
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    function openLightbox(src: string, alt: string) {
+      if (!lightbox || !lightboxImage) return;
+      lightboxImage.src = src;
+      lightboxImage.alt = alt;
+      lightbox.classList.remove('hidden');
+      lightbox.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      if (!lightbox || !lightboxImage) return;
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      lightboxImage.src = '';
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll<HTMLButtonElement>('[data-lightbox-trigger]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const img = btn.querySelector('img');
+        if (img) openLightbox(img.src, img.alt);
+      });
+    });
+
+    lightbox?.addEventListener('click', closeLightbox);
+    lightboxClose?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox && !lightbox.classList.contains('hidden')) {
+        closeLightbox();
+      }
+    });
+  </script>
 
   <!-- Specs -->
   <section class="py-16 md:py-24 bg-brand-charcoal text-white">
@@ -365,7 +416,7 @@ const buyNowUrl = 'https://buy.stripe.com/4gM7sL9iB6Fr0bt9CY8og0n';
             <li>&#10003; 48V phantom power. Ships with a hard flight case.</li>
             <li>&#10003; Same 30-day audition period and lifetime build warranty</li>
           </ul>
-          <a href="https://buy.stripe.com/3cI6oH66p3tfaQ7bL68og0k" target="_blank" rel="noopener noreferrer" class="inline-block bg-brand-orange text-white font-heading font-bold px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors w-full text-center">
+          <a href="https://buy.stripe.com/8x25kDamF7Jv8HZ5mI8og0i" target="_blank" rel="noopener noreferrer" class="inline-block bg-brand-orange text-white font-heading font-bold px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors w-full text-center">
             Buy a Chester V1
           </a>
           <p class="text-xs text-gray-500 mt-3 text-center">Only 2 or 3 left at this price. When they're gone, they're gone.</p>

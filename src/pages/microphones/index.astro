@@ -18,20 +18,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <section class="py-16 md:py-24">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="grid md:grid-cols-2 gap-12">
-        <!-- Milton -->
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
-          <img src="/images/microphones/milton-overview.jpg" alt="Milton condenser microphone" class="w-full aspect-[4/3] object-cover" />
-          <div class="p-8">
-            <h2 class="font-heading font-bold text-2xl mb-2">Milton</h2>
-            <p class="text-gray-600 mb-4">
-              A large-diaphragm condenser mic ready to make your acoustic instruments sound their best. Also an excellent option for clear vocals or as a single mic to relay your authentic sound to your audience.
-            </p>
-            <p class="font-heading font-bold text-2xl text-brand-orange mb-4">$500</p>
-            <a href="/microphones/milton" class="inline-block bg-brand-orange text-white font-heading font-bold px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors">
-              Explore the Milton &rarr;
-            </a>
-          </div>
-        </div>
         <!-- Chester -->
         <div class="bg-white rounded-xl shadow-lg overflow-hidden">
           <img src="/images/chester/chester-v2-mounted-front.jpg" alt="Chester V2 condenser microphone for upright bass" class="w-full aspect-[4/3] object-cover" />
@@ -43,6 +29,20 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <p class="font-heading font-bold text-2xl text-brand-orange mb-4">$650</p>
             <a href="/microphones/chester" class="inline-block bg-brand-orange text-white font-heading font-bold px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors">
               Explore the Chester &rarr;
+            </a>
+          </div>
+        </div>
+        <!-- Milton -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+          <img src="/images/microphones/milton-overview.jpg" alt="Milton condenser microphone" class="w-full aspect-[4/3] object-cover" />
+          <div class="p-8">
+            <h2 class="font-heading font-bold text-2xl mb-2">Milton</h2>
+            <p class="text-gray-600 mb-4">
+              A large-diaphragm condenser mic ready to make your acoustic instruments sound their best. Also an excellent option for clear vocals or as a single mic to relay your authentic sound to your audience.
+            </p>
+            <p class="font-heading font-bold text-2xl text-brand-orange mb-4">$500</p>
+            <a href="/microphones/milton" class="inline-block bg-brand-orange text-white font-heading font-bold px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors">
+              Explore the Milton &rarr;
             </a>
           </div>
         </div>
@@ -95,33 +95,23 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <!-- Ordering process -->
   <section class="py-16 md:py-24 bg-brand-charcoal text-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      <h2 class="font-heading font-bold text-3xl mb-10 text-center">Hand-Built, Made-to-Order</h2>
-      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <h2 class="font-heading font-bold text-3xl mb-10 text-center">Hand-Built in Small Batches</h2>
+      <div class="grid sm:grid-cols-3 gap-8 text-center">
         <div>
           <div class="text-brand-orange font-heading font-bold text-4xl mb-2">1</div>
-          <p class="font-heading font-semibold mb-1">Reserve</p>
-          <p class="text-gray-400 text-sm">Place a deposit to reserve your build slot</p>
+          <p class="font-heading font-semibold mb-1">Check What's In Stock</p>
+          <p class="text-gray-400 text-sm">Each mic's page shows what's ready to ship right now.</p>
         </div>
         <div>
           <div class="text-brand-orange font-heading font-bold text-4xl mb-2">2</div>
-          <p class="font-heading font-semibold mb-1">Build</p>
-          <p class="text-gray-400 text-sm">Less than a week to a few weeks</p>
+          <p class="font-heading font-semibold mb-1">Buy It</p>
+          <p class="text-gray-400 text-sm">Free U.S. shipping with tracking. 30-day audition period.</p>
         </div>
         <div>
           <div class="text-brand-orange font-heading font-bold text-4xl mb-2">3</div>
-          <p class="font-heading font-semibold mb-1">Pay Balance</p>
-          <p class="text-gray-400 text-sm">Private payment link for the remaining balance</p>
+          <p class="font-heading font-semibold mb-1">Or Get on the List</p>
+          <p class="text-gray-400 text-sm">If a mic is sold out, sign up and I'll email you when the next batch is ready.</p>
         </div>
-        <div>
-          <div class="text-brand-orange font-heading font-bold text-4xl mb-2">4</div>
-          <p class="font-heading font-semibold mb-1">Ship</p>
-          <p class="text-gray-400 text-sm">Ships with tracking</p>
-        </div>
-      </div>
-      <div class="text-center mt-10">
-        <a href="https://buy.stripe.com/aFaeVd66pbZL7DVdTe8og0c" target="_blank" rel="noopener noreferrer" class="inline-block bg-brand-orange text-white font-heading font-bold px-8 py-4 rounded-lg hover:bg-orange-600 transition-colors text-lg">
-          Reserve Your Build Slot
-        </a>
       </div>
     </div>
   </section>
@@ -157,7 +147,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             How long will it take?
             <span class="text-brand-orange group-open:rotate-45 transition-transform text-2xl">+</span>
           </summary>
-          <p class="text-gray-600 mt-3">Built-to-order, often less than a week if parts are on hand. Occasionally delayed by parts availability.</p>
+          <p class="text-gray-600 mt-3">In-stock mics ship within 1 to 3 business days. If you're on the email list waiting for a restock, the next batch usually takes a week or two, occasionally longer when parts are on backorder.</p>
         </details>
         <details class="group border-b border-gray-200 pb-4">
           <summary class="font-heading font-bold text-lg cursor-pointer list-none flex items-center justify-between">
