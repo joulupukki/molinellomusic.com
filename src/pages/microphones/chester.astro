@@ -15,7 +15,7 @@ const productSchema = {
   },
   offers: {
     '@type': 'Offer',
-    price: '650.00',
+    price: '449.00',
     priceCurrency: 'USD',
     availability: 'https://schema.org/InStock',
     url: 'https://www.molinellomusic.com/microphones/chester',
@@ -58,7 +58,7 @@ const productSchema = {
   },
 };
 
-const buyNowUrl = 'https://buy.stripe.com/4gM7sL9iB6Fr0bt9CY8og0n';
+const buyNowUrl = 'https://buy.stripe.com/aFabJ12Ud2pbgar6qM8og0p';
 ---
 
 <BaseLayout title="Chester - Molinello Music" description="The microphone that makes your upright bass sound like YOUR bass. Lighter, faster to install, and tuned specifically for upright." ogImage="/images/chester/chester-v2-mounted-front.jpg" structuredData={productSchema}>
@@ -90,16 +90,21 @@ const buyNowUrl = 'https://buy.stripe.com/4gM7sL9iB6Fr0bt9CY8og0n';
           <p class="text-gray-600 text-lg leading-relaxed mb-6">
             I rebuilt Chester to be lighter, faster to install, and tuned with a flat response specifically for the upright bass. The 40 Hz low cut and a natural high cut are built into the circuit, so all you need is 48V phantom power. It's plug and play and ready for the stage.
           </p>
+          <p class="text-gray-600 text-lg leading-relaxed mb-6">
+            Comparable boutique upright-bass mics run $650 and up. Chester is lighter, installs in under 30 seconds, and costs a third less.
+          </p>
 
           <div class="bg-brand-warm rounded-xl p-6 mb-4">
             <div class="flex items-baseline gap-3 mb-1">
-              <p class="font-heading font-extrabold text-4xl text-brand-dark">$650</p>
+              <p class="font-heading font-extrabold text-4xl text-brand-dark">$449</p>
               <p class="text-sm text-gray-500">with free shipping</p>
             </div>
+            <p class="text-xs text-gray-500 italic mb-3">Introductory price</p>
             <p class="text-sm text-brand-orange font-heading font-semibold mb-4">2 in stock and ready to ship</p>
             <a href={buyNowUrl} target="_blank" rel="noopener noreferrer" class="block bg-brand-orange text-white font-heading font-bold px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors text-center">
               Buy Now
             </a>
+            <p class="text-sm text-gray-700 font-heading font-semibold mt-3 text-center">30-day audition. Try it risk-free.</p>
             <p class="text-xs text-gray-500 mt-3">When the in-stock units are gone, <a href="#get-notified" class="text-brand-orange hover:underline">get on the list</a> and I'll let you know when the next batch is ready.</p>
           </div>
         </div>
@@ -199,7 +204,7 @@ const buyNowUrl = 'https://buy.stripe.com/4gM7sL9iB6Fr0bt9CY8og0n';
   <section class="py-16 md:py-24 bg-brand-warm">
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
       <h2 class="font-heading font-bold text-3xl mb-8 text-center">The Natural Tone You've Been Chasing</h2>
-      <p class="text-gray-600 text-lg text-center mb-8">A balanced, consistent, round sound of your bass. No hidden EQ tricks.</p>
+      <p class="text-gray-600 text-lg text-center mb-8">A balanced, consistent, round sound of your bass. Nothing hyped, nothing missing.</p>
       <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-3xl mx-auto">
         {[
           'The fundamental warmth of the bass',
@@ -352,6 +357,18 @@ const buyNowUrl = 'https://buy.stripe.com/4gM7sL9iB6Fr0bt9CY8og0n';
             <p class="text-gray-300">{value}</p>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Measured response chart -->
+  <section class="py-16 md:py-24 bg-brand-warm">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <h2 class="font-heading font-bold text-3xl mb-3 text-center">Chester V2 Frequency Response</h2>
+      <p class="text-gray-600 text-center max-w-2xl mx-auto mb-8">The mids stay flat, so there are no hyped peaks to invite feedback on stage. The gentle low-end roll-off is intentional. When Chester is mounted on your bass, the proximity effect fills in the body and warmth, capturing how your bass actually sounds.</p>
+      <div class="bg-white rounded-xl shadow-md p-4 md:p-8">
+        <img src="/images/chester/chester-v2-frequency-response.svg" alt="Chester V2 frequency response curve, showing a 40 Hz low cut, a flat response from roughly 100 Hz through 5 kHz, and a natural high cut starting around 7 kHz." class="w-full h-auto" />
+        <p class="text-xs text-gray-500 text-center mt-4">Response normalized to 0dB at 1kHz.</p>
       </div>
     </div>
   </section>
