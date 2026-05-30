@@ -4,9 +4,6 @@
     <g transform="matrix(1.117807,0,0,0.75658,-102.838279,-102.871239)">
         <rect x="162" y="153" width="1613" height="717" style="fill:rgb(251,250,247);stroke:rgb(242,240,235);stroke-width:2.1px;"/>
     </g>
-    <g transform="matrix(1.334745,0,0,0.849604,-464.545842,-72.289451)">
-        <path d="M406.664,568.53C440.801,529.883 494,464 494,464C494,464 531.181,419.948 570,407C608.819,394.052 879,317 879,317C879,317 1027.355,285 1128,285C1228.645,285 1272.107,281.075 1344,285C1478.333,292.333 1531.059,291.982 1589,376C1646.094,458.789 1649.167,463.833 1675,498C1696.699,526.698 1741.413,590.246 1754.887,608.817" style="fill:none;stroke:rgb(255,149,2);stroke-width:5.36px;"/>
-    </g>
     <g id="Axis-Labels" serif:id="Axis Labels" transform="matrix(1.117807,0,0,1.117807,-103.956086,-331.580117)">
         <g transform="matrix(0.894609,0,0,0.894609,-152.122733,-504.928676)">
             <g transform="matrix(20,0,0,20,334.361598,1073.091797)">
@@ -63,54 +60,6 @@
             <text x="285.061px" y="1073.092px" style="font-family:'SFProDisplay-Regular', 'SF Pro Display';font-size:20px;fill:rgb(111,111,111);">20 kHz</text>
         </g>
     </g>
-    <g transform="matrix(1,0,0,1,-169.662266,-973.699961)">
-        <g transform="matrix(24,0,0,24,428.382812,1075.910156)">
-        </g>
-        <text x="274px" y="1075.91px" style="font-family:'SFProDisplay-Heavy', 'SF Pro Display';font-weight:800;font-size:24px;fill:rgb(255,149,2);">40 Hz lo<tspan x="366.531px " y="1075.91px ">w</tspan> cut</text>
-    </g>
-    <g transform="matrix(1,0,0,1,-169.749433,-936.483891)">
-        <g transform="matrix(24,0,0,24,517.117188,1075.910156)">
-        </g>
-        <text x="274px" y="1075.91px" style="font-family:'SFProDisplay-Medium', 'SF Pro Display';font-weight:500;font-size:24px;fill:rgb(114,114,113);">K<tspan x="288.121px " y="1075.91px ">e</tspan>eps st<tspan x="362.57px " y="1075.91px ">a</tspan>ge rumble out</text>
-    </g>
-    <g transform="matrix(1.117807,0,0,1.117807,-103.956086,-331.580117)">
-        <path d="M315,556.351L283.897,439.238" style="fill:none;stroke:rgb(194,189,182);stroke-width:1.79px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:5.368,5.368,0,0,0,0;"/>
-    </g>
-    <g transform="matrix(1.117807,0,0,1.117807,726.024,-202.632627)">
-        <path d="M225.432,531L486.618,332.237" style="fill:none;stroke:rgb(194,189,182);stroke-width:1.79px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:5.368,5.368,0,0,0,0;"/>
-    </g>
-    <g transform="matrix(1.117807,0,0,1.117807,962.634706,-265.255672)">
-        <path d="M597.279,439.152L605.279,347.6" style="fill:none;stroke:rgb(194,189,182);stroke-width:1.79px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:5.368,5.368,0,0,0,0;"/>
-    </g>
-    <g transform="matrix(1,0,0,1,502.675093,-607.943684)">
-        <g transform="matrix(24,0,0,24,672.402344,1075.910156)">
-        </g>
-        <text x="274px" y="1075.91px" style="font-family:'SFProDisplay-Medium', 'SF Pro Display';font-weight:500;font-size:24px;fill:rgb(114,114,113);">Balanced and honest.<tspan x="495.145px " y="1075.91px "> </tspan>No hyped peak<tspan x="655.434px " y="1075.91px ">s</tspan>.</text>
-    </g>
-    <g transform="matrix(1,0,0,1,1254.991171,-972.592969)">
-        <g transform="matrix(24,0,0,24,495.203125,1075.910156)">
-        </g>
-        <text x="274px" y="1075.91px" style="font-family:'SFProDisplay-Medium', 'SF Pro Display';font-weight:500;font-size:24px;fill:rgb(114,114,113);">No surprise EQ peak<tspan x="483.613px " y="1075.91px ">s</tspan></text>
-    </g>
-    <g transform="matrix(1,0,0,1,1255.055851,-1009.722606)">
-        <g transform="matrix(24,0,0,24,454.339844,1075.910156)">
-        </g>
-        <text x="274px" y="1075.91px" style="font-family:'SFProDisplay-Heavy', 'SF Pro Display';font-weight:800;font-size:24px;fill:rgb(255,149,2);">N<tspan x="291.109px " y="1075.91px ">a</tspan>tur<tspan x="337.574px " y="1075.91px ">a</tspan>l high cut</text>
-    </g>
-    <g transform="matrix(1,0,0,1,502.675093,-644.831328)">
-        <g transform="matrix(24,0,0,24,705.472656,1075.910156)">
-        </g>
-        <text x="274px" y="1075.91px" style="font-family:'SFProDisplay-Heavy', 'SF Pro Display';font-weight:800;font-size:24px;fill:rgb(255,149,2);">Intentionally flat in mids t<tspan x="559.059px " y="1075.91px ">o</tspan> upper mids</text>
-    </g>
-    <g transform="matrix(1.117807,0,0,1.117807,-112.898545,-192.580117)">
-        <circle cx="323" cy="432" r="8" style="fill:rgb(255,149,2);"/>
-    </g>
-    <g transform="matrix(1.117807,0,0,1.117807,1269.225931,-257.260795)">
-        <circle cx="323" cy="432" r="8" style="fill:rgb(255,149,2);"/>
-    </g>
-    <g transform="matrix(1.117807,0,0,1.117807,908.917059,-314.148927)">
-        <circle cx="323" cy="432" r="8" style="fill:rgb(255,149,2);"/>
-    </g>
     <g id="Grid-Lines" serif:id="Grid Lines" transform="matrix(1.117807,0,0,0.846339,-103.956086,-116.181167)">
         <g transform="matrix(1,0,0,0.893945,-0,16.173449)">
             <path d="M377,869.5L377,152.5" style="fill:none;stroke:rgb(208,208,208);stroke-width:1.05px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:3.143,5.239,0,0,0,0;"/>
@@ -130,14 +79,65 @@
         <g transform="matrix(1,0,0,0.893945,1235,16.173449)">
             <path d="M377,869.5L377,152.5" style="fill:none;stroke:rgb(208,208,208);stroke-width:1.05px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:3.143,5.239,0,0,0,0;"/>
         </g>
-        <g transform="matrix(0,1,-1,0,1720.566292,70.594092)">
+        <g transform="matrix(0,1,-1,0,1720.566292,-38.109414)">
             <path d="M377,1554.445L377,-55.434" style="fill:none;stroke:rgb(208,208,208);stroke-width:1.01px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:3.026,5.043,0,0,0,0;"/>
         </g>
-        <g transform="matrix(0,1,-1,0,1720.566292,186.554806)">
+        <g transform="matrix(0,1,-1,0,1720.566292,113.298096)">
             <path d="M377,1554.445L377,-55.434" style="fill:none;stroke:rgb(208,208,208);stroke-width:1.01px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:3.026,5.043,0,0,0,0;"/>
         </g>
-        <g transform="matrix(0,1,-1,0,1720.566292,299.253261)">
+        <g transform="matrix(0,1,-1,0,1720.566292,261.443346)">
             <path d="M377,1554.445L377,-55.434" style="fill:none;stroke:rgb(208,208,208);stroke-width:1.01px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:3.026,5.043,0,0,0,0;"/>
         </g>
+    </g>
+    <g transform="matrix(1,0,0,1,533.675093,-675.943684)">
+        <g transform="matrix(24,0,0,24,672.402344,1075.910156)">
+        </g>
+        <text x="274px" y="1075.91px" style="font-family:'SFProDisplay-Medium', 'SF Pro Display';font-weight:500;font-size:24px;fill:rgb(114,114,113);">Balanced and honest.<tspan x="495.145px " y="1075.91px "> </tspan>No hyped peak<tspan x="655.434px " y="1075.91px ">s</tspan>.</text>
+    </g>
+    <g transform="matrix(1,0,0,1,533.675093,-712.831328)">
+        <g transform="matrix(24,0,0,24,705.472656,1075.910156)">
+        </g>
+        <text x="274px" y="1075.91px" style="font-family:'SFProDisplay-Heavy', 'SF Pro Display';font-weight:800;font-size:24px;fill:rgb(255,149,2);">Intentionally flat in mids t<tspan x="559.059px " y="1075.91px ">o</tspan> upper mids</text>
+    </g>
+    <g transform="matrix(1,0,0,1,1254.991171,-972.592969)">
+        <g transform="matrix(24,0,0,24,495.203125,1075.910156)">
+        </g>
+        <text x="274px" y="1075.91px" style="font-family:'SFProDisplay-Medium', 'SF Pro Display';font-weight:500;font-size:24px;fill:rgb(114,114,113);">No surprise EQ peak<tspan x="483.613px " y="1075.91px ">s</tspan></text>
+    </g>
+    <g transform="matrix(1,0,0,1,1255.055851,-1009.722606)">
+        <g transform="matrix(24,0,0,24,454.339844,1075.910156)">
+        </g>
+        <text x="274px" y="1075.91px" style="font-family:'SFProDisplay-Heavy', 'SF Pro Display';font-weight:800;font-size:24px;fill:rgb(255,149,2);">N<tspan x="291.109px " y="1075.91px ">a</tspan>tur<tspan x="337.574px " y="1075.91px ">a</tspan>l high cut</text>
+    </g>
+    <g transform="matrix(1,0,0,1,-169.662266,-973.699961)">
+        <g transform="matrix(24,0,0,24,428.382812,1075.910156)">
+        </g>
+        <text x="274px" y="1075.91px" style="font-family:'SFProDisplay-Heavy', 'SF Pro Display';font-weight:800;font-size:24px;fill:rgb(255,149,2);">40 Hz lo<tspan x="366.531px " y="1075.91px ">w</tspan> cut</text>
+    </g>
+    <g transform="matrix(1,0,0,1,-169.749433,-936.483891)">
+        <g transform="matrix(24,0,0,24,517.117188,1075.910156)">
+        </g>
+        <text x="274px" y="1075.91px" style="font-family:'SFProDisplay-Medium', 'SF Pro Display';font-weight:500;font-size:24px;fill:rgb(114,114,113);">K<tspan x="288.121px " y="1075.91px ">e</tspan>eps st<tspan x="362.57px " y="1075.91px ">a</tspan>ge rumble out</text>
+    </g>
+    <g transform="matrix(1.117807,0,0,1.117807,-103.956086,-331.580117)">
+        <path d="M315,556.351L283.897,439.238" style="fill:none;stroke:rgb(194,189,182);stroke-width:1.79px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:5.368,5.368,0,0,0,0;"/>
+    </g>
+    <g transform="matrix(1.117807,0,0,1.117807,726.024,-202.632627)">
+        <path d="M278.121,480.007L486.618,332.237" style="fill:none;stroke:rgb(194,189,182);stroke-width:1.79px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:5.368,5.368,0,0,0,0;"/>
+    </g>
+    <g transform="matrix(1.117807,0,0,1.117807,962.634706,-265.255672)">
+        <path d="M597.279,439.152L605.279,347.6" style="fill:none;stroke:rgb(194,189,182);stroke-width:1.79px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-dasharray:5.368,5.368,0,0,0,0;"/>
+    </g>
+    <g transform="matrix(1.117807,0,0,1.117807,-112.898545,-192.580117)">
+        <circle cx="323" cy="432" r="8" style="fill:rgb(255,149,2);"/>
+    </g>
+    <g transform="matrix(1.117807,0,0,1.117807,1269.225931,-257.260795)">
+        <circle cx="323" cy="432" r="8" style="fill:rgb(255,149,2);"/>
+    </g>
+    <g transform="matrix(1.117807,0,0,1.117807,908.917059,-314.148927)">
+        <circle cx="323" cy="432" r="8" style="fill:rgb(255,149,2);"/>
+    </g>
+    <g transform="matrix(1.334745,0,0,0.849604,-464.545842,-72.289451)">
+        <path d="M406.664,568.53C440.801,529.883 494,464 494,464C494,464 531.181,419.948 570,407C608.819,394.052 879,317 879,317C879,317 1027.355,285 1128,285C1228.645,285 1272.107,281.075 1344,285C1478.333,292.333 1531.059,291.982 1589,376C1646.094,458.789 1649.167,463.833 1675,498C1696.699,526.698 1741.413,590.246 1754.887,608.817" style="fill:none;stroke:rgb(255,149,2);stroke-width:5.36px;"/>
     </g>
 </svg>
