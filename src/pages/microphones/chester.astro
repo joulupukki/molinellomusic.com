@@ -74,6 +74,27 @@ const buyNowUrl = 'https://buy.stripe.com/aFabJ12Ud2pbgar6qM8og0p';
     </div>
   </section>
 
+  <!-- At-a-glance stats -->
+  <section class="bg-brand-warm py-6 md:py-8 border-b border-black/5">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-y-4 gap-x-2 text-center">
+        {[
+          ['~190 g', 'Weight'],
+          ['< 30 sec', 'Install time'],
+          ['48V', 'Phantom power'],
+          ['Hand-built', 'Made in Utah'],
+          ['30 days', 'Audition'],
+          ['Lifetime', 'Warranty'],
+        ].map(([value, label]) => (
+          <div>
+            <p class="font-heading font-extrabold text-xl md:text-2xl text-brand-dark leading-none">{value}</p>
+            <p class="text-[11px] md:text-xs text-gray-600 uppercase tracking-wider mt-1">{label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- Main product + pitch -->
   <section class="py-16 md:py-24">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
@@ -99,7 +120,8 @@ const buyNowUrl = 'https://buy.stripe.com/aFabJ12Ud2pbgar6qM8og0p';
               <p class="font-heading font-extrabold text-4xl text-brand-dark">$449</p>
               <p class="text-sm text-gray-500">with free shipping</p>
             </div>
-            <p class="text-xs text-gray-500 italic mb-3">Introductory price</p>
+            <p class="text-xs text-gray-500 italic mb-1">Introductory price</p>
+            <p class="text-xs text-gray-500 italic mb-3">Built by hand in Highland, Utah</p>
             <p class="text-sm text-brand-orange font-heading font-semibold mb-4">2 in stock and ready to ship</p>
             <a href={buyNowUrl} target="_blank" rel="noopener noreferrer" class="block bg-brand-orange text-white font-heading font-bold px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors text-center">
               Buy Now
