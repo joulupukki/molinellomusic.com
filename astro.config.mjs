@@ -9,6 +9,10 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://www.molinellomusic.com',
 
+  redirects: {
+    '/chester': '/microphones/chester'
+  },
+
   vite: {
     plugins: [tailwindcss()]
   },
