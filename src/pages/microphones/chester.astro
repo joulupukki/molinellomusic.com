@@ -79,7 +79,7 @@ const buyNowUrl = 'https://buy.stripe.com/aFabJ12Ud2pbgar6qM8og0p';
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-y-4 gap-x-2 text-center">
         {[
-          ['~190 g', 'Weight'],
+          ['6.7 oz', 'Lightweight'],
           ['< 30 sec', 'Install time'],
           ['48V', 'Phantom power'],
           ['Hand-built', 'Made in Utah'],
@@ -299,6 +299,9 @@ const buyNowUrl = 'https://buy.stripe.com/aFabJ12Ud2pbgar6qM8og0p';
           ['chester-v2-weight.jpg', 'Chester V2 weighing in at 190 grams'],
           ['chester-v2-mounted-front.jpg', 'Chester V2 mounted between the strings'],
           ['chester-v2-mounted-side.jpg', 'Chester V2 side view with cable clip installed'],
+          ['chester-v2-case-open.jpg', 'Chester V2 packed in its foam-lined hard-shell case with XLR cable'],
+          ['chester-v2-case-open-top.jpg', 'Top-down view of Chester V2 and XLR cable nestled in the hard-shell case foam'],
+          ['chester-v2-case-closed.jpg', 'Chester V2 hard case with serial-numbered Molinello Music label'],
         ].map(([file, alt]) => (
           <button type="button" class="block group cursor-zoom-in p-0 border-0 bg-transparent" data-lightbox-trigger aria-label={`View ${alt}`}>
             <img src={`/images/chester/${file}`} alt={alt} loading="lazy" class="rounded-lg shadow-md w-full aspect-square object-cover transition-opacity group-hover:opacity-90" />
@@ -311,6 +314,8 @@ const buyNowUrl = 'https://buy.stripe.com/aFabJ12Ud2pbgar6qM8og0p';
   <!-- Lightbox -->
   <div id="lightbox" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/90 p-4 cursor-zoom-out" role="dialog" aria-modal="true" aria-label="Image viewer">
     <img id="lightbox-image" src="" alt="" class="max-w-full max-h-full rounded-lg shadow-2xl" />
+    <button id="lightbox-prev" type="button" class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 text-white text-5xl leading-none px-3 py-2 hover:text-brand-orange transition-colors select-none" aria-label="Previous image">&#8249;</button>
+    <button id="lightbox-next" type="button" class="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 text-white text-5xl leading-none px-3 py-2 hover:text-brand-orange transition-colors select-none" aria-label="Next image">&#8250;</button>
     <button id="lightbox-close" type="button" class="absolute top-4 right-4 text-white text-4xl leading-none hover:text-brand-orange transition-colors" aria-label="Close image viewer">&times;</button>
   </div>
 
@@ -318,11 +323,27 @@ const buyNowUrl = 'https://buy.stripe.com/aFabJ12Ud2pbgar6qM8og0p';
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightbox-image') as HTMLImageElement | null;
     const lightboxClose = document.getElementById('lightbox-close');
+    const lightboxPrev = document.getElementById('lightbox-prev');
+    const lightboxNext = document.getElementById('lightbox-next');
 
-    function openLightbox(src: string, alt: string) {
-      if (!lightbox || !lightboxImage) return;
-      lightboxImage.src = src;
-      lightboxImage.alt = alt;
+    const triggers = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-lightbox-trigger]'));
+    const gallery = triggers.map(btn => {
+      const img = btn.querySelector('img');
+      return { src: img?.src ?? '', alt: img?.alt ?? '' };
+    });
+    let currentIndex = 0;
+
+    function showImage(index: number) {
+      if (!lightboxImage || gallery.length === 0) return;
+      currentIndex = (index + gallery.length) % gallery.length;
+      const item = gallery[currentIndex];
+      lightboxImage.src = item.src;
+      lightboxImage.alt = item.alt;
+    }
+
+    function openLightbox(index: number) {
+      if (!lightbox) return;
+      showImage(index);
       lightbox.classList.remove('hidden');
       lightbox.classList.add('flex');
       document.body.style.overflow = 'hidden';
@@ -336,22 +357,29 @@ const buyNowUrl = 'https://buy.stripe.com/aFabJ12Ud2pbgar6qM8og0p';
       document.body.style.overflow = '';
     }
 
-    document.querySelectorAll<HTMLButtonElement>('[data-lightbox-trigger]').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const img = btn.querySelector('img');
-        if (img) openLightbox(img.src, img.alt);
-      });
+    triggers.forEach((btn, index) => {
+      btn.addEventListener('click', () => openLightbox(index));
     });
 
     lightbox?.addEventListener('click', closeLightbox);
+    lightboxImage?.addEventListener('click', (e) => e.stopPropagation());
     lightboxClose?.addEventListener('click', (e) => {
       e.stopPropagation();
       closeLightbox();
     });
+    lightboxPrev?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showImage(currentIndex - 1);
+    });
+    lightboxNext?.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showImage(currentIndex + 1);
+    });
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && lightbox && !lightbox.classList.contains('hidden')) {
-        closeLightbox();
-      }
+      if (!lightbox || lightbox.classList.contains('hidden')) return;
+      if (e.key === 'Escape') closeLightbox();
+      else if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+      else if (e.key === 'ArrowRight') showImage(currentIndex + 1);
     });
   </script>
 
