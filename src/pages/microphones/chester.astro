@@ -126,8 +126,8 @@ const buyNowUrl = 'https://buy.stripe.com/aFabJ12Ud2pbgar6qM8og0p';
             <a href={buyNowUrl} target="_blank" rel="noopener noreferrer" class="block bg-brand-orange text-white font-heading font-bold px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors text-center">
               Buy Now
             </a>
-            <p class="text-sm text-gray-700 font-heading font-semibold mt-3 text-center">30-day audition. Try it risk-free.</p>
-            <p class="text-xs text-gray-500 mt-3">When the in-stock units are gone, <a href="#get-notified" class="text-brand-orange hover:underline">get on the list</a> and I'll let you know when the next batch is ready.</p>
+            <p class="text-sm text-gray-700 font-heading font-semibold mt-3 text-center">30-day audition. If it's not your sound, send it back for a full refund.</p>
+            <p class="text-xs text-gray-500 mt-3 text-center">Secure checkout via Stripe &middot; all major cards accepted</p>
           </div>
         </div>
       </div>
@@ -242,7 +242,7 @@ const buyNowUrl = 'https://buy.stripe.com/aFabJ12Ud2pbgar6qM8og0p';
           },
           {
             title: 'Neutrik XLR Connector',
-            body: 'A high-quality Neutrik male XLR connector. The included clip secures the cable directly to the mic, so it stays put through the gig with nothing extra touching the tailpiece.',
+            body: 'A short cable off the head basket ends in a high-quality Neutrik male XLR. Plug in any standard XLR cable, or go straight into a wireless transmitter. The included clip secures your cable to the mic itself, so nothing extra touches the tailpiece.',
           },
           {
             title: 'Plug and Play',
@@ -282,7 +282,7 @@ const buyNowUrl = 'https://buy.stripe.com/aFabJ12Ud2pbgar6qM8og0p';
         ))}
       </div>
       <p class="text-center text-gray-700 font-heading font-semibold mt-8 italic">
-        "This is the closest thing to 'studio mic tone' you can use on stage."
+        The closest thing to studio-mic tone you can take on stage.
       </p>
     </div>
   </section>
@@ -290,7 +290,8 @@ const buyNowUrl = 'https://buy.stripe.com/aFabJ12Ud2pbgar6qM8og0p';
   <!-- Videos -->
   <section class="py-16 md:py-24">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
-      <h2 class="font-heading font-bold text-3xl mb-10 text-center">Chester in a Live Mix</h2>
+      <h2 class="font-heading font-bold text-3xl mb-3 text-center">Chester in a Live Mix</h2>
+      <p class="text-gray-500 mb-10 text-center">Basin &amp; Grange live, with Chester on the upright bass.</p>
       <div class="grid md:grid-cols-2 gap-8">
         <div class="aspect-video rounded-xl overflow-hidden shadow-lg">
           <iframe src="https://www.youtube.com/embed/LWgeRZLm08I" title="Chester live demo 1" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -299,6 +300,26 @@ const buyNowUrl = 'https://buy.stripe.com/aFabJ12Ud2pbgar6qM8og0p';
           <iframe src="https://www.youtube.com/embed/iQT9kJUMJqY" title="Chester live demo 2" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- From the builder -->
+  <section class="py-16 md:py-24 bg-brand-warm">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <p class="text-brand-orange font-heading font-semibold tracking-wider uppercase text-sm mb-2 text-center">Who Builds Chester</p>
+      <h2 class="font-heading font-bold text-3xl mb-6 text-center">Hi, I'm Boyd.</h2>
+      <div class="space-y-4 text-gray-700 text-lg leading-relaxed">
+        <p>
+          I'm an upright bassist, and I gig with my band, Basin &amp; Grange &mdash; those live videos above are our shows, with Chester handling the bass. I built the first Chester for myself because nothing I tried let the audience hear what my bass actually sounds like.
+        </p>
+        <p>
+          Every Chester is assembled, tested, and tuned by ear in my shop in Highland, Utah. When you order one, it comes from my bench, not a warehouse.
+        </p>
+        <p>
+          Have a question before you buy? Email me at <a href="mailto:info@molinellomusic.com" class="text-brand-orange hover:underline">info@molinellomusic.com</a> or call <a href="tel:801-893-1171" class="text-brand-orange hover:underline">801-893-1171</a>. You'll get me, not a support desk.
+        </p>
+      </div>
+      <p class="font-heading font-bold text-brand-dark mt-6 text-center">&mdash; Boyd Timothy</p>
     </div>
   </section>
 
@@ -318,6 +339,7 @@ const buyNowUrl = 'https://buy.stripe.com/aFabJ12Ud2pbgar6qM8og0p';
         <blockquote class="text-brand-dark text-lg md:text-xl font-heading italic leading-relaxed relative">
           It sounded so good I didn't want to stop playing. So much so that when the concert was over I stayed playing alone in the hall just to listen more.
         </blockquote>
+        <figcaption class="text-sm text-gray-500 mt-4">&mdash; Mario C., after his first concert with Chester</figcaption>
       </figure>
 
       <p class="text-brand-dark font-heading font-bold text-xl mt-10 italic">That moment is what this mic was built for.</p>
@@ -339,8 +361,8 @@ const buyNowUrl = 'https://buy.stripe.com/aFabJ12Ud2pbgar6qM8og0p';
           ['chester-v2-weight-oz.jpg', 'Chester V2 and clip on a scale reading 6.7 oz'],
           ['chester-v2-mounted-front.jpg', 'Chester V2 mounted between the strings'],
           ['chester-v2-mounted-side.jpg', 'Chester V2 side view with cable clip installed'],
-          ['chester-v2-case-open.jpg', 'Chester V2 packed in its foam-lined hard-shell case with XLR cable'],
-          ['chester-v2-case-open-top.jpg', 'Top-down view of Chester V2 and XLR cable nestled in the hard-shell case foam'],
+          ['chester-v2-case-open.jpg', 'Chester V2 packed in its foam-lined hard-shell case'],
+          ['chester-v2-case-open-top.jpg', 'Top-down view of Chester V2 nestled in the hard-shell case foam'],
           ['chester-v2-case-closed.jpg', 'Chester V2 hard case with serial-numbered Molinello Music label'],
         ].map(([file, alt]) => (
           <button type="button" class="block group cursor-zoom-in p-0 border-0 bg-transparent" data-lightbox-trigger aria-label={`View ${alt}`}>
@@ -435,11 +457,11 @@ const buyNowUrl = 'https://buy.stripe.com/aFabJ12Ud2pbgar6qM8og0p';
           ['Low Cut', 'Built-in 40 Hz filter to prevent stage rumble'],
           ['Mounting', 'Mounts between the strings below the bridge with a keyed swivel for precise angle'],
           ['Install Time', 'Under 30 seconds'],
-          ['Connector', 'Neutrik male XLR'],
+          ['Connector', 'Short attached cable ending in a Neutrik male XLR. Plugs into any standard XLR cable or wireless transmitter.'],
           ['Power', '48V phantom power required'],
           ['Weight', '190 g (just under 7 oz)'],
           ['Build', 'Hand-built copper and brass body with a brass mesh grille'],
-          ['Includes', 'Mic, XLR cable clip, and air-tight hard-shell carrying case'],
+          ['Includes', 'Mic, XLR cable clip, and air-tight hard-shell carrying case. Bring your own standard XLR cable.'],
           ['Warranty', 'Lifetime manufacturing. 30-day audition.'],
         ].map(([label, value]) => (
           <div class="border-b border-white/10 pb-3">
@@ -448,6 +470,60 @@ const buyNowUrl = 'https://buy.stripe.com/aFabJ12Ud2pbgar6qM8og0p';
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <h2 class="font-heading font-bold text-3xl mb-10 text-center">Questions Bassists Ask Before Buying</h2>
+      <div class="space-y-6">
+        {[
+          {
+            q: 'Do I need to buy anything else?',
+            a: 'Just a standard XLR cable and 48V phantom power, which any mixer, audio interface, or mic preamp provides. Chester has a short cable attached to the mic that ends in a Neutrik male XLR, so it plugs straight into your regular XLR cable, or directly into an XLR wireless transmitter if you play untethered.',
+          },
+          {
+            q: 'Will it fit my bass?',
+            a: 'Chester is designed for standard 4-string setups and mounts between the strings below the bridge. If your setup is unusual, say a 5-string or a very low tailpiece, email me a photo of your bridge and tailpiece before you order and I’ll tell you honestly whether it will work.',
+          },
+          {
+            q: 'Does it work for arco (bowed) playing?',
+            a: 'Yes. The flat tuning across the register of the bass captures bowed playing just as naturally as pizzicato, which makes it at home in classical and jazz settings as well as bluegrass and folk.',
+          },
+          {
+            q: 'What about feedback on stage?',
+            a: 'At acoustic, bluegrass, jazz, and folk stage volumes, Chester gives you noticeably more gain before feedback than a large-diaphragm condenser: the medium capsule, the built-in 40 Hz low cut, and the capsule aimed into the body all work in your favor. On a very loud stage with monitors pointed at the bass, every microphone has limits. The preferred placement shown above is the most feedback-resistant spot I’ve found.',
+          },
+          {
+            q: 'Will it mark or damage my bass?',
+            a: 'No. Chester mounts between the strings below the bridge. There are no clamps on the top, no velcro around the tailpiece, and nothing pressing on the finish.',
+          },
+          {
+            q: 'Do you ship internationally?',
+            a: 'U.S. only for now. If you’re outside the U.S. and want a Chester, email me. If there’s enough interest, I’ll figure out international shipping.',
+          },
+          {
+            q: 'What if it’s not my sound?',
+            a: 'You get a 30-day audition. Play real gigs with it. If it’s not right for you, send it back for a full refund; you cover the return shipping.',
+          },
+          {
+            q: 'Is there a warranty?',
+            a: 'Lifetime manufacturing warranty. If something on your Chester ever fails, I’ll repair it or make it right.',
+          },
+        ].map(item => (
+          <details class="group border-b border-gray-200 pb-4">
+            <summary class="font-heading font-bold text-lg cursor-pointer list-none flex items-center justify-between">
+              {item.q}
+              <span class="text-brand-orange group-open:rotate-45 transition-transform text-2xl">+</span>
+            </summary>
+            <p class="text-gray-600 mt-3">{item.a}</p>
+          </details>
+        ))}
+      </div>
+      <p class="text-center text-gray-600 mt-10">
+        Something else on your mind? <a href="mailto:info@molinellomusic.com" class="text-brand-orange hover:underline">Email me</a> &mdash; I answer every message personally.
+      </p>
     </div>
   </section>
 
@@ -480,14 +556,17 @@ const buyNowUrl = 'https://buy.stripe.com/aFabJ12Ud2pbgar6qM8og0p';
           <a href={buyNowUrl} target="_blank" rel="noopener noreferrer" class="block bg-brand-orange text-white font-heading font-bold px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors text-center">
             Buy Now
           </a>
+          <p class="text-xs text-gray-500 mt-3 text-center">Secure checkout via Stripe &middot; all major cards accepted</p>
         </div>
       </div>
 
-      <div class="flex items-center gap-4 max-w-md mx-auto mb-10">
+      <div class="flex items-center gap-4 max-w-md mx-auto mb-6">
         <div class="flex-1 h-px bg-gray-200"></div>
-        <p class="text-gray-500 font-heading font-semibold text-sm uppercase tracking-wider">Sold out?</p>
+        <p class="text-gray-500 font-heading font-semibold text-sm uppercase tracking-wider">If the batch sells out</p>
         <div class="flex-1 h-px bg-gray-200"></div>
       </div>
+
+      <p class="text-gray-600 text-sm text-center max-w-md mx-auto mb-8">Chesters are built in small batches. If the current batch is spoken for, get on the list and I'll email you the moment the next one is ready.</p>
 
       <div id="get-notified" class="max-w-2xl mx-auto scroll-mt-20">
         <script async data-uid="560de3bcb1" src="https://molinello-music.kit.com/560de3bcb1/index.js" is:inline></script>
@@ -537,7 +616,8 @@ const buyNowUrl = 'https://buy.stripe.com/aFabJ12Ud2pbgar6qM8og0p';
       <a href={buyNowUrl} target="_blank" rel="noopener noreferrer" class="inline-block bg-brand-orange text-white font-heading font-bold px-8 py-4 rounded-lg hover:bg-orange-600 transition-colors text-lg">
         Buy a Chester V2
       </a>
-      <p class="text-gray-500 text-sm mt-6">Sold out? <a href="#get-notified" class="text-brand-orange hover:underline">Get on the list</a> and I'll email you when the next batch ships.</p>
+      <p class="text-gray-500 text-sm mt-6">30-day audition &middot; Lifetime warranty &middot; Free U.S. shipping</p>
+      <p class="text-gray-500 text-sm mt-2">Not sure yet? <a href="mailto:info@molinellomusic.com" class="text-brand-orange hover:underline">Email me your question</a> &mdash; you'll get me, not a support desk.</p>
     </div>
   </section>
 </BaseLayout>
