@@ -59,6 +59,28 @@ const productSchema = {
 };
 
 const buyNowUrl = 'https://buy.stripe.com/aFabJ12Ud2pbgar6qM8og0p';
+
+// Quote is transcribed from Edgar's public endorsement video on the Edgar Loudermilk
+// Band Facebook page. His run-on sentence is split at the final "and" and the filler
+// "there" is dropped; no words added or changed.
+// videoPoster: drop in a still from that video to render a clickable thumbnail.
+// photo: a press photo, if we ever get one. Renders as a small avatar by his name.
+const endorsers = [
+  {
+    name: 'Edgar Loudermilk',
+    quote: 'It attaches real easily to the strings, there’s no noise, and it’s absolutely wonderful tone. We love this microphone.',
+    credit: 'Upright bass · Edgar Loudermilk Band',
+    detail: 'Two-time back-to-back SPBGMA Bass Fiddle Performer of the Year. Previously with Rhonda Vincent & The Rage, Russell Moore & IIIrd Tyme Out, and Marty Raybon & Full Circle.',
+    disclosure: 'Edgar plays a Chester through an endorsement arrangement with Molinello Music.',
+    videoUrl: 'https://www.facebook.com/reel/1423506819703359/',
+    videoPoster: '/images/chester/edgar-endorsement-poster.jpg',
+    photo: null,
+  },
+];
+
+// Click-to-load: no Facebook code touches the page until a visitor presses play.
+const fbPluginSrc = (videoUrl: string) =>
+  `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(videoUrl)}&show_text=false&width=300&autoplay=true`;
 ---
 
 <BaseLayout title="Chester - Molinello Music" description="The microphone that makes your upright bass sound like your bass. Lighter, faster to install, and tuned specifically for upright." ogImage="/images/chester/chester-v2-mounted-front.jpg" structuredData={productSchema}>
@@ -116,6 +138,13 @@ const buyNowUrl = 'https://buy.stripe.com/aFabJ12Ud2pbgar6qM8og0p';
           </p>
 
           <div class="bg-brand-warm rounded-xl p-6 mb-4">
+            <a href="#endorsement" class="group block pb-4 mb-4 border-b border-black/10">
+              <p class="text-sm text-gray-700 leading-snug">
+                <span class="font-heading font-semibold text-brand-dark">Endorsed by Edgar Loudermilk</span>
+                <span class="text-gray-600"> &mdash; two-time SPBGMA Bass Fiddle Performer of the Year</span>
+              </p>
+              <p class="text-xs text-brand-orange font-heading font-semibold mt-1 group-hover:underline">See his endorsement &darr;</p>
+            </a>
             <div class="flex items-baseline gap-3 mb-1">
               <p class="font-heading font-extrabold text-4xl text-brand-dark">$449</p>
               <p class="text-sm text-gray-500">with free shipping</p>
@@ -322,6 +351,79 @@ const buyNowUrl = 'https://buy.stripe.com/aFabJ12Ud2pbgar6qM8og0p';
       <p class="font-heading font-bold text-brand-dark mt-6 text-center">&mdash; Boyd Timothy</p>
     </div>
   </section>
+
+  <!-- Endorsing artists -->
+  <section id="endorsement" class="py-16 md:py-24 bg-brand-charcoal text-white scroll-mt-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10 md:mb-12">
+        <p class="text-brand-orange font-heading font-semibold tracking-wider uppercase text-sm mb-2">Endorsing Artists</p>
+        <!-- Generalize this heading if a second endorser is ever added -->
+        <h2 class="font-heading font-bold text-3xl md:text-4xl mb-4">Endorsed by Edgar Loudermilk</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">An award-winning bluegrass bassist, playing Chester on his own upright.</p>
+      </div>
+
+      <div class="space-y-6 max-w-2xl mx-auto">
+        {endorsers.map(artist => (
+          <figure class="bg-brand-dark/50 border border-white/10 rounded-xl p-8 md:p-10">
+            {artist.videoPoster && (
+              <div class="relative mx-auto mb-8 max-w-[300px] aspect-[101/148] rounded-lg overflow-hidden shadow-lg bg-black" data-fb-video data-video-src={fbPluginSrc(artist.videoUrl)}>
+                <button type="button" class="group absolute inset-0 w-full h-full p-0 border-0 bg-transparent cursor-pointer" aria-label={`Play ${artist.name}'s endorsement video`}>
+                  <img src={artist.videoPoster} alt={`${artist.name} holding his upright bass with a Chester microphone mounted`} loading="lazy" class="w-full h-full object-cover transition-opacity group-hover:opacity-90" />
+                  <span aria-hidden="true" class="absolute inset-0 flex items-center justify-center">
+                    <span class="w-16 h-16 rounded-full bg-brand-orange/90 flex items-center justify-center shadow-lg transition-transform group-hover:scale-105">
+                      <span class="block w-0 h-0 border-y-[10px] border-y-transparent border-l-[16px] border-l-white ml-1"></span>
+                    </span>
+                  </span>
+                </button>
+              </div>
+            )}
+
+            <blockquote class="font-heading italic text-xl md:text-2xl leading-relaxed text-center text-balance">
+              &ldquo;{artist.quote}&rdquo;
+            </blockquote>
+
+            <figcaption class="mt-6 text-center">
+              {artist.photo && (
+                <img src={artist.photo} alt={artist.name} loading="lazy" class="w-16 h-16 rounded-full object-cover mx-auto mb-4 border-2 border-brand-orange/40" />
+              )}
+              <p class="font-heading font-bold text-lg text-brand-orange">{artist.name}</p>
+              <p class="text-gray-300 text-sm mt-1">{artist.credit}</p>
+              <p class="text-gray-400 text-xs mt-3 leading-relaxed max-w-md mx-auto">{artist.detail}</p>
+            </figcaption>
+
+            {artist.videoUrl && (
+              <p class="text-center mt-6">
+                <a href={artist.videoUrl} target="_blank" rel="noopener noreferrer" class="text-brand-orange font-heading font-semibold text-sm hover:underline">
+                  Watch the full endorsement on Facebook &rarr;
+                </a>
+              </p>
+            )}
+
+            {artist.disclosure && (
+              <p class="text-gray-500 text-xs italic text-center mt-6 pt-6 border-t border-white/10">{artist.disclosure}</p>
+            )}
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll<HTMLElement>('[data-fb-video]').forEach(box => {
+      box.querySelector('button')?.addEventListener('click', () => {
+        const src = box.dataset.videoSrc;
+        if (!src) return;
+        const frame = document.createElement('iframe');
+        frame.src = src;
+        frame.className = 'absolute inset-0 w-full h-full';
+        frame.setAttribute('frameborder', '0');
+        frame.setAttribute('scrolling', 'no');
+        frame.setAttribute('allowfullscreen', 'true');
+        frame.setAttribute('allow', 'autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share');
+        box.replaceChildren(frame);
+      });
+    });
+  </script>
 
   <!-- Testimonial feel -->
   <section class="py-16 md:py-24">
