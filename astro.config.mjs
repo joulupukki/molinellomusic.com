@@ -10,7 +10,8 @@ export default defineConfig({
   site: 'https://www.molinellomusic.com',
 
   redirects: {
-    '/chester': '/microphones/chester'
+    '/chester': '/microphones/chester',
+    '/microphones/milton': '/microphones/chester'
   },
 
   vite: {
