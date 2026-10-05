@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AcoustiMatch IR Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --panel: #e3e6e9;      /* brushed enclosure */
+    --plate: #f7f8f9;
+    --ink: #1a2330;
+    --muted: #5a6573;
+    --line: #c2c8cf;
+    --led: #f0a000;        /* only ever means "playing now" */
+    --led-glow: rgba(240, 160, 0, .45);
+    --action: #1f4f7a;
+    --danger: #a3341f;
+    --ok: #2d6b3c;
+    --curve: #1f4f7a;
+    color-scheme: light;
+    --sans: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --cond: "Barlow Semi Condensed", "Arial Narrow", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --panel: #161a1f; --plate: #1f252c; --ink: #e5e9ee; --muted: #9aa5b1;
+      --line: #36404a; --action: #8cbcec; --danger: #f08a73; --ok: #8fd19e;
+      --curve: #8cbcec; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --panel: #161a1f; --plate: #1f252c; --ink: #e5e9ee; --muted: #9aa5b1;
+    --line: #36404a; --action: #8cbcec; --danger: #f08a73; --ok: #8fd19e;
+    --curve: #8cbcec; color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  body {
+    margin: 0; background: var(--panel); color: var(--ink);
+    font: 400 16px/1.5 var(--sans);
+  }
+  main { max-width: 1040px; margin: 0 auto; padding: 32px 20px 64px; }
+  button, input { font: inherit; color: inherit; }
+  :focus-visible { outline: 2px solid var(--action); outline-offset: 2px; }
+
+  header.top {
+    display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+    gap: 12px 24px; margin-bottom: 28px;
+  }
+  h1 {
+    font: 700 clamp(28px, 4vw, 40px)/1.05 var(--cond); letter-spacing: -.01em; margin: 0;
+  }
+  h1 span { font-weight: 500; color: var(--muted); }
+  .conn { display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 15px; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--line); flex: none; }
+  .conn.on .dot { background: var(--ok); }
+
+  .btn {
+    border: 1px solid var(--line); background: var(--plate); border-radius: 6px;
+    padding: 7px 14px; cursor: pointer; font-weight: 500; font-size: 15px;
+  }
+  .btn:hover:not(:disabled) { border-color: var(--action); color: var(--action); }
+  .btn:disabled { opacity: .5; cursor: default; }
+  .btn.primary { background: var(--action); border-color: var(--action); color: var(--plate); }
+  .btn.primary:hover:not(:disabled) { color: var(--plate); filter: brightness(1.1); }
+  .btn.danger { color: var(--danger); }
+  .btn.quiet { border-color: transparent; background: none; padding-inline: 8px; }
+  .btn.quiet:hover:not(:disabled) { border-color: var(--line); }
+
+  /* ---- Connect screen ---- */
+  .intro { max-width: 620px; }
+  .intro p { color: var(--muted); margin: 0 0 20px; font-size: 18px; }
+  .steps { margin: 0 0 28px; padding: 0; list-style: none; counter-reset: s; }
+  .steps li {
+    counter-increment: s; position: relative; padding: 0 0 14px 40px; min-height: 28px;
+  }
+  .steps li::before {
+    content: counter(s); position: absolute; left: 0; top: -1px; width: 28px; height: 28px;
+    border-radius: 50%; border: 1.5px solid var(--ink); display: grid; place-items: center;
+    font: 600 14px/1 var(--cond);
+  }
+  .note {
+    border-left: 3px solid var(--danger); background: var(--plate); padding: 12px 16px;
+    border-radius: 0 6px 6px 0; margin: 0 0 20px;
+  }
+
+  /* ---- The panel: toggle lever across three plates ---- */
+  .panel { position: relative; }
+  .switch {
+    position: relative; display: grid; grid-template-columns: repeat(3, 1fr);
+    height: 72px; margin-bottom: 4px;
+  }
+  .switch .track {
+    position: absolute; left: calc(100% / 6); right: calc(100% / 6); top: 30px; height: 4px;
+    border-radius: 2px; background: var(--line);
+  }
+  .switch .stop {
+    position: relative; display: grid; justify-items: center; align-content: start;
+    font: 600 15px/1 var(--cond); color: var(--muted); padding-top: 0;
+  }
+  .switch .stop i {
+    display: block; width: 12px; height: 12px; border-radius: 50%; margin-top: 26px;
+    background: var(--panel); border: 2px solid var(--line);
+  }
+  .switch .stop b { position: absolute; top: 54px; font-weight: 600; }
+  .lever {
+    position: absolute; top: 14px; left: calc(100% / 6); width: 36px; height: 36px;
+    margin-left: -18px; border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #fff 0, #c9ced4 45%, #8e979f 100%);
+    box-shadow: 0 2px 4px rgba(0,0,0,.35), inset 0 -2px 3px rgba(0,0,0,.25);
+    transition: left .35s cubic-bezier(.3, 1.4, .5, 1);
+  }
+  @media (prefers-reduced-motion: reduce) { .lever { transition: none; } }
+
+  .plates {
+    display: grid; grid-template-columns: repeat(3, 1fr); background: var(--plate);
+    border: 1px solid var(--line); border-radius: 10px; margin-top: 18px;
+  }
+  .plate {
+    position: relative; padding: 18px 20px 20px; min-width: 0;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .plate + .plate { border-left: 1px solid var(--line); }
+  .plate .head { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 22px; }
+  .tag { font: 600 14px/1 var(--cond); color: var(--muted); }
+  .tag.custom { color: var(--action); }
+  .playing { display: flex; align-items: center; gap: 7px; font: 600 14px/1 var(--cond); color: var(--ink); }
+  .playing::before {
+    content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--led);
+    box-shadow: 0 0 0 3px var(--led-glow);
+  }
+  .name {
+    font: 600 24px/1.15 var(--cond); margin: 0; overflow-wrap: anywhere; min-height: 1.15em;
+  }
+  .facts { color: var(--muted); font-size: 14px; margin: 4px 0 0; }
+  svg.curve { width: 100%; height: 84px; display: block; }
+  svg.curve .grid { stroke: var(--line); stroke-width: 1; }
+  svg.curve .line { fill: none; stroke: var(--curve); stroke-width: 2; vector-effect: non-scaling-stroke; }
+  svg.curve text { fill: var(--muted); font: 11px var(--sans); }
+  .actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; }
+
+  .rename { display: flex; gap: 6px; }
+  .rename input, .staged input {
+    flex: 1; min-width: 0; padding: 6px 10px; border: 1px solid var(--muted); border-radius: 6px;
+    background: var(--plate); font: 600 18px/1.2 var(--cond);
+  }
+  .staged { display: flex; flex-direction: column; gap: 10px; }
+  .staged .file { font-size: 14px; color: var(--muted); overflow-wrap: anywhere; margin: 0; }
+  .staged ul { margin: 0; padding-left: 18px; font-size: 14px; }
+  .staged label { font-size: 14px; color: var(--muted); display: grid; gap: 4px; }
+  .staged input:disabled { border-color: var(--line); color: var(--muted); }
+  progress { width: 100%; height: 6px; accent-color: var(--action); }
+  .msg { font-size: 14px; margin: 0; }
+  .msg.err { color: var(--danger); }
+  .msg.ok { color: var(--ok); }
+
+  .plate.drop::after {
+    content: "Drop to load here"; position: absolute; inset: 6px; border: 2px dashed var(--action);
+    border-radius: 8px; display: grid; place-items: center; background: color-mix(in srgb, var(--plate) 88%, transparent);
+    font: 600 20px var(--cond); color: var(--action);
+  }
+
+  /* ---- Voicing ---- */
+  .voicing { margin-top: 36px; }
+  .vhead { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; }
+  .vhead h2 { font: 700 26px/1.1 var(--cond); margin: 0; }
+  .vhead h2 span { font-weight: 500; color: var(--muted); font-size: 18px; margin-left: 6px; }
+  .vnote { color: var(--muted); font-size: 15px; margin: 6px 0 14px; max-width: 70ch; }
+  .btn[aria-pressed="true"] { background: var(--led); border-color: var(--led); color: #1a2330; }
+  .vgrid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); background: var(--plate);
+    border: 1px solid var(--line); border-radius: 10px;
+  }
+  .feature { padding: 18px 20px 20px; min-width: 0; display: flex; flex-direction: column; gap: 12px; }
+  .feature:not([hidden]) + .feature { border-left: 1px solid var(--line); }
+  .vgrid:has(> .feature[hidden]) { max-width: 520px; }
+  .feature header { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .feature h3 { font: 600 22px/1.15 var(--cond); margin: 0; }
+  .feature .desc { color: var(--muted); font-size: 14px; margin: 0; }
+  .feature.unavailable .rows { opacity: .5; }
+  .sw { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font: 600 15px/1 var(--cond); color: var(--muted); }
+  .sw input {
+    appearance: none; width: 40px; height: 22px; border-radius: 11px; margin: 0; cursor: pointer;
+    background: var(--line); position: relative; transition: background .15s;
+  }
+  .sw input::after {
+    content: ""; position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; border-radius: 50%;
+    background: var(--plate); box-shadow: 0 1px 2px rgba(0,0,0,.3); transition: left .15s;
+  }
+  .sw input:checked { background: var(--action); }
+  .sw input:checked::after { left: 21px; }
+  .sw input:checked + span { color: var(--action); }
+  .sw input:disabled { cursor: default; opacity: .5; }
+  @media (prefers-reduced-motion: reduce) { .sw input, .sw input::after { transition: none; } }
+  .rows { display: grid; gap: 10px; }
+  .row { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; align-items: baseline; }
+  .row label { font-size: 15px; }
+  .row output { font: 600 16px/1 var(--cond); font-variant-numeric: tabular-nums; }
+  .row input[type=range] { grid-column: 1 / -1; width: 100%; accent-color: var(--action); margin: 0; }
+  .feature details { margin-top: 0; }
+  .feature details .rows { margin-top: 10px; }
+
+  .help { margin-top: 28px; color: var(--muted); font-size: 15px; max-width: 70ch; }
+  .help p { margin: 0 0 8px; }
+  details { margin-top: 18px; color: var(--muted); font-size: 14px; }
+  summary { cursor: pointer; }
+  details pre { white-space: pre-wrap; font-size: 13px; margin: 8px 0 0; }
+
+  @media (max-width: 760px) {
+    .switch { display: none; }
+    .plates { grid-template-columns: 1fr; }
+    .plate + .plate { border-left: 0; border-top: 1px solid var(--line); }
+    .vgrid { grid-template-columns: 1fr; }
+    .feature:not([hidden]) + .feature { border-left: 0; border-top: 1px solid var(--line); }
+  }
+  @media (min-width: 761px) { .plate .pos { display: none; } }
+</style>
+</head>
+<body>
+<main>
+  <header class="top">
+    <h1>AcoustiMatch <span>IR Manager</span></h1>
+    <div class="conn" id="conn" hidden>
+      <span class="dot"></span><span id="connText"></span>
+      <button class="btn quiet" id="disconnect">Disconnect</button>
+    </div>
+  </header>
+
+  <section class="intro" id="intro">
+    <p>Choose which impulse response plays on each position of Toggle 1, using IRs you've made in AcoustiMatch or downloaded anywhere.</p>
+    <div class="note" id="unsupported" hidden>
+      This browser can't talk to USB devices. Open this page in Chrome or Edge on a Mac, Windows or Linux computer.
+    </div>
+    <ol class="steps">
+      <li>Plug a USB cable from your computer into the Daisy Seed's USB port on the pedal. The pedal can stay plugged into your amp, so you can hear each IR as you load it.</li>
+      <li>Click <strong>Connect pedal</strong>.</li>
+      <li>Pick <strong>Daisy Seed Built In</strong> from the list your browser shows, then click <strong>Connect</strong>.</li>
+    </ol>
+    <button class="btn primary" id="connect">Connect pedal</button>
+    <p class="msg err" id="connectErr" hidden></p>
+  </section>
+
+  <section class="panel" id="panel" hidden>
+    <div class="switch" aria-hidden="true">
+      <div class="track"></div>
+      <div class="stop"><i></i><b data-pos="0"></b></div>
+      <div class="stop"><i></i><b data-pos="1"></b></div>
+      <div class="stop"><i></i><b data-pos="2"></b></div>
+      <div class="lever" id="lever"></div>
+    </div>
+    <div class="plates" id="plates"></div>
+
+    <section class="voicing" id="voicing" hidden aria-labelledby="voicingTitle">
+      <div class="vhead">
+        <h2 id="voicingTitle">Voicing</h2>
+        <button class="btn" id="bypassAll" aria-pressed="false" title="Click to switch both off for an A/B; hold to hear them off only while held">Bypass all</button>
+      </div>
+      <p class="vnote">Shapes the IR sound only: with Mix at 0 the pedal is still the dry pickup. Changes play straight away and are saved on the pedal. Switching a feature off keeps its settings for next time.</p>
+      <div class="vgrid">
+        <article class="feature" id="featSoft">
+          <header>
+            <h3>Transient softener</h3>
+            <label class="sw"><input type="checkbox" id="softEnabled"><span>On</span></label>
+          </header>
+          <p class="desc">Eases the pickup's sharp attack ("quack") for a few milliseconds on each note, the way a mic hears the body bloom in.</p>
+          <div class="rows" data-keys="softAmount"></div>
+          <details>
+            <summary>Advanced</summary>
+            <div class="rows" data-keys="softKneeDb softFastMs softSlowMs softMaxCutDb"></div>
+          </details>
+        </article>
+        <article class="feature" id="featRefl">
+          <header>
+            <h3>Early reflections</h3>
+            <label class="sw"><input type="checkbox" id="reflEnabled"><span>On</span></label>
+          </header>
+          <p class="desc">Adds a little early room sound behind the IR, from close-miked to roomy.</p>
+          <div class="rows" data-keys="reflLevelDb reflSize reflDampingHz"></div>
+          <p class="msg" id="reflNote" hidden>Not in this firmware yet. The settings are saved for when it is.</p>
+        </article>
+      </div>
+      <p class="msg err" id="voicingErr" hidden></p>
+    </section>
+
+    <div class="help">
+      <p>To load an IR, drag a WAV file onto a position, or click <strong>Load IR</strong> or <strong>Replace</strong>. Flip Toggle 1 on the pedal to hear each one; the lever above follows it.</p>
+      <p>An empty position plays the dry pickup, with no IR. <strong>Clear slot</strong> empties a position. Changes save on the pedal straight away and stay after you unplug it, and after firmware updates.</p>
+    </div>
+    <details>
+      <summary>Pedal details</summary>
+      <pre id="details"></pre>
+    </details>
+  </section>
+</main>
+
+<template id="plateTpl">
+  <article class="plate">
+    <div class="head"><span class="tag"></span><span class="playing" hidden>Playing</span></div>
+    <span class="tag pos"></span>
+    <div class="view">
+      <h2 class="name"></h2>
+      <p class="facts"></p>
+    </div>
+    <svg class="curve" viewBox="0 0 300 84" preserveAspectRatio="none" role="img"></svg>
+    <div class="body"></div>
+    <input type="file" accept=".wav,audio/wav,audio/x-wav,audio/*" hidden>
+  </article>
+</template>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
