@@ -1,0 +1,98 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Hub for the QR code on the card shipped with every Chester, and for the URL
+// shown at the end of the YouTube video. Add a video or link by adding one
+// entry to `links`; nothing else on the page needs to change.
+const videoId = 'HRZu3HZbwvw';
+
+const links = [
+  {
+    title: 'Chester in a live mix',
+    blurb: 'Basin & Grange live, with Chester on the upright bass.',
+    href: '/microphones/chester#live-mix',
+  },
+  {
+    title: 'Specs and frequency response',
+    blurb: 'The numbers behind the sound, including measured response.',
+    href: '/microphones/chester#specs',
+  },
+  {
+    title: 'Questions and answers',
+    blurb: 'Fit, feedback, bowing, warranty, and the 30-day audition.',
+    href: '/microphones/chester#faq',
+  },
+  {
+    title: 'Chester in detail',
+    blurb: 'Photos, the story behind it, and how to order.',
+    href: '/microphones/chester',
+  },
+];
+---
+
+<BaseLayout
+  title="Chester Upright Bass Microphone: Getting Started - Molinello Music"
+  description="Getting started with Chester: what's in the case, how to install and remove it, plus demos, specs, and support."
+  ogImage="/images/chester/chester-v2-mounted-front.jpg"
+>
+  <section class="bg-brand-dark text-white pt-14 pb-10 md:pt-20 md:pb-14">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+      <p class="text-brand-orange font-heading font-semibold tracking-wider uppercase text-sm mb-3">Getting Started</p>
+      <h1 class="font-heading font-extrabold text-5xl md:text-6xl mb-4">Chester</h1>
+      <p class="text-gray-300 text-lg md:text-xl max-w-xl mx-auto">
+        Just got yours? Start with the video. It covers what's in the case, how to install Chester on your bass, and how to take it off again.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-brand-dark pb-14 md:pb-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="aspect-video rounded-xl overflow-hidden shadow-2xl bg-black">
+        <iframe
+          src={`https://www.youtube.com/embed/${videoId}`}
+          title="Chester upright bass microphone: Getting started"
+          class="w-full h-full"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <p class="text-gray-400 text-sm mt-3 text-center">
+        <a href={`https://youtu.be/${videoId}`} class="hover:text-brand-orange transition-colors">Watch on YouTube &rarr;</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-brand-warm py-14 md:py-20">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6">
+      <h2 class="font-heading font-bold text-2xl md:text-3xl mb-6 text-center">More about Chester</h2>
+      <ul class="space-y-4">
+        {links.map(link => (
+          <li>
+            <a href={link.href} class="group flex items-center justify-between gap-4 bg-white rounded-xl px-5 py-4 shadow-sm border border-black/5 hover:border-brand-orange hover:shadow-md transition">
+              <span>
+                <span class="block font-heading font-bold text-lg text-brand-dark">{link.title}</span>
+                <span class="block text-gray-600 text-sm mt-0.5">{link.blurb}</span>
+              </span>
+              <span class="text-brand-orange text-2xl shrink-0 group-hover:translate-x-1 transition-transform" aria-hidden="true">&rarr;</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="py-14 md:py-20">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="font-heading font-bold text-2xl md:text-3xl mb-4">Need a hand?</h2>
+      <p class="text-gray-600 text-lg leading-relaxed mb-6">
+        If anything about your Chester isn't right, or you just want help with placement, email me. Chester has a lifetime manufacturing warranty, and I answer every message personally.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="mailto:info@molinellomusic.com" class="bg-brand-orange text-white font-heading font-bold px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors">Email me</a>
+        <a href="tel:801-893-1171" class="border border-brand-dark/20 text-brand-dark font-heading font-bold px-6 py-3 rounded-lg hover:border-brand-orange hover:text-brand-orange transition-colors">Call 801-893-1171</a>
+      </div>
+      <p class="font-heading font-bold text-brand-dark mt-8">&mdash; Boyd Timothy</p>
+    </div>
+  </section>
+</BaseLayout>

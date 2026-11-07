@@ -6,7 +6,7 @@ const priceValidUntil = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000).toISOSt
 const productSchema = {
   '@context': 'https://schema.org',
   '@type': 'Product',
-  name: 'Chester Condenser Microphone for Upright Bass (V2)',
+  name: 'Chester Condenser Microphone for Upright Bass',
   description: 'A hand-built cardioid condenser microphone tuned specifically for upright bass. Lightweight, installs in seconds, and ready to plug into 48V phantom power.',
   image: 'https://www.molinellomusic.com/images/chester/chester-v2-mounted-front.jpg',
   brand: {
@@ -87,7 +87,6 @@ const fbPluginSrc = (videoUrl: string) =>
   <!-- Hero -->
   <section class="bg-brand-dark text-white py-16 md:py-24">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-      <p class="inline-block bg-brand-orange/20 text-brand-orange font-heading font-semibold text-xs tracking-wider uppercase px-3 py-1 rounded-full mb-4">New: Version 2</p>
       <h1 class="font-heading font-extrabold text-5xl md:text-6xl mb-4">Chester</h1>
       <p class="text-xl md:text-2xl text-brand-orange font-heading mb-2 text-balance max-w-2xl mx-auto">The microphone that makes your upright bass sound like <em>your</em> bass.</p>
       <p class="text-gray-400 max-w-2xl mx-auto">
@@ -122,14 +121,14 @@ const fbPluginSrc = (videoUrl: string) =>
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="md:flex gap-12 items-center">
         <div class="md:w-1/2 mb-8 md:mb-0">
-          <img src="/images/chester/chester-v2-mounted-front.jpg" alt="Chester V2 microphone mounted between the strings of an upright bass" class="rounded-xl shadow-lg w-full" />
+          <img src="/images/chester/chester-v2-mounted-front.jpg" alt="Chester microphone mounted between the strings of an upright bass" class="rounded-xl shadow-lg w-full" />
         </div>
         <div class="md:w-1/2">
           <h2 class="font-heading font-bold text-3xl mb-4">Built by an Upright Bassist Who Got Tired of Compromising</h2>
           <p class="text-gray-600 text-lg mb-4 leading-relaxed">
             Every bassist knows the struggle. Pickups don't sound natural and they quack. Clip-on mics are flimsy. Cheap condensers sound thin. Studio mics sound great, unless you're moving.
           </p>
-          <p class="text-brand-dark font-heading font-bold text-xl mb-4">Chester V2 solves all of that. In under 30 seconds.</p>
+          <p class="text-brand-dark font-heading font-bold text-xl mb-4">Chester solves all of that. In under 30 seconds.</p>
           <p class="text-gray-600 text-lg leading-relaxed mb-6">
             I rebuilt Chester to be lighter, faster to install, and tuned with a flat response specifically for the upright bass. The 40 Hz low cut and a natural high cut are built into the circuit, so all you need is 48V phantom power. It's plug and play and ready for the stage.
           </p>
@@ -171,7 +170,7 @@ const fbPluginSrc = (videoUrl: string) =>
           <div class="w-full max-w-[280px] aspect-[9/16] rounded-xl overflow-hidden shadow-lg bg-black">
             <iframe
               src="https://www.youtube.com/embed/rtg9je5kd6k"
-              title="Chester V2 installs in under 30 seconds"
+              title="Chester installs in under 30 seconds"
               class="w-full h-full"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -194,6 +193,31 @@ const fbPluginSrc = (videoUrl: string) =>
     </div>
   </section>
 
+  <!-- Getting started video -->
+  <section id="getting-started" class="py-16 md:py-24 bg-brand-charcoal text-white scroll-mt-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <p class="text-brand-orange font-heading font-semibold tracking-wider uppercase text-sm mb-2">Video</p>
+      <h2 class="font-heading font-bold text-3xl md:text-4xl mb-4">Getting Started with Chester</h2>
+      <p class="text-gray-300 text-lg max-w-2xl mx-auto mb-8">
+        What comes in the case, how to install Chester on your bass, how to take it off again, and a few tips along the way.
+      </p>
+      <div class="aspect-video rounded-xl overflow-hidden shadow-lg bg-black">
+        <iframe
+          src="https://www.youtube.com/embed/HRZu3HZbwvw"
+          title="Chester upright bass microphone: Getting started"
+          class="w-full h-full"
+          frameborder="0"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <p class="text-gray-400 text-sm mt-4">
+        Already have a Chester? <a href="/chester" class="text-brand-orange hover:underline">Everything for owners is on one page.</a>
+      </p>
+    </div>
+  </section>
+
   <!-- Preferred placement -->
   <section class="py-16 md:py-24">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
@@ -206,8 +230,8 @@ const fbPluginSrc = (videoUrl: string) =>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 max-w-3xl mx-auto mb-12">
-        <img src="/images/chester/chester-v2-placement-1.jpg" alt="Chester V2 mounted between the strings behind the bridge, capsule facing the body" loading="lazy" class="rounded-xl shadow-lg w-full" />
-        <img src="/images/chester/chester-v2-placement-2.jpg" alt="Close view of Chester V2 in its preferred position with the cable clipped to the connector" loading="lazy" class="rounded-xl shadow-lg w-full" />
+        <img src="/images/chester/chester-v2-placement-1.jpg" alt="Chester mounted between the strings behind the bridge, capsule facing the body" loading="lazy" class="rounded-xl shadow-lg w-full" />
+        <img src="/images/chester/chester-v2-placement-2.jpg" alt="Close view of Chester in its preferred position with the cable clipped to the connector" loading="lazy" class="rounded-xl shadow-lg w-full" />
       </div>
 
       <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -234,13 +258,13 @@ const fbPluginSrc = (videoUrl: string) =>
     </div>
   </section>
 
-  <!-- What's new in V2 -->
+  <!-- Features -->
   <section class="py-16 md:py-24 bg-brand-charcoal text-white">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-12">
-        <p class="text-brand-orange font-heading font-semibold tracking-wider uppercase text-sm mb-2">What's New</p>
-        <h2 class="font-heading font-bold text-3xl md:text-4xl mb-4">What Changed in V2</h2>
-        <p class="text-gray-400 max-w-2xl mx-auto">Every change came from gigging the original Chester and listening to bassists who actually use one.</p>
+        <p class="text-brand-orange font-heading font-semibold tracking-wider uppercase text-sm mb-2">Features</p>
+        <h2 class="font-heading font-bold text-3xl md:text-4xl mb-4">What Makes Chester Different</h2>
+        <p class="text-gray-400 max-w-2xl mx-auto">Every detail came from gigging with Chester and listening to bassists who actually use one.</p>
       </div>
 
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -317,7 +341,7 @@ const fbPluginSrc = (videoUrl: string) =>
   </section>
 
   <!-- Videos -->
-  <section class="py-16 md:py-24">
+  <section id="live-mix" class="py-16 md:py-24 scroll-mt-20">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <h2 class="font-heading font-bold text-3xl mb-3 text-center">Chester in a Live Mix</h2>
       <p class="text-gray-500 mb-10 text-center">Basin &amp; Grange live, with Chester on the upright bass.</p>
@@ -457,15 +481,15 @@ const fbPluginSrc = (videoUrl: string) =>
       </p>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
         {[
-          ['chester-v2-kit.jpg', 'Chester V2 with included XLR cable clip'],
-          ['chester-v2-swivel.jpg', 'Chester V2 keyed swivel detail'],
-          ['chester-v2-back.jpg', 'Chester V2 back showing Neutrik XLR connector'],
-          ['chester-v2-weight-oz.jpg', 'Chester V2 and clip on a scale reading 6.7 oz'],
-          ['chester-v2-mounted-front.jpg', 'Chester V2 mounted between the strings'],
-          ['chester-v2-mounted-side.jpg', 'Chester V2 side view with cable clip installed'],
-          ['chester-v2-case-open.jpg', 'Chester V2 packed in its foam-lined hard-shell case'],
-          ['chester-v2-case-open-top.jpg', 'Top-down view of Chester V2 nestled in the hard-shell case foam'],
-          ['chester-v2-case-closed.jpg', 'Chester V2 hard case with serial-numbered Molinello Music label'],
+          ['chester-v2-kit.jpg', 'Chester with included XLR cable clip'],
+          ['chester-v2-swivel.jpg', 'Chester keyed swivel detail'],
+          ['chester-v2-back.jpg', 'Chester back showing Neutrik XLR connector'],
+          ['chester-v2-weight-oz.jpg', 'Chester and clip on a scale reading 6.7 oz'],
+          ['chester-v2-mounted-front.jpg', 'Chester mounted between the strings'],
+          ['chester-v2-mounted-side.jpg', 'Chester side view with cable clip installed'],
+          ['chester-v2-case-open.jpg', 'Chester packed in its foam-lined hard-shell case'],
+          ['chester-v2-case-open-top.jpg', 'Top-down view of Chester nestled in the hard-shell case foam'],
+          ['chester-v2-case-closed.jpg', 'Chester hard case with serial-numbered Molinello Music label'],
         ].map(([file, alt]) => (
           <button type="button" class="block group cursor-zoom-in p-0 border-0 bg-transparent" data-lightbox-trigger aria-label={`View ${alt}`}>
             <img src={`/images/chester/${file}`} alt={alt} loading="lazy" class="rounded-lg shadow-md w-full aspect-square object-cover transition-opacity group-hover:opacity-90" />
@@ -548,9 +572,9 @@ const fbPluginSrc = (videoUrl: string) =>
   </script>
 
   <!-- Specs -->
-  <section class="py-16 md:py-24 bg-brand-charcoal text-white">
+  <section id="specs" class="py-16 md:py-24 bg-brand-charcoal text-white scroll-mt-20">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
-      <h2 class="font-heading font-bold text-3xl mb-10 text-center">Chester V2 Technical Specs</h2>
+      <h2 class="font-heading font-bold text-3xl mb-10 text-center">Chester Technical Specs</h2>
       <div class="grid sm:grid-cols-2 gap-x-12 gap-y-4">
         {[
           ['Capsule', 'Medium-size cardioid condenser'],
@@ -576,7 +600,7 @@ const fbPluginSrc = (videoUrl: string) =>
   </section>
 
   <!-- FAQ -->
-  <section class="py-16 md:py-24">
+  <section id="faq" class="py-16 md:py-24 scroll-mt-20">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
       <h2 class="font-heading font-bold text-3xl mb-10 text-center">Questions Bassists Ask Before Buying</h2>
       <div class="space-y-6">
@@ -596,6 +620,10 @@ const fbPluginSrc = (videoUrl: string) =>
           {
             q: 'What about feedback on stage?',
             a: 'At acoustic, bluegrass, jazz, and folk stage volumes, Chester gives you noticeably more gain before feedback than a large-diaphragm condenser: the medium capsule, the built-in 40 Hz low cut, and the capsule aimed into the body all work in your favor. On a very loud stage with monitors pointed at the bass, every microphone has limits. The preferred placement shown above is the most feedback-resistant spot I’ve found.',
+          },
+          {
+            q: 'How do I install it?',
+            a: 'Chester mounts between the strings below the bridge and takes under 30 seconds. The Getting Started video above shows what’s in the case, how to put it on, and how to take it off again.',
           },
           {
             q: 'Will it mark or damage my bass?',
@@ -632,10 +660,10 @@ const fbPluginSrc = (videoUrl: string) =>
   <!-- Measured response chart -->
   <section class="py-16 md:py-24 bg-brand-warm">
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
-      <h2 class="font-heading font-bold text-3xl mb-3 text-center">Chester V2 Frequency Response</h2>
+      <h2 class="font-heading font-bold text-3xl mb-3 text-center">Chester Frequency Response</h2>
       <p class="text-gray-600 text-center max-w-2xl mx-auto mb-8">The mids stay flat, so there are no hyped peaks to invite feedback on stage. The gentle low-end roll-off is intentional. When Chester is mounted on your bass, the proximity effect fills in the body and warmth, capturing how your bass actually sounds.</p>
       <div class="bg-white rounded-xl shadow-md p-4 md:p-8">
-        <img src="/images/chester/chester-v2-frequency-response.svg" alt="Chester V2 frequency response curve, showing a 40 Hz low cut, a flat response from roughly 100 Hz through 5 kHz, and a natural high cut starting around 7 kHz." class="w-full h-auto" />
+        <img src="/images/chester/chester-v2-frequency-response.svg" alt="Chester frequency response curve, showing a 40 Hz low cut, a flat response from roughly 100 Hz through 5 kHz, and a natural high cut starting around 7 kHz." class="w-full h-auto" />
         <p class="text-xs text-gray-500 text-center mt-4">Response normalized to 0dB at 1kHz.</p>
       </div>
     </div>
@@ -678,45 +706,13 @@ const fbPluginSrc = (videoUrl: string) =>
     </div>
   </section>
 
-  <!-- V1 Closeout -->
-  <section class="py-16 md:py-24 bg-brand-warm border-t-4 border-brand-orange">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-10">
-        <p class="text-brand-orange font-heading font-semibold tracking-wider uppercase text-sm mb-2">Final Units. While Supplies Last.</p>
-        <h2 class="font-heading font-bold text-3xl md:text-4xl mb-3">Original Chester (V1): $299</h2>
-        <p class="text-gray-600 max-w-2xl mx-auto">
-          The Chester that started it all. Same warm, woody tone. Mounted under the bridge with the original velcro tailpiece strap. Chester V1 has been sunset, but I still have a small number left at a closeout price.
-        </p>
-      </div>
-      <div class="md:flex gap-10 items-center bg-white rounded-xl shadow-md p-6 md:p-10">
-        <div class="md:w-1/2 mb-6 md:mb-0">
-          <img src="/images/chester/chester-mounted-closeup.jpg" alt="Original Chester V1 microphone mounted on upright bass" class="rounded-lg shadow-sm w-full" />
-        </div>
-        <div class="md:w-1/2">
-          <p class="font-heading font-extrabold text-4xl text-brand-dark mb-2">$299</p>
-          <p class="text-sm text-brand-orange font-heading font-semibold mb-4">Only 2 units remain</p>
-          <ul class="text-gray-600 text-sm space-y-2 mb-6">
-            <li>&#10003; Large-diaphragm condenser (26mm) in a 3" copper-pipe body</li>
-            <li>&#10003; Mounts below the bridge with included velcro tailpiece strap</li>
-            <li>&#10003; 48V phantom power. Ships with a hard flight case.</li>
-            <li>&#10003; Same 30-day audition period and lifetime build warranty</li>
-          </ul>
-          <a href="https://buy.stripe.com/8x25kDamF7Jv8HZ5mI8og0i" target="_blank" rel="noopener noreferrer" class="inline-block bg-brand-orange text-white font-heading font-bold px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors w-full text-center">
-            Buy a Chester V1
-          </a>
-          <p class="text-xs text-gray-500 mt-3 text-center">Only 2 left at this price. When they're gone, they're gone.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Bottom CTA -->
   <section class="py-16 md:py-24 bg-brand-dark text-white text-center">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
       <h2 class="font-heading font-bold text-3xl mb-4">Your Bass Has a Voice. Chester Lets It Speak.</h2>
       <p class="text-gray-400 mb-8">If you're ready to finally hear your upright the way you always wished it sounded:</p>
       <a href={buyNowUrl} target="_blank" rel="noopener noreferrer" class="inline-block bg-brand-orange text-white font-heading font-bold px-8 py-4 rounded-lg hover:bg-orange-600 transition-colors text-lg">
-        Buy a Chester V2
+        Buy a Chester
       </a>
       <p class="text-gray-500 text-sm mt-6">30-day audition &middot; Lifetime warranty &middot; Free U.S. shipping</p>
       <p class="text-gray-500 text-sm mt-2">Not sure yet? <a href="mailto:info@molinellomusic.com" class="text-brand-orange hover:underline">Email me your question</a> &mdash; you'll get me, not a support desk.</p>
