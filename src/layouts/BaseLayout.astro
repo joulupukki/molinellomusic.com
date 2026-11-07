@@ -11,6 +11,7 @@ interface Props {
 
 const { title, description = 'Hand-built microphones, guitar pedals, audio software, and original music by Boyd Timothy.', ogImage = '/images/logo-full.jpg', structuredData, noindex = false } = Astro.props;
 const currentPath = Astro.url.pathname;
+const currentYear = new Date().getFullYear();
 const canonicalURL = new URL(currentPath, Astro.site);
 ---
 
@@ -126,7 +127,7 @@ const canonicalURL = new URL(currentPath, Astro.site);
         <div class="flex justify-center mb-4">
           <img src="/images/logo-icon.png" alt="Molinello Music" class="h-10 w-10 opacity-80" />
         </div>
-        <p class="text-xs text-gray-500">&copy; 2024-2025 Molinello Music. All rights reserved.</p>
+        <p class="text-xs text-gray-500">&copy; 2024-{currentYear} Molinello Music. All rights reserved.</p>
       </div>
     </footer>
 
