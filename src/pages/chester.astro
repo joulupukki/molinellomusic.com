@@ -5,11 +5,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 // shown at the end of the YouTube video. Add a video or link by adding one
 // entry to `links`; nothing else on the page needs to change.
 const videoId = 'HRZu3HZbwvw';
+const placementVideoId = 'l0621b7QQWo';
 
 const links = [
   {
-    title: 'Chester in a live mix',
-    blurb: 'Basin & Grange live, with Chester on the upright bass.',
+    title: 'Live: Edgar Loudermilk Band',
+    blurb: 'Edgar plays \u201cCry Cry Darling\u201d with Chester.',
+    href: '/microphones/chester#live-mix-edgar',
+  },
+  {
+    title: 'Live: Basin & Grange',
+    blurb: 'Chester on the upright bass in a live mix.',
     href: '/microphones/chester#live-mix',
   },
   {
@@ -40,7 +46,7 @@ const links = [
       <p class="text-brand-orange font-heading font-semibold tracking-wider uppercase text-sm mb-3">Getting Started</p>
       <h1 class="font-heading font-extrabold text-5xl md:text-6xl mb-4">Chester</h1>
       <p class="text-gray-300 text-lg md:text-xl max-w-xl mx-auto">
-        Just got yours? Start with the video. It covers what's in the case, how to install Chester on your bass, and how to take it off again.
+        Just got yours? Start with this video. It covers what's in the case, how to install Chester on your bass, and how to take it off again.
       </p>
     </div>
   </section>
@@ -59,6 +65,32 @@ const links = [
       </div>
       <p class="text-gray-400 text-sm mt-3 text-center">
         <a href={`https://youtu.be/${videoId}`} class="hover:text-brand-orange transition-colors">Watch on YouTube &rarr;</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-brand-dark pb-14 md:pb-20 border-t border-white/10">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="text-center pt-14 md:pt-20 mb-8">
+        <p class="text-brand-orange font-heading font-semibold tracking-wider uppercase text-sm mb-3">Mic Placement</p>
+        <h2 class="font-heading font-extrabold text-3xl md:text-4xl text-white mb-4">Move the mic. Find your sound.</h2>
+        <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+          There's no single right spot. The grommet and keyed swivel let you aim Chester wherever you like. This video plays the same part in several positions so you can hear what changes.
+        </p>
+      </div>
+      <div class="aspect-video rounded-xl overflow-hidden shadow-2xl bg-black">
+        <iframe
+          src={`https://www.youtube.com/embed/${placementVideoId}`}
+          title="Upright bass mic placement: how position changes the sound (Chester microphone)"
+          class="w-full h-full"
+          frameborder="0"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <p class="text-gray-400 text-sm mt-3 text-center">
+        <a href={`https://youtu.be/${placementVideoId}`} class="hover:text-brand-orange transition-colors">Watch on YouTube &rarr;</a>
       </p>
     </div>
   </section>

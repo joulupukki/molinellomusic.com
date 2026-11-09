@@ -78,6 +78,14 @@ const endorsers = [
   },
 ];
 
+// Live clip from the Edgar Loudermilk Band. Same click-to-load treatment as the
+// endorsement video. poster is a still from the reel; set it to null to fall back
+// to a plain card with a play button.
+const liveReel = {
+  videoUrl: 'https://www.facebook.com/reel/961480760333808/',
+  poster: '/images/chester/edgar-live-poster.jpg' as string | null,
+};
+
 // Click-to-load: no Facebook code touches the page until a visitor presses play.
 const fbPluginSrc = (videoUrl: string) =>
   `https://www.facebook.com/plugins/video.php?href=${encodeURIComponent(videoUrl)}&show_text=false&width=300&autoplay=true`;
@@ -262,6 +270,24 @@ const fbPluginSrc = (videoUrl: string) =>
           </div>
         ))}
       </div>
+
+      <div id="placement-video" class="max-w-3xl mx-auto mt-16 text-center scroll-mt-20">
+        <h3 class="font-heading font-bold text-2xl md:text-3xl mb-3">Move the Mic. Find Your Sound.</h3>
+        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+          That's my favorite spot, but it isn't the only one. The grommet and keyed swivel let you aim Chester wherever you like. In this video I play the same part in several positions so you can hear what changes.
+        </p>
+        <div class="aspect-video rounded-xl overflow-hidden shadow-lg bg-black">
+          <iframe
+            src="https://www.youtube.com/embed/l0621b7QQWo"
+            title="Upright bass mic placement: how position changes the sound (Chester microphone)"
+            class="w-full h-full"
+            frameborder="0"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -360,6 +386,30 @@ const fbPluginSrc = (videoUrl: string) =>
           <iframe src="https://www.youtube.com/embed/iQT9kJUMJqY" title="Chester live demo 2" class="w-full h-full" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
+
+      <div id="live-mix-edgar" class="max-w-2xl mx-auto mt-16 text-center scroll-mt-20">
+        <h3 class="font-heading font-bold text-2xl mb-2">Edgar Loudermilk Band</h3>
+        <p class="text-gray-500 mb-6">Edgar on upright bass with Chester, playing &ldquo;Cry Cry Darling.&rdquo;</p>
+        <div class="relative mx-auto max-w-[560px] aspect-video rounded-lg overflow-hidden shadow-lg bg-brand-dark" data-fb-video data-video-src={fbPluginSrc(liveReel.videoUrl)}>
+          <button type="button" class="group absolute inset-0 w-full h-full p-0 border-0 bg-transparent cursor-pointer" aria-label="Play Edgar Loudermilk Band performing Cry Cry Darling">
+            {liveReel.poster && (
+              <img src={liveReel.poster} alt="Edgar Loudermilk Band playing Cry Cry Darling, with Chester on the upright bass" loading="lazy" class="w-full h-full object-cover transition-opacity group-hover:opacity-90" />
+            )}
+            {!liveReel.poster && (
+              <span class="absolute inset-0 flex flex-col items-center justify-end pb-10 px-6 text-white bg-gradient-to-b from-brand-charcoal to-brand-dark">
+                <span class="font-heading font-bold text-xl">Cry Cry Darling</span>
+                <span class="text-sm text-gray-400 mt-1">Edgar Loudermilk Band</span>
+              </span>
+            )}
+            <span aria-hidden="true" class="absolute inset-0 flex items-center justify-center">
+              <span class="w-16 h-16 rounded-full bg-brand-orange/90 flex items-center justify-center shadow-lg transition-transform group-hover:scale-105">
+                <span class="block w-0 h-0 border-y-[10px] border-y-transparent border-l-[16px] border-l-white ml-1"></span>
+              </span>
+            </span>
+          </button>
+        </div>
+        <p class="text-xs text-gray-500 mt-4">Edgar plays a Chester through an endorsement arrangement with Molinello Music.</p>
+      </div>
     </div>
   </section>
 
@@ -444,8 +494,10 @@ const fbPluginSrc = (videoUrl: string) =>
       box.querySelector('button')?.addEventListener('click', () => {
         const src = box.dataset.videoSrc;
         if (!src) return;
+        const url = new URL(src);
+        url.searchParams.set('width', String(Math.round(box.clientWidth)));
         const frame = document.createElement('iframe');
-        frame.src = src;
+        frame.src = url.toString();
         frame.className = 'absolute inset-0 w-full h-full';
         frame.setAttribute('frameborder', '0');
         frame.setAttribute('scrolling', 'no');
@@ -631,6 +683,10 @@ const fbPluginSrc = (videoUrl: string) =>
           {
             q: 'How do I install it?',
             a: 'Chester mounts between the strings below the bridge and takes under 30 seconds. The Getting Started video above shows what’s in the case, how to put it on, and how to take it off again.',
+          },
+          {
+            q: 'Where should I put the microphone?',
+            a: 'I mount mine between the strings just above the tailpiece with the capsule facing the body of the bass, because it gives the most balanced tone and the best feedback rejection. There isn’t one right spot, though. The keyed swivel lets you aim Chester wherever you like, and the placement video on this page plays the same part in several positions so you can hear the difference.',
           },
           {
             q: 'Will it mark or damage my bass?',
