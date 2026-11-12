@@ -19,7 +19,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <div class="max-w-5xl mx-auto px-4 sm:px-6">
       <div class="md:flex gap-12 items-center">
         <div class="md:w-3/5 mb-8 md:mb-0">
-          <img src="/images/acoustimatch/screenshot.png" alt="AcoustiMatch showing EQ matching curve" class="rounded-xl shadow-lg w-full" />
+          <img src="/images/acoustimatch/acoustimatch-eq.png" alt="AcoustiMatch showing the pickup and microphone spectra, the match curve, and an editable EQ band" class="rounded-xl shadow-lg w-full" width="1960" height="1280" />
         </div>
         <div class="md:w-2/5">
           <h2 class="font-heading font-bold text-2xl md:text-3xl mb-4">Impulse Response Creator</h2>
@@ -43,16 +43,19 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <h2 class="font-heading font-bold text-3xl text-center mb-12">How It Works</h2>
       <div class="grid md:grid-cols-3 gap-8">
         <div class="text-center">
+          <img src="/images/acoustimatch/acoustimatch-setup.png" alt="AcoustiMatch setup screen with slots for a pickup recording and a microphone recording" class="rounded-lg shadow-md w-full mb-6" loading="lazy" />
           <div class="w-14 h-14 rounded-full bg-brand-dark text-white flex items-center justify-center mx-auto mb-4 font-heading font-bold text-xl">1</div>
           <h3 class="font-heading font-bold text-lg mb-2">Record</h3>
           <p class="text-gray-600">Play your instrument while AcoustiMatch captures both the pickup and microphone signals simultaneously.</p>
         </div>
         <div class="text-center">
+          <img src="/images/acoustimatch/acoustimatch-app.png" alt="AcoustiMatch showing the computed match curve" class="rounded-lg shadow-md w-full mb-6" loading="lazy" />
           <div class="w-14 h-14 rounded-full bg-brand-dark text-white flex items-center justify-center mx-auto mb-4 font-heading font-bold text-xl">2</div>
           <h3 class="font-heading font-bold text-lg mb-2">Match</h3>
           <p class="text-gray-600">The app analyzes the spectral differences and computes an EQ curve that transforms one into the other.</p>
         </div>
         <div class="text-center">
+          <img src="/images/acoustimatch/acoustimatch-export.png" alt="AcoustiMatch export impulse response panel with length and sample rate options" class="rounded-lg shadow-md w-full mb-6" loading="lazy" />
           <div class="w-14 h-14 rounded-full bg-brand-dark text-white flex items-center justify-center mx-auto mb-4 font-heading font-bold text-xl">3</div>
           <h3 class="font-heading font-bold text-lg mb-2">Export IR</h3>
           <p class="text-gray-600">Export the result as a standard impulse response file you can load into any IR loader or convolution plugin.</p>
@@ -64,12 +67,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   <!-- Pricing -->
   <section class="py-16 md:py-24">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
-      <h2 class="font-heading font-bold text-3xl mb-4">Pricing</h2>
+      <h2 class="font-heading font-bold text-3xl mb-4">Try the Beta</h2>
       <p class="text-gray-600 text-lg mb-8 leading-relaxed">
-        EQ matching is <strong>completely free</strong> in both the standalone app and DAW plugin. To export impulse responses, you'll need a license key.
+        AcoustiMatch is currently in beta. Download the standalone app or DAW plugin below and try it on your own recordings.
       </p>
       <p class="text-gray-600 text-lg leading-relaxed">
-        AcoustiMatch is currently in beta testing. If you'd like to get early access to the app and plugin, please <a href="/contact" class="text-brand-orange font-bold hover:underline">contact us</a>.
+        I'd love to hear how the impulse responses sound on your rig, and what you'd change. Please <a href="/contact" class="text-brand-orange font-bold hover:underline">send feedback</a>.
       </p>
     </div>
   </section>
@@ -95,15 +98,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
       <h2 class="font-heading font-bold text-3xl mb-4">Downloads</h2>
       <p class="text-gray-600 text-lg mb-8">
-        Download the latest version of AcoustiMatch. EQ matching works immediately — a license key is only needed to export impulse responses.
+        Download the latest beta of AcoustiMatch for Mac or Windows.
       </p>
       <div class="bg-white rounded-xl shadow-lg p-8 max-w-md mx-auto">
-        <p class="font-heading font-bold text-lg text-brand-dark mb-1">v1.0.5</p>
-        <p class="text-gray-500 text-sm mb-6">Latest release</p>
+        <p class="font-heading font-bold text-lg text-brand-dark mb-1">v1.1.0</p>
+        <p class="text-gray-500 text-sm mb-6">Latest beta release</p>
         <div class="flex flex-col gap-6">
           <div>
             <a
-              href="/downloads/acoustimatch/v1.0.5/AcoustiMatch-v1.0.5-mac.zip"
+              href="/downloads/acoustimatch/v1.1.0/AcoustiMatch-v1.1.0-mac.zip"
               class="inline-flex items-center justify-center gap-2 bg-brand-dark text-white font-heading font-bold px-6 py-3 rounded-lg hover:bg-brand-charcoal transition-colors"
             >
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V3" /></svg>
@@ -113,7 +116,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           </div>
           <div>
             <a
-              href="/downloads/acoustimatch/v1.0.5/AcoustiMatch-v1.0.5-windows.zip"
+              href="/downloads/acoustimatch/v1.1.0/AcoustiMatch-v1.1.0-windows.zip"
               class="inline-flex items-center justify-center gap-2 bg-brand-dark text-white font-heading font-bold px-6 py-3 rounded-lg hover:bg-brand-charcoal transition-colors"
             >
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V3" /></svg>
