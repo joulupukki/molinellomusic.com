@@ -38,6 +38,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
 
         <div>
+          <label for="subject" class="block font-heading font-semibold text-brand-dark mb-2">Subject</label>
+          <input
+            type="text"
+            name="subject"
+            id="subject"
+            value="Message from molinellomusic.com"
+            class="w-full border border-gray-300 rounded-lg px-4 py-3 bg-white text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-orange focus:border-brand-orange"
+          />
+        </div>
+
+        <div>
           <label for="message" class="block font-heading font-semibold text-brand-dark mb-2">Message</label>
           <textarea
             name="message"
@@ -55,6 +66,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           Send Message
         </button>
       </form>
+
+      <p class="text-gray-500 text-sm text-center mt-10">
+        Prefer email? <a href="mailto:info@molinellomusic.com" class="text-brand-orange hover:underline">info@molinellomusic.com</a>
+      </p>
     </div>
   </section>
+
+  <script>
+    // Links like /contact?subject=... (For Sale, amp commissions) prefill the subject.
+    const subject = new URLSearchParams(window.location.search).get('subject');
+    const field = document.getElementById('subject') as HTMLInputElement | null;
+    if (subject && field) {
+      field.value = subject.slice(0, 200);
+      document.getElementById('message')?.focus();
+    }
+  </script>
 </BaseLayout>

@@ -1,0 +1,73 @@
+{
+  "_readme": "Listings for /for-sale. Only entries with published: true render. status is available | pending | sold. Sold items are hidden unless showSold is true. price is optional; leave it out to show no price. photos are paths under /public.",
+  "showSold": false,
+  "items": [
+    {
+      "id": "18w-tmb-head",
+      "title": "Molinello 18W TMB Amplifier Head",
+      "published": true,
+      "status": "available",
+      "dateListed": "2026-11-14",
+      "condition": "Used, working, hand-built",
+      "photos": ["/images/amplifiers/18w-tmb-front.jpg"],
+      "description": "A Marshall-style all-tube 18-watt head with two channels, built from a Mojotone 18 Watt TMB kit in a 19.75\" head cabinet I made for it. Channel one is the classic 18-watt circuit with big JTM 45-like tones. Channel two uses a JCM 800 preamp with Treble, Mid, Bass and Master Volume controls. Cathode-biased, two EL84s, EZ81 rectifier. It is loud.",
+      "specs": [
+        ["Output", "~18 Watts, Class AB, all tube"],
+        ["Circuit", "Marshall 1974 & Marshall 2204 (JCM 800)"],
+        ["Tubes", "ECC83/12AX7 (3), EL84 (2), EZ81 rectifier"],
+        ["Transformers", "Mojotone 18W power (MOJO 7000018) and output (MOJO 7000118)"],
+        ["Cabinet", "Hand-made head, 19.75\" wide"]
+      ]
+    },
+    {
+      "id": "sdc-84-pair",
+      "title": "Microphone Parts SDC-84 stereo matched pair",
+      "published": false,
+      "status": "available",
+      "dateListed": "",
+      "condition": "",
+      "photos": [],
+      "description": ""
+    },
+    {
+      "id": "flatiron-a-artist",
+      "title": "1990s Flatiron A Artist mandolin",
+      "published": false,
+      "status": "available",
+      "dateListed": "",
+      "condition": "",
+      "photos": [],
+      "description": ""
+    },
+    {
+      "id": "fishman-preamp",
+      "title": "Fishman preamp",
+      "published": false,
+      "status": "available",
+      "dateListed": "",
+      "condition": "",
+      "photos": [],
+      "description": ""
+    },
+    {
+      "id": "greenlee-punch",
+      "title": "Vintage Greenlee conduit punch",
+      "published": false,
+      "status": "available",
+      "dateListed": "",
+      "condition": "",
+      "photos": [],
+      "description": ""
+    },
+    {
+      "id": "guitar-pedals",
+      "title": "Electric guitar pedals",
+      "published": false,
+      "status": "available",
+      "dateListed": "",
+      "condition": "",
+      "photos": [],
+      "description": ""
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { listings } from '../data/for-sale';
+import { contactHref } from '../data/site';
+
+const statusLabel = { available: 'Available', pending: 'Sale pending', sold: 'Sold' } as const;
+const formatDate = (iso: string) =>
+  iso ? new Date(`${iso}T12:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '';
+---
+
+<BaseLayout
+  title="For Sale - Molinello Music"
+  description="Spare gear and builds from the Molinello bench and studio: amps, instruments and parts I'm letting go of."
+>
+  <section class="bg-brand-dark text-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-12 md:py-20 text-center">
+      <h1 class="font-heading font-extrabold text-4xl md:text-5xl mb-4">For Sale</h1>
+      <p class="text-gray-300 text-lg max-w-xl mx-auto">
+        Gear from my bench and studio that I'm letting go of. Local pickup in Highland, Utah, or shipping by arrangement; we'll sort out payment by email.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-14 md:py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      {listings.length === 0 ? (
+        <div class="text-center max-w-md mx-auto py-10">
+          <p class="font-heading font-bold text-xl mb-2">Nothing listed right now</p>
+          <p class="text-gray-600 mb-6">Check back, or get in touch if you're looking for something in particular.</p>
+          <a href={contactHref('For Sale question')} class="inline-block bg-brand-orange text-white font-heading font-bold px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors">Get in touch</a>
+        </div>
+      ) : (
+        <div class="grid md:grid-cols-2 gap-8">
+          {listings.map((item) => (
+            <article id={item.id} class:list={["bg-white rounded-xl shadow-md overflow-hidden border border-black/5 flex flex-col scroll-mt-20", item.status === 'sold' && "opacity-60"]}>
+              {item.photos[0] && (
+                <img src={item.photos[0]} alt={item.title} loading="lazy" class="w-full aspect-[4/3] object-cover" />
+              )}
+              {item.photos.length > 1 && (
+                <div class="grid grid-cols-4 gap-1 p-1 bg-gray-100">
+                  {item.photos.slice(1).map((src, i) => (
+                    <a href={src} target="_blank" rel="noopener"><img src={src} alt={`${item.title}, photo ${i + 2}`} loading="lazy" class="w-full aspect-square object-cover" /></a>
+                  ))}
+                </div>
+              )}
+              <div class="p-6 flex-1 flex flex-col">
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                  <span class:list={[
+                    "text-xs font-heading font-bold uppercase tracking-wider px-2.5 py-1 rounded-full",
+                    item.status === 'available' && "bg-green-100 text-green-800",
+                    item.status === 'pending' && "bg-amber-100 text-amber-800",
+                    item.status === 'sold' && "bg-gray-200 text-gray-600",
+                  ]}>{statusLabel[item.status]}</span>
+                  {item.dateListed && <span class="text-xs text-gray-500">Listed {formatDate(item.dateListed)}</span>}
+                </div>
+                <h2 class="font-heading font-bold text-2xl mb-1">{item.title}</h2>
+                {item.price && <p class="font-heading font-extrabold text-xl text-brand-dark mb-2">{item.price}</p>}
+                {item.condition && <p class="text-sm text-gray-500 mb-3"><span class="font-heading font-semibold">Condition:</span> {item.condition}</p>}
+                <p class="text-gray-700 leading-relaxed mb-4">{item.description}</p>
+                {item.specs && item.specs.length > 0 && (
+                  <table class="w-full text-sm mb-5">
+                    <caption class="sr-only">{item.title} details</caption>
+                    <tbody>
+                      {item.specs.map(([k, v]) => (
+                        <tr class="border-t border-gray-200 align-top">
+                          <th scope="row" class="text-left font-heading font-semibold text-gray-500 py-2 pr-4 whitespace-nowrap">{k}</th>
+                          <td class="py-2">{v}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                )}
+                {item.status !== 'sold' && (
+                  <a href={contactHref(`Question about: ${item.title}`)} class="mt-auto self-start bg-brand-orange text-white font-heading font-bold px-5 py-2.5 rounded-lg hover:bg-orange-600 transition-colors">
+                    Ask about this
+                  </a>
+                )}
+              </div>
+            </article>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>
