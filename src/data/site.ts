@@ -46,7 +46,7 @@ export const nav: NavItem[] = [
     match: ['/microphones', '/chester', '/software'],
     links: [
       { label: 'Chester', href: '/microphones/chester', blurb: 'Upright bass microphone' },
-      { label: 'AcoustiMatch', href: '/software/acoustimatch', blurb: 'Make a pickup sound like a mic' },
+      { label: 'AcoustiMatch', href: '/software/acoustimatch', blurb: 'For when a mic isn\'t an option' },
     ],
   },
   {

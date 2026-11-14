@@ -10,7 +10,7 @@ interface Props {
   noindex?: boolean;
 }
 
-const { title, description = 'Stage sound for acoustic musicians: the Chester upright bass microphone and AcoustiMatch, hand-built in Utah. Plus tube amps, guitar pedals and the label behind Basin & Grange.', ogImage = '/images/logo-full.jpg', structuredData, noindex = false } = Astro.props;
+const { title, description = 'Stage sound for acoustic musicians, starting with Chester, a hand-built upright bass microphone made in Utah. Plus tube amps, guitar pedals and the label behind Basin & Grange.', ogImage = '/images/logo-full.jpg', structuredData, noindex = false } = Astro.props;
 const currentPath = Astro.url.pathname;
 const currentYear = new Date().getFullYear();
 const canonicalURL = new URL(currentPath, Astro.site);
