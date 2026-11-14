@@ -1,5 +1,5 @@
 {
-  "_readme": "Listings for /for-sale. Only entries with published: true render. status is available | pending | sold. Sold items are hidden unless showSold is true. price is optional; leave it out to show no price. photos are {src, thumb?, alt} objects with paths under /public; the first photo is the main image. note is an optional highlighted line.",
+  "_readme": "Listings for /for-sale. Only entries with published: true render. status is available | pending | sold. Sold items are hidden unless showSold is true. price is optional; leave it out to show no price. photos are {src, thumb?, alt} objects with paths under /public; the first photo is the main image. note is an optional highlighted line. videos is an optional list of {url, title} links.",
   "showSold": false,
   "items": [
     {
@@ -95,7 +95,13 @@
         ["Transformers", "Mojotone 18W power (MOJO 7000018) and output (MOJO 7000118)"],
         ["Cabinet", "Hand-made head, 19.75\" wide"]
       ],
-      "note": "Amp head only. The speaker cabinet in some photos is not included."
+      "note": "Amp head only. The speaker cabinet in some photos is not included.",
+      "videos": [
+        {
+          "url": "https://youtu.be/X3mDVDV6fvQ",
+          "title": "Jake Workman playing my Telecaster straight into this amp"
+        }
+      ]
     },
     {
       "id": "sdc-84-pair",

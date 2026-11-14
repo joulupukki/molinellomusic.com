@@ -82,6 +82,23 @@ const formatDate = (iso: string) =>
                   <p class="text-sm font-heading font-semibold text-brand-dark bg-brand-warm border-l-4 border-brand-orange px-3 py-2 rounded-r mb-4">{item.note}</p>
                 )}
                 <p class="text-gray-700 leading-relaxed mb-4">{item.description}</p>
+                {item.videos && item.videos.length > 0 && (
+                  <ul class="space-y-2 mb-5">
+                    {item.videos.map((video) => (
+                      <li>
+                        <a href={video.url} target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 rounded-lg border border-black/10 px-3 py-2.5 hover:border-brand-orange transition-colors">
+                          <span class="shrink-0 w-9 h-9 rounded-full bg-brand-orange text-white flex items-center justify-center" aria-hidden="true">
+                            <svg class="w-4 h-4 ml-0.5" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z" /></svg>
+                          </span>
+                          <span class="text-sm">
+                            <span class="block font-heading font-semibold text-brand-dark group-hover:text-brand-orange transition-colors">{video.title}</span>
+                            <span class="block text-gray-500">Watch on YouTube</span>
+                          </span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
                 {item.specs && item.specs.length > 0 && (
                   <table class="w-full text-sm mb-5">
                     <caption class="sr-only">{item.title} details</caption>

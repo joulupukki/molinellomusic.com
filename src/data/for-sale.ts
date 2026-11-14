@@ -17,6 +17,7 @@ export interface Listing {
   condition: string;
   photos: ListingPhoto[];
   note?: string;
+  videos?: { url: string; title: string }[];
   description: string;
   price?: string;
   specs?: [string, string][];
