@@ -11,6 +11,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <p class="text-gray-400 text-lg max-w-2xl mx-auto">
         Make your acoustic instrument's pickup sound like a real microphone.
       </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-4">
+        <a href="#downloads" class="inline-block bg-brand-orange text-white font-heading font-bold px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors">Download the Beta</a>
+        <a href="/software/acoustimatch/guide" class="inline-block border border-white/30 text-white font-heading font-bold px-6 py-3 rounded-lg hover:border-brand-orange hover:text-brand-orange transition-colors">User Guide</a>
+      </div>
     </div>
   </section>
 
@@ -28,6 +32,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           </p>
           <p class="text-gray-600 mb-4 leading-relaxed">
             Load the IR into any convolution plugin or IR loader in your DAW, live rig, or standalone player — and your pickup will sound remarkably close to your mic'd tone.
+          </p>
+          <p class="text-gray-600 mb-4 leading-relaxed">
+            Fine-tune the result with up to 16 EQ points (bells, shelves, and low or high cuts) and an Attack control that tames a piezo's quacky attack.
           </p>
           <p class="text-gray-600 leading-relaxed">
             Available as a <strong>standalone app</strong> and a <strong>DAW plugin</strong> (VST3/AU/AAX).
@@ -61,6 +68,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           <p class="text-gray-600">Export the result as a standard impulse response file you can load into any IR loader or convolution plugin.</p>
         </div>
       </div>
+      <p class="text-center text-gray-600 mt-12">
+        Step-by-step instructions, recording tips and troubleshooting are in the <a href="/software/acoustimatch/guide" class="text-brand-orange font-bold hover:underline">AcoustiMatch User Guide</a>.
+      </p>
     </div>
   </section>
 
@@ -101,12 +111,12 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         Download the latest beta of AcoustiMatch for Mac or Windows.
       </p>
       <div class="bg-white rounded-xl shadow-lg p-8 max-w-md mx-auto">
-        <p class="font-heading font-bold text-lg text-brand-dark mb-1">v1.1.0</p>
+        <p class="font-heading font-bold text-lg text-brand-dark mb-1">v1.2.0</p>
         <p class="text-gray-500 text-sm mb-6">Latest beta release</p>
         <div class="flex flex-col gap-6">
           <div>
             <a
-              href="/downloads/acoustimatch/v1.1.0/AcoustiMatch-v1.1.0-mac.zip"
+              href="/downloads/acoustimatch/v1.2.0/AcoustiMatch-v1.2.0-mac.zip"
               class="inline-flex items-center justify-center gap-2 bg-brand-dark text-white font-heading font-bold px-6 py-3 rounded-lg hover:bg-brand-charcoal transition-colors"
             >
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V3" /></svg>
@@ -116,7 +126,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
           </div>
           <div>
             <a
-              href="/downloads/acoustimatch/v1.1.0/AcoustiMatch-v1.1.0-windows.zip"
+              href="/downloads/acoustimatch/v1.2.0/AcoustiMatch-v1.2.0-windows.zip"
               class="inline-flex items-center justify-center gap-2 bg-brand-dark text-white font-heading font-bold px-6 py-3 rounded-lg hover:bg-brand-charcoal transition-colors"
             >
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5m0 0l5-5m-5 5V3" /></svg>
@@ -125,6 +135,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             <p class="text-gray-500 text-sm mt-2">Windows 10 or 11, 64-bit. Standalone app and VST3 plugin. Not code-signed yet, so Windows may show a SmartScreen warning: choose &ldquo;More info&rdquo;, then &ldquo;Run anyway&rdquo;.</p>
           </div>
         </div>
+        <p class="text-gray-500 text-sm mt-8 pt-6 border-t border-gray-200">
+          New in 1.2: low and high cuts and shelves for EQ points, plus a user guide. Each download includes the guide as a PDF; you can also <a href="/software/acoustimatch/guide" class="text-brand-orange font-bold hover:underline">read it online</a> or <a href="/downloads/acoustimatch/AcoustiMatch-User-Guide.pdf" class="text-brand-orange font-bold hover:underline">download the PDF</a>.
+        </p>
       </div>
     </div>
   </section>

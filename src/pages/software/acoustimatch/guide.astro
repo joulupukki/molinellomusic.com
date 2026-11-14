@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+// Generated from the app repo's docs/user-guide.html by
+// scripts/sync-acoustimatch-guide.sh. Edit the guide there, then re-sync.
+import guide from '../../../data/acoustimatch-guide.html?raw';
+---
+
+<BaseLayout title="AcoustiMatch User Guide - Molinello Music" description="How to record, build a match, shape it with EQ points and export an impulse response with AcoustiMatch." ogImage="/images/acoustimatch/icon.png">
+  <div class="border-b border-gray-200 bg-brand-warm">
+    <div class="max-w-[760px] mx-auto px-5 py-3 flex items-center justify-between gap-4 text-sm font-heading font-semibold">
+      <a href="/software/acoustimatch" class="text-gray-600 hover:text-brand-orange transition-colors">&larr; AcoustiMatch</a>
+      <div class="flex items-center gap-5">
+        <a href="/software/acoustimatch#downloads" class="text-gray-600 hover:text-brand-orange transition-colors">Downloads</a>
+        <a href="/downloads/acoustimatch/AcoustiMatch-User-Guide.pdf" class="text-brand-orange hover:underline">PDF</a>
+      </div>
+    </div>
+  </div>
+
+  <Fragment set:html={guide} />
+</BaseLayout>
+
+<style is:global>
+  /* Undo the parts of Tailwind's reset that the guide's own styles rely on
+     browser defaults for. Guide styles stay in the app repo. */
+  .am-guide ul { list-style: disc; }
+  .am-guide ol { list-style: decimal; }
+  .am-guide svg.am-shape { display: inline-block; }
+  .am-guide h2, .am-guide h3 { scroll-margin-top: 1rem; }
+  /* Long file names and paths in the install table would widen the page on phones */
+  .am-guide td, .am-guide code { overflow-wrap: anywhere; }
+</style>
