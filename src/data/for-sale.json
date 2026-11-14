@@ -104,18 +104,106 @@
       ]
     },
     {
-      "id": "sdc-84-pair",
-      "title": "Microphone Parts SDC-84 stereo matched pair",
-      "published": false,
+      "id": "flatiron-a-artist",
+      "title": "1994 Flatiron A5-Artist Mandolin",
+      "published": true,
       "status": "available",
-      "dateListed": "",
-      "condition": "",
-      "photos": [],
-      "description": ""
+      "dateListed": "2026-11-14",
+      "condition": "Used, with original hard-shell case",
+      "photos": [
+        {
+          "src": "/images/for-sale/flatiron-a5-artist/full/img-1145.jpg",
+          "thumb": "/images/for-sale/flatiron-a5-artist/thumb/img-1145.jpg",
+          "alt": "Flatiron A5-Artist mandolin in its open hard case"
+        },
+        {
+          "src": "/images/for-sale/flatiron-a5-artist/full/img-1146.jpg",
+          "thumb": "/images/for-sale/flatiron-a5-artist/thumb/img-1146.jpg",
+          "alt": "Carved spruce top in sunburst, f-holes, adjustable bridge and engraved tailpiece"
+        },
+        {
+          "src": "/images/for-sale/flatiron-a5-artist/full/img-1153.jpg",
+          "thumb": "/images/for-sale/flatiron-a5-artist/thumb/img-1153.jpg",
+          "alt": "Treble side of the mandolin resting on its case"
+        },
+        {
+          "src": "/images/for-sale/flatiron-a5-artist/full/img-1152.jpg",
+          "thumb": "/images/for-sale/flatiron-a5-artist/thumb/img-1152.jpg",
+          "alt": "Bass side showing the bound body and figured maple sides"
+        },
+        {
+          "src": "/images/for-sale/flatiron-a5-artist/full/img-1157.jpg",
+          "thumb": "/images/for-sale/flatiron-a5-artist/thumb/img-1157.jpg",
+          "alt": "Close view of the top, bridge, f-holes and bound fingerboard extension"
+        },
+        {
+          "src": "/images/for-sale/flatiron-a5-artist/full/img-1159.jpg",
+          "thumb": "/images/for-sale/flatiron-a5-artist/thumb/img-1159.jpg",
+          "alt": "Back of the mandolin: flamed maple with a sunburst finish"
+        },
+        {
+          "src": "/images/for-sale/flatiron-a5-artist/full/img-1149.jpg",
+          "thumb": "/images/for-sale/flatiron-a5-artist/thumb/img-1149.jpg",
+          "alt": "Back and neck, standing in the case"
+        },
+        {
+          "src": "/images/for-sale/flatiron-a5-artist/full/img-1150.jpg",
+          "thumb": "/images/for-sale/flatiron-a5-artist/thumb/img-1150.jpg",
+          "alt": "Close-up of the flamed maple back"
+        },
+        {
+          "src": "/images/for-sale/flatiron-a5-artist/full/img-1147.jpg",
+          "thumb": "/images/for-sale/flatiron-a5-artist/thumb/img-1147.jpg",
+          "alt": "Bound ebony fingerboard with pearl dot markers"
+        },
+        {
+          "src": "/images/for-sale/flatiron-a5-artist/full/img-1148.jpg",
+          "thumb": "/images/for-sale/flatiron-a5-artist/thumb/img-1148.jpg",
+          "alt": "Black headstock face with The Flatiron script and fern inlay, gold tuners"
+        },
+        {
+          "src": "/images/for-sale/flatiron-a5-artist/full/img-1156.jpg",
+          "thumb": "/images/for-sale/flatiron-a5-artist/thumb/img-1156.jpg",
+          "alt": "Headstock from an angle, showing the binding and pearl inlay"
+        },
+        {
+          "src": "/images/for-sale/flatiron-a5-artist/full/img-1151.jpg",
+          "thumb": "/images/for-sale/flatiron-a5-artist/thumb/img-1151.jpg",
+          "alt": "Back of the headstock: gold engraved tuner plates with pearloid buttons"
+        },
+        {
+          "src": "/images/for-sale/flatiron-a5-artist/full/img-1155.jpg",
+          "thumb": "/images/for-sale/flatiron-a5-artist/thumb/img-1155.jpg",
+          "alt": "Engraved gold tailpiece cover reading The Flatiron"
+        },
+        {
+          "src": "/images/for-sale/flatiron-a5-artist/full/img-1154.jpg",
+          "thumb": "/images/for-sale/flatiron-a5-artist/thumb/img-1154.jpg",
+          "alt": "Tailpiece and the 1/4\" endpin jack for the K&K pickup"
+        },
+        {
+          "src": "/images/for-sale/flatiron-a5-artist/full/img-1158.jpg",
+          "thumb": "/images/for-sale/flatiron-a5-artist/thumb/img-1158.jpg",
+          "alt": "Interior label: Model A5-Artist, No. 94051920, signed Bruce D. Weber, Hand made in Bozeman, Montana"
+        }
+      ],
+      "description": "A hand-carved A-style mandolin from Flatiron's Bozeman, Montana shop, made in 1994 and signed on the label by Bruce D. Weber. Gibson bought Flatiron in 1987 and kept the Bozeman luthiers building Gibson and Flatiron mandolins there until 1996, when production moved to Nashville. Weber ran that shop and went on to found Weber Fine Acoustic Instruments. The Artist was the top of Flatiron's A-model line: carved spruce top, flamed maple back and sides, bound ebony fingerboard, gold hardware and the pearl-inlaid \"The Flatiron\" headstock. Bozeman-era Flatirons are well regarded for their tone and are often compared to Gibson A-5s from the same shop. It has a K&K Mandolin Twin pickup installed, so it plugs straight into an amp or PA through the 1/4\" endpin jack, and it comes in its original hard-shell case.",
+      "specs": [
+        ["Model", "Flatiron A5-Artist, serial no. 94051920"],
+        ["Made", "1994, Bozeman, Montana; label signed by Bruce D. Weber"],
+        ["Top", "Hand-carved spruce, f-holes, sunburst finish"],
+        ["Back & sides", "Flamed maple"],
+        ["Neck & fingerboard", "Maple neck; bound ebony fingerboard with extension and pearl dots"],
+        ["Bridge", "Adjustable ebony"],
+        ["Headstock", "Bound, black face, pearl \"The Flatiron\" script and fern inlay"],
+        ["Hardware", "Gold engraved 4-on-a-plate tuners, engraved gold tailpiece"],
+        ["Pickup", "K&K Mandolin Twin transducer (passive), standard 1/4\" endpin jack"],
+        ["Case", "Original black hard-shell case"]
+      ]
     },
     {
-      "id": "flatiron-a-artist",
-      "title": "1990s Flatiron A Artist mandolin",
+      "id": "sdc-84-pair",
+      "title": "Microphone Parts SDC-84 stereo matched pair",
       "published": false,
       "status": "available",
       "dateListed": "",
