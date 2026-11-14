@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { amps, gallery } from '../data/amplifiers';
 import { liveListing } from '../data/for-sale';
 import { contactHref } from '../data/site';
+import Lightbox from '../components/Lightbox.astro';
 
 const thumb = (file: string) => `/images/amplifiers/gallery/thumb/${file}`;
 const full = (file: string) => `/images/amplifiers/gallery/full/${file}`;
@@ -101,12 +102,12 @@ const full = (file: string) => `/images/amplifiers/gallery/full/${file}`;
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <h2 class="font-heading font-bold text-3xl md:text-4xl text-center mb-3">Build photos</h2>
       <p class="text-gray-400 text-center mb-10">Cabinets, chassis, wiring and testing. Tap a photo to see it larger.</p>
-      <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3" id="amp-gallery">
-        {gallery.map((photo, i) => (
+      <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3" id="amp-gallery" data-lightbox-group="amp-builds">
+        {gallery.map((photo) => (
           <li>
             <a
               href={full(photo.file)}
-              data-index={i}
+              data-lightbox
               class="block aspect-[4/3] overflow-hidden rounded-lg bg-black/40 focus:outline-none focus:ring-2 focus:ring-brand-orange"
             >
               <img
@@ -125,63 +126,5 @@ const full = (file: string) => `/images/amplifiers/gallery/full/${file}`;
     </div>
   </section>
 
-  <!-- Lightbox -->
-  <dialog id="lightbox" class="m-auto bg-transparent p-0 max-w-none w-full h-full backdrop:bg-black/90" aria-label="Photo viewer">
-    <div class="w-full h-full flex flex-col items-center justify-center p-4 sm:p-10">
-      <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl" />
-      <p id="lightbox-caption" class="text-gray-300 text-sm mt-4 text-center"></p>
-      <div class="flex items-center gap-4 mt-4">
-        <button type="button" data-lb="prev" class="text-white bg-white/10 hover:bg-white/20 rounded-full w-11 h-11 text-xl" aria-label="Previous photo">&larr;</button>
-        <button type="button" data-lb="close" class="text-white bg-white/10 hover:bg-white/20 rounded-full px-5 h-11 font-heading font-semibold text-sm">Close</button>
-        <button type="button" data-lb="next" class="text-white bg-white/10 hover:bg-white/20 rounded-full w-11 h-11 text-xl" aria-label="Next photo">&rarr;</button>
-      </div>
-    </div>
-  </dialog>
-
-  <script>
-    const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('#amp-gallery a'));
-    const dialog = document.getElementById('lightbox') as HTMLDialogElement | null;
-    const img = document.getElementById('lightbox-img') as HTMLImageElement | null;
-    const caption = document.getElementById('lightbox-caption');
-    let current = 0;
-
-    function show(i: number) {
-      if (!img || !caption) return;
-      current = (i + links.length) % links.length;
-      const link = links[current];
-      const alt = link.querySelector('img')?.alt ?? '';
-      img.src = link.href;
-      img.alt = alt;
-      caption.textContent = `${alt} (${current + 1} of ${links.length})`;
-    }
-
-    if (dialog && typeof dialog.showModal === 'function') {
-      links.forEach((link, i) => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          show(i);
-          dialog.showModal();
-        });
-      });
-      dialog.addEventListener('click', (e) => {
-        const target = e.target as HTMLElement;
-        const action = target.closest<HTMLElement>('[data-lb]')?.dataset.lb;
-        if (action === 'prev') show(current - 1);
-        else if (action === 'next') show(current + 1);
-        else if (action === 'close' || target === dialog || target.tagName === 'DIV') dialog.close();
-      });
-      dialog.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') show(current - 1);
-        if (e.key === 'ArrowRight') show(current + 1);
-      });
-      // Swipe on touch screens.
-      let startX = 0;
-      dialog.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
-      dialog.addEventListener('touchend', (e) => {
-        const dx = e.changedTouches[0].clientX - startX;
-        if (Math.abs(dx) > 50) show(current + (dx < 0 ? 1 : -1));
-      });
-      dialog.addEventListener('close', () => { if (img) img.src = ''; });
-    }
-  </script>
+  <Lightbox />
 </BaseLayout>

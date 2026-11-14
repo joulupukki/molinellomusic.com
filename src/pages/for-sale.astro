@@ -3,6 +3,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { listings } from '../data/for-sale';
 import { contactHref } from '../data/site';
 
+import Lightbox from '../components/Lightbox.astro';
+
+// How many small thumbnails to show under the main photo before "+N".
+const THUMBS = 4;
 const statusLabel = { available: 'Available', pending: 'Sale pending', sold: 'Sold' } as const;
 const formatDate = (iso: string) =>
   iso ? new Date(`${iso}T12:00:00`).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) : '';
@@ -30,17 +34,35 @@ const formatDate = (iso: string) =>
           <a href={contactHref('For Sale question')} class="inline-block bg-brand-orange text-white font-heading font-bold px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors">Get in touch</a>
         </div>
       ) : (
-        <div class="grid md:grid-cols-2 gap-8">
+        <div class:list={["grid gap-8", listings.length > 1 ? "md:grid-cols-2" : "max-w-xl mx-auto"]}>
           {listings.map((item) => (
             <article id={item.id} class:list={["bg-white rounded-xl shadow-md overflow-hidden border border-black/5 flex flex-col scroll-mt-20", item.status === 'sold' && "opacity-60"]}>
-              {item.photos[0] && (
-                <img src={item.photos[0]} alt={item.title} loading="lazy" class="w-full aspect-[4/3] object-cover" />
-              )}
-              {item.photos.length > 1 && (
-                <div class="grid grid-cols-4 gap-1 p-1 bg-gray-100">
-                  {item.photos.slice(1).map((src, i) => (
-                    <a href={src} target="_blank" rel="noopener"><img src={src} alt={`${item.title}, photo ${i + 2}`} loading="lazy" class="w-full aspect-square object-cover" /></a>
-                  ))}
+              {item.photos.length > 0 && (
+                <div data-lightbox-group={item.id}>
+                  <a href={item.photos[0].src} data-lightbox class="block relative group">
+                    <img src={item.photos[0].src} alt={item.photos[0].alt} loading="lazy" class="w-full aspect-[4/3] object-cover" />
+                    {item.photos.length > 1 && (
+                      <span class="absolute bottom-3 right-3 bg-black/70 text-white text-xs font-heading font-semibold px-2.5 py-1 rounded-full group-hover:bg-black/85 transition-colors">
+                        1 / {item.photos.length}
+                      </span>
+                    )}
+                  </a>
+                  {item.photos.length > 1 && (
+                    <ul class="grid grid-cols-4 gap-1 p-1 bg-gray-100">
+                      {item.photos.slice(1).map((photo, i) => (
+                        <li class:list={[i >= THUMBS && "hidden"]}>
+                          <a href={photo.src} data-lightbox class="block relative">
+                            <img src={photo.thumb ?? photo.src} alt={photo.alt} loading="lazy" class="w-full aspect-square object-cover" />
+                            {i === THUMBS - 1 && item.photos.length - 1 > THUMBS && (
+                              <span class="absolute inset-0 bg-black/60 text-white font-heading font-bold flex items-center justify-center" aria-hidden="true">
+                                +{item.photos.length - 1 - THUMBS}
+                              </span>
+                            )}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               )}
               <div class="p-6 flex-1 flex flex-col">
@@ -56,6 +78,9 @@ const formatDate = (iso: string) =>
                 <h2 class="font-heading font-bold text-2xl mb-1">{item.title}</h2>
                 {item.price && <p class="font-heading font-extrabold text-xl text-brand-dark mb-2">{item.price}</p>}
                 {item.condition && <p class="text-sm text-gray-500 mb-3"><span class="font-heading font-semibold">Condition:</span> {item.condition}</p>}
+                {item.note && (
+                  <p class="text-sm font-heading font-semibold text-brand-dark bg-brand-warm border-l-4 border-brand-orange px-3 py-2 rounded-r mb-4">{item.note}</p>
+                )}
                 <p class="text-gray-700 leading-relaxed mb-4">{item.description}</p>
                 {item.specs && item.specs.length > 0 && (
                   <table class="w-full text-sm mb-5">
@@ -70,11 +95,18 @@ const formatDate = (iso: string) =>
                     </tbody>
                   </table>
                 )}
-                {item.status !== 'sold' && (
-                  <a href={contactHref(`Question about: ${item.title}`)} class="mt-auto self-start bg-brand-orange text-white font-heading font-bold px-5 py-2.5 rounded-lg hover:bg-orange-600 transition-colors">
-                    Ask about this
-                  </a>
-                )}
+                <div class="mt-auto flex flex-wrap gap-3">
+                  {item.status !== 'sold' && (
+                    <a href={contactHref(`Question about: ${item.title}`)} class="bg-brand-orange text-white font-heading font-bold px-5 py-2.5 rounded-lg hover:bg-orange-600 transition-colors">
+                      Ask about this
+                    </a>
+                  )}
+                  {item.photos.length > 1 && (
+                    <button type="button" data-lightbox-open={item.id} class="border-2 border-brand-dark text-brand-dark font-heading font-bold px-5 py-2 rounded-lg hover:bg-brand-dark hover:text-white transition-colors cursor-pointer">
+                      View all {item.photos.length} photos
+                    </button>
+                  )}
+                </div>
               </div>
             </article>
           ))}
@@ -82,4 +114,6 @@ const formatDate = (iso: string) =>
       )}
     </div>
   </section>
+
+  <Lightbox />
 </BaseLayout>

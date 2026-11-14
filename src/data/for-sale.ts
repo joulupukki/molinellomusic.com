@@ -2,6 +2,12 @@ import data from './for-sale.json';
 
 export type ListingStatus = 'available' | 'pending' | 'sold';
 
+export interface ListingPhoto {
+  src: string;
+  thumb?: string;
+  alt: string;
+}
+
 export interface Listing {
   id: string;
   title: string;
@@ -9,7 +15,8 @@ export interface Listing {
   status: ListingStatus;
   dateListed: string;
   condition: string;
-  photos: string[];
+  photos: ListingPhoto[];
+  note?: string;
   description: string;
   price?: string;
   specs?: [string, string][];

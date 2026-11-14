@@ -1,5 +1,5 @@
 {
-  "_readme": "Listings for /for-sale. Only entries with published: true render. status is available | pending | sold. Sold items are hidden unless showSold is true. price is optional; leave it out to show no price. photos are paths under /public.",
+  "_readme": "Listings for /for-sale. Only entries with published: true render. status is available | pending | sold. Sold items are hidden unless showSold is true. price is optional; leave it out to show no price. photos are {src, thumb?, alt} objects with paths under /public; the first photo is the main image. note is an optional highlighted line.",
   "showSold": false,
   "items": [
     {
@@ -9,15 +9,93 @@
       "status": "available",
       "dateListed": "2026-11-14",
       "condition": "Used, working, hand-built",
-      "photos": ["/images/amplifiers/18w-tmb-front.jpg"],
-      "description": "A Marshall-style all-tube 18-watt head with two channels, built from a Mojotone 18 Watt TMB kit in a 19.75\" head cabinet I made for it. Channel one is the classic 18-watt circuit with big JTM 45-like tones. Channel two uses a JCM 800 preamp with Treble, Mid, Bass and Master Volume controls. Cathode-biased, two EL84s, EZ81 rectifier. It is loud.",
+      "photos": [
+        {
+          "src": "/images/for-sale/18w-tmb/full/img-2073.jpg",
+          "thumb": "/images/for-sale/18w-tmb/thumb/img-2073.jpg",
+          "alt": "Molinello 18W TMB amp head, front view"
+        },
+        {
+          "src": "/images/for-sale/18w-tmb/full/img-2072.jpg",
+          "thumb": "/images/for-sale/18w-tmb/thumb/img-2072.jpg",
+          "alt": "Front of the 18W TMB head with its handle on top"
+        },
+        {
+          "src": "/images/for-sale/18w-tmb/full/img-1104.jpg",
+          "thumb": "/images/for-sale/18w-tmb/thumb/img-1104.jpg",
+          "alt": "Front panel and Molinello logo, angled view"
+        },
+        {
+          "src": "/images/for-sale/18w-tmb/full/img-3877.jpg",
+          "thumb": "/images/for-sale/18w-tmb/thumb/img-3877.jpg",
+          "alt": "Front panel controls: Bass, Middle, Treble, Gain and Master"
+        },
+        {
+          "src": "/images/for-sale/18w-tmb/full/img-3878.jpg",
+          "thumb": "/images/for-sale/18w-tmb/thumb/img-3878.jpg",
+          "alt": "Front panel controls: Gain, Master, Tone, Volume and the two inputs"
+        },
+        {
+          "src": "/images/for-sale/18w-tmb/full/img-3876.jpg",
+          "thumb": "/images/for-sale/18w-tmb/thumb/img-3876.jpg",
+          "alt": "Indicator light, Mains and Standby switches"
+        },
+        {
+          "src": "/images/for-sale/18w-tmb/full/img-2074.jpg",
+          "thumb": "/images/for-sale/18w-tmb/thumb/img-2074.jpg",
+          "alt": "Back of the 18W TMB head"
+        },
+        {
+          "src": "/images/for-sale/18w-tmb/full/img-3880.jpg",
+          "thumb": "/images/for-sale/18w-tmb/thumb/img-3880.jpg",
+          "alt": "Back panel: speaker outputs, impedance selector, mains input and fuse"
+        },
+        {
+          "src": "/images/for-sale/18w-tmb/full/img-3879.jpg",
+          "thumb": "/images/for-sale/18w-tmb/thumb/img-3879.jpg",
+          "alt": "Close-up of the two speaker outputs and the 4/8/16 ohm impedance selector"
+        },
+        {
+          "src": "/images/for-sale/18w-tmb/full/img-1107.jpg",
+          "thumb": "/images/for-sale/18w-tmb/thumb/img-1107.jpg",
+          "alt": "Back panel of the head, angled view"
+        },
+        {
+          "src": "/images/for-sale/18w-tmb/full/img-1184.jpg",
+          "thumb": "/images/for-sale/18w-tmb/thumb/img-1184.jpg",
+          "alt": "EL84 power tubes glowing"
+        },
+        {
+          "src": "/images/for-sale/18w-tmb/full/img-3768.jpg",
+          "thumb": "/images/for-sale/18w-tmb/thumb/img-3768.jpg",
+          "alt": "Inside the chassis: point-to-point wiring and turret board"
+        },
+        {
+          "src": "/images/for-sale/18w-tmb/full/img-1415.jpg",
+          "thumb": "/images/for-sale/18w-tmb/thumb/img-1415.jpg",
+          "alt": "Chassis out of the cabinet with tubes and transformers"
+        },
+        {
+          "src": "/images/for-sale/18w-tmb/full/img-3875.jpg",
+          "thumb": "/images/for-sale/18w-tmb/thumb/img-3875.jpg",
+          "alt": "Head under a padded black cover"
+        },
+        {
+          "src": "/images/for-sale/18w-tmb/full/img-2069.jpg",
+          "thumb": "/images/for-sale/18w-tmb/thumb/img-2069.jpg",
+          "alt": "Head sitting on a 1x12 speaker cabinet (cabinet not included)"
+        }
+      ],
+      "description": "A Marshall-style all-tube 18-watt amp head with two channels, built from a Mojotone 18 Watt TMB kit in a 19.75\" head cabinet I made for it. Channel one is the classic 18-watt circuit with big JTM 45-like tones. Channel two uses a JCM 800 preamp with Treble, Mid, Bass and Master Volume controls. Cathode-biased, two EL84s, EZ81 rectifier. It is loud.",
       "specs": [
+        ["Included", "Amp head only (no speaker cabinet)"],
         ["Output", "~18 Watts, Class AB, all tube"],
         ["Circuit", "Marshall 1974 & Marshall 2204 (JCM 800)"],
         ["Tubes", "ECC83/12AX7 (3), EL84 (2), EZ81 rectifier"],
         ["Transformers", "Mojotone 18W power (MOJO 7000018) and output (MOJO 7000118)"],
         ["Cabinet", "Hand-made head, 19.75\" wide"]
-      ]
+      ],
+      "note": "Amp head only. The speaker cabinet in some photos is not included."
     },
     {
       "id": "sdc-84-pair",
