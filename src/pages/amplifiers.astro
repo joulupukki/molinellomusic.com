@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { amps, gallery } from '../data/amplifiers';
+import { liveListing } from '../data/for-sale';
+import { contactHref } from '../data/site';
+
+const thumb = (file: string) => `/images/amplifiers/gallery/thumb/${file}`;
+const full = (file: string) => `/images/amplifiers/gallery/full/${file}`;
+---
+
+<BaseLayout
+  title="Tube Amplifier Builds - Molinello Music"
+  description="Hand-built tube guitar amps from the Molinello workbench: a Princeton Reverb, an 18 Watt TMB, a 2-watt JTM 45 and two scratch-built B-Verbs, with specs and build photos."
+  ogImage="/images/amplifiers/all-amplifiers.jpg"
+>
+  <!-- Hero -->
+  <section class="bg-brand-dark text-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 pt-12 md:pt-20 pb-10 md:pb-14 text-center">
+      <p class="text-brand-orange font-heading font-bold text-sm uppercase tracking-widest mb-3">From the workbench</p>
+      <h1 class="font-heading font-extrabold text-4xl md:text-5xl mb-4">Amplifiers</h1>
+      <p class="text-gray-300 text-lg max-w-2xl mx-auto">Tube guitar amps I've built from kits and from scratch, with the specs and the photos from the bench.</p>
+    </div>
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 pb-12 md:pb-16">
+      <img src="/images/amplifiers/all-amplifiers.jpg" alt="Molinello tube amp heads, combos and speaker cabinets lined up together" class="rounded-xl shadow-2xl w-full" />
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="py-14 md:py-20 bg-brand-warm">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 space-y-5 text-gray-700 text-lg leading-relaxed">
+      <p>
+        Tube amps started as a kit project I meant to build with my son. He wasn't interested, so a year later I ordered a Mojotone Princeton Reverb kit for myself, right when everything was backordered. While I waited I read everything I could find about how tubes and amplifiers work, and I had the next build picked out before the first kit arrived.
+      </p>
+      <p>
+        Next came an 18 Watt TMB in a cabinet I built myself, then a tiny Bassman Micro that turned into a 2-watt JTM 45. Those needed speakers, so I built two 1x12 extension cabs in the style of old Marshall cabinets, one with a Mojotone British Vintage BV-30H and one with a Mojotone Greyhound. Along the way I owned and modified a Fender Princeton Reverb Reissue and a Deluxe Reverb Reissue, which made good reference amps.
+      </p>
+      <p>
+        The hardest and most satisfying builds were the B-Verbs: single-channel, Deluxe Reverb-style amps built from scratch, guided by Rob Robinette's Blackvibe 6V6 and Hoffman's 1 Channel AB763 projects. I built one as a combo and one as a head. They're the best amps I've made so far.
+      </p>
+    </div>
+  </section>
+
+  <!-- Amps -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 space-y-20 md:space-y-28">
+      {amps.map((amp, i) => {
+        const listing = liveListing(amp.forSaleId);
+        return (
+          <article id={amp.id} class="scroll-mt-20">
+            <div class="md:flex gap-10 items-start">
+              <div class:list={["md:w-1/2 mb-6 md:mb-0", i % 2 === 1 && "md:order-2"]}>
+                <img src={amp.image} alt={amp.alt} loading="lazy" class="rounded-xl shadow-lg w-full" />
+              </div>
+              <div class="md:w-1/2">
+                <h2 class="font-heading font-extrabold text-2xl md:text-3xl mb-3">{amp.name}</h2>
+                {listing && (
+                  <a href={`/for-sale#${listing.id}`} class="inline-flex items-center gap-1 text-xs font-heading font-bold uppercase tracking-wider bg-brand-orange/15 text-orange-700 px-2.5 py-1 rounded-full mb-4 hover:bg-brand-orange/25 transition-colors">
+                    For sale &rarr;
+                  </a>
+                )}
+                <p class="text-gray-700 leading-relaxed mb-3">{amp.summary}</p>
+                {amp.story && <p class="text-gray-600 leading-relaxed mb-3">{amp.story}</p>}
+                <table class="w-full text-sm mt-5">
+                  <caption class="sr-only">{amp.name} specifications</caption>
+                  <tbody>
+                    {amp.specs.map(([k, v]) => (
+                      <tr class="border-t border-gray-200 align-top">
+                        <th scope="row" class="text-left font-heading font-semibold text-gray-500 py-2 pr-4 w-1/3 whitespace-nowrap">{k}</th>
+                        <td class="py-2 text-brand-dark">{v}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </article>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- Custom builds -->
+  <section class="pb-16 md:pb-24">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="bg-brand-warm rounded-xl p-6 md:p-8 sm:flex items-center gap-8">
+        <div class="flex-1 mb-5 sm:mb-0">
+          <h2 class="font-heading font-bold text-xl mb-2">Custom builds</h2>
+          <p class="text-gray-600 leading-relaxed">
+            Every so often I build a B-Verb, or something along those lines, for someone else. If you'd like one, drop me a note and we can talk it through.
+          </p>
+        </div>
+        <a href={contactHref('Amp commission inquiry')} class="inline-block shrink-0 border-2 border-brand-dark text-brand-dark font-heading font-bold px-5 py-2.5 rounded-lg hover:bg-brand-dark hover:text-white transition-colors">
+          Get in touch
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Build photos -->
+  <section class="py-16 md:py-24 bg-brand-dark text-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <h2 class="font-heading font-bold text-3xl md:text-4xl text-center mb-3">Build photos</h2>
+      <p class="text-gray-400 text-center mb-10">Cabinets, chassis, wiring and testing. Tap a photo to see it larger.</p>
+      <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3" id="amp-gallery">
+        {gallery.map((photo, i) => (
+          <li>
+            <a
+              href={full(photo.file)}
+              data-index={i}
+              class="block aspect-[4/3] overflow-hidden rounded-lg bg-black/40 focus:outline-none focus:ring-2 focus:ring-brand-orange"
+            >
+              <img
+                src={thumb(photo.file)}
+                alt={photo.alt}
+                loading="lazy"
+                decoding="async"
+                width="480"
+                height="360"
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <dialog id="lightbox" class="m-auto bg-transparent p-0 max-w-none w-full h-full backdrop:bg-black/90" aria-label="Photo viewer">
+    <div class="w-full h-full flex flex-col items-center justify-center p-4 sm:p-10">
+      <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl" />
+      <p id="lightbox-caption" class="text-gray-300 text-sm mt-4 text-center"></p>
+      <div class="flex items-center gap-4 mt-4">
+        <button type="button" data-lb="prev" class="text-white bg-white/10 hover:bg-white/20 rounded-full w-11 h-11 text-xl" aria-label="Previous photo">&larr;</button>
+        <button type="button" data-lb="close" class="text-white bg-white/10 hover:bg-white/20 rounded-full px-5 h-11 font-heading font-semibold text-sm">Close</button>
+        <button type="button" data-lb="next" class="text-white bg-white/10 hover:bg-white/20 rounded-full w-11 h-11 text-xl" aria-label="Next photo">&rarr;</button>
+      </div>
+    </div>
+  </dialog>
+
+  <script>
+    const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('#amp-gallery a'));
+    const dialog = document.getElementById('lightbox') as HTMLDialogElement | null;
+    const img = document.getElementById('lightbox-img') as HTMLImageElement | null;
+    const caption = document.getElementById('lightbox-caption');
+    let current = 0;
+
+    function show(i: number) {
+      if (!img || !caption) return;
+      current = (i + links.length) % links.length;
+      const link = links[current];
+      const alt = link.querySelector('img')?.alt ?? '';
+      img.src = link.href;
+      img.alt = alt;
+      caption.textContent = `${alt} (${current + 1} of ${links.length})`;
+    }
+
+    if (dialog && typeof dialog.showModal === 'function') {
+      links.forEach((link, i) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          show(i);
+          dialog.showModal();
+        });
+      });
+      dialog.addEventListener('click', (e) => {
+        const target = e.target as HTMLElement;
+        const action = target.closest<HTMLElement>('[data-lb]')?.dataset.lb;
+        if (action === 'prev') show(current - 1);
+        else if (action === 'next') show(current + 1);
+        else if (action === 'close' || target === dialog || target.tagName === 'DIV') dialog.close();
+      });
+      dialog.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') show(current - 1);
+        if (e.key === 'ArrowRight') show(current + 1);
+      });
+      // Swipe on touch screens.
+      let startX = 0;
+      dialog.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+      dialog.addEventListener('touchend', (e) => {
+        const dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 50) show(current + (dx < 0 ? 1 : -1));
+      });
+      dialog.addEventListener('close', () => { if (img) img.src = ''; });
+    }
+  </script>
+</BaseLayout>
