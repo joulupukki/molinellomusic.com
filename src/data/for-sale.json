@@ -203,13 +203,80 @@
     },
     {
       "id": "sdc-84-pair",
-      "title": "Microphone Parts SDC-84 stereo matched pair",
-      "published": false,
+      "title": "Microphone Parts SDC-84 Stereo Matched Pair",
+      "published": true,
       "status": "available",
-      "dateListed": "",
-      "condition": "",
-      "photos": [],
-      "description": ""
+      "dateListed": "2026-11-14",
+      "condition": "Very lightly used, practically new",
+      "photos": [
+        {
+          "src": "/images/for-sale/sdc-84-pair/full/img-1162.jpg",
+          "thumb": "/images/for-sale/sdc-84-pair/thumb/img-1162.jpg",
+          "alt": "Stereo matched pair of Microphone Parts SDC-84 small-diaphragm condenser mics"
+        },
+        {
+          "src": "/images/for-sale/sdc-84-pair/full/img-1160.jpg",
+          "thumb": "/images/for-sale/sdc-84-pair/thumb/img-1160.jpg",
+          "alt": "Both mics, shock-mount clips and accessories in the aluminum flight case"
+        },
+        {
+          "src": "/images/for-sale/sdc-84-pair/full/img-1161.jpg",
+          "thumb": "/images/for-sale/sdc-84-pair/thumb/img-1161.jpg",
+          "alt": "Case interior: the two mics, two shock-mount clips and the stand adapters"
+        },
+        {
+          "src": "/images/for-sale/sdc-84-pair/full/img-1165.jpg",
+          "thumb": "/images/for-sale/sdc-84-pair/thumb/img-1165.jpg",
+          "alt": "Close-up of the MP diamond badges and capsule grilles"
+        },
+        {
+          "src": "/images/for-sale/sdc-84-pair/full/img-1163.jpg",
+          "thumb": "/images/for-sale/sdc-84-pair/thumb/img-1163.jpg",
+          "alt": "Capsule ends of both mics, one showing the cardioid marking"
+        },
+        {
+          "src": "/images/for-sale/sdc-84-pair/full/img-1164.jpg",
+          "thumb": "/images/for-sale/sdc-84-pair/thumb/img-1164.jpg",
+          "alt": "Gold-pin XLR connectors on both mics"
+        },
+        {
+          "src": "/images/for-sale/sdc-84-pair/full/img-1166.jpg",
+          "thumb": "/images/for-sale/sdc-84-pair/thumb/img-1166.jpg",
+          "alt": "The two shock-mount clips"
+        },
+        {
+          "src": "/images/for-sale/sdc-84-pair/full/img-1167.jpg",
+          "thumb": "/images/for-sale/sdc-84-pair/thumb/img-1167.jpg",
+          "alt": "Shock-mount clips showing their threaded stand mounts"
+        },
+        {
+          "src": "/images/for-sale/sdc-84-pair/full/img-1168.jpg",
+          "thumb": "/images/for-sale/sdc-84-pair/thumb/img-1168.jpg",
+          "alt": "Brass mic stand thread adapters and spare elastic bands for the clips"
+        },
+        {
+          "src": "/images/for-sale/sdc-84-pair/full/img-1169.jpg",
+          "thumb": "/images/for-sale/sdc-84-pair/thumb/img-1169.jpg",
+          "alt": "Two 8 pF pad capacitors (left) and spare case screws (right)"
+        },
+        {
+          "src": "/images/for-sale/sdc-84-pair/full/img-1170.jpg",
+          "thumb": "/images/for-sale/sdc-84-pair/thumb/img-1170.jpg",
+          "alt": "Close-up of the spare case screws"
+        }
+      ],
+      "description": "A very lightly used stereo matched pair of Microphone Parts SDC-84 small-diaphragm condenser mics, with almost no signs of use. They are the company's take on the classic Neumann KM84. Each mic uses a JFET impedance converter and an output transformer, with a capsule designed to follow the KM84's. Sound On Sound's review called the SDC-84 \"sonically very close to the real thing\" and said that on many sources the reviewer couldn't tell it from his KM84s in a blind test. The pad capacitors are not installed, which leaves the mics about 15 dB more sensitive than a KM84, good for acoustic guitar, strings and other quieter sources. Two 8 pF pad capacitors are included if you want to fit them later for drum overheads and louder sources.",
+      "specs": [
+        ["Included", "Two SDC-84 mics, two shock-mount clips, aluminum flight case"],
+        ["Extras", "Two 8 pF pad capacitors, spare elastic bands for the clips, mic stand thread adapters, three spare case screws"],
+        ["Type", "Small-diaphragm condenser, stereo matched pair"],
+        ["Modeled on", "Neumann KM84"],
+        ["Circuit", "JFET with output transformer"],
+        ["Capsules", "Cardioid"],
+        ["Pad", "Not installed (capacitors included)"],
+        ["Output", "XLR, needs 48V phantom power"]
+      ],
+      "note": "Everything shown in the photos is included."
     },
     {
       "id": "fishman-preamp",
