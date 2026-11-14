@@ -1,0 +1,76 @@
+---
+// Shared photo viewer. Include once per page. Any element with
+// data-lightbox-group="<name>" holds a set of <a data-lightbox href="full.jpg">
+// links (the alt of the <img> inside is used as the caption). A button with
+// data-lightbox-open="<name>" opens that set at the first photo.
+---
+
+<dialog id="lightbox" class="m-auto bg-transparent p-0 max-w-none w-full h-full backdrop:bg-black/90" aria-label="Photo viewer">
+  <div data-lb-backdrop class="w-full h-full flex flex-col items-center justify-center p-4 sm:p-10">
+    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl" />
+    <p id="lightbox-caption" class="text-gray-300 text-sm mt-4 text-center"></p>
+    <div class="flex items-center gap-4 mt-4">
+      <button type="button" data-lb="prev" class="text-white bg-white/10 hover:bg-white/20 rounded-full w-11 h-11 text-xl" aria-label="Previous photo">&larr;</button>
+      <button type="button" data-lb="close" class="text-white bg-white/10 hover:bg-white/20 rounded-full px-5 h-11 font-heading font-semibold text-sm">Close</button>
+      <button type="button" data-lb="next" class="text-white bg-white/10 hover:bg-white/20 rounded-full w-11 h-11 text-xl" aria-label="Next photo">&rarr;</button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+  const dialog = document.getElementById('lightbox') as HTMLDialogElement | null;
+  const img = document.getElementById('lightbox-img') as HTMLImageElement | null;
+  const caption = document.getElementById('lightbox-caption');
+  let links: HTMLAnchorElement[] = [];
+  let current = 0;
+
+  function show(i: number) {
+    if (!img || !caption || links.length === 0) return;
+    current = (i + links.length) % links.length;
+    const link = links[current];
+    const alt = link.querySelector('img')?.alt ?? '';
+    img.src = link.href;
+    img.alt = alt;
+    caption.textContent = `${alt} (${current + 1} of ${links.length})`;
+  }
+
+  function open(group: Element, i: number) {
+    if (!dialog) return;
+    links = Array.from(group.querySelectorAll<HTMLAnchorElement>('a[data-lightbox]'));
+    show(i);
+    dialog.showModal();
+  }
+
+  if (dialog && typeof dialog.showModal === 'function') {
+    document.querySelectorAll('[data-lightbox-group]').forEach((group) => {
+      group.querySelectorAll<HTMLAnchorElement>('a[data-lightbox]').forEach((link, i) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          open(group, i);
+        });
+      });
+    });
+    document.querySelectorAll<HTMLElement>('[data-lightbox-open]').forEach((btn) => {
+      const group = document.querySelector(`[data-lightbox-group="${btn.dataset.lightboxOpen}"]`);
+      btn.addEventListener('click', () => group && open(group, 0));
+    });
+    dialog.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      const action = target.closest<HTMLElement>('[data-lb]')?.dataset.lb;
+      if (action === 'prev') show(current - 1);
+      else if (action === 'next') show(current + 1);
+      else if (action === 'close' || target === dialog || target.hasAttribute('data-lb-backdrop')) dialog.close();
+    });
+    dialog.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') show(current - 1);
+      if (e.key === 'ArrowRight') show(current + 1);
+    });
+    let startX = 0;
+    dialog.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, { passive: true });
+    dialog.addEventListener('touchend', (e) => {
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 50) show(current + (dx < 0 ? 1 : -1));
+    });
+    dialog.addEventListener('close', () => { if (img) img.src = ''; });
+  }
+</script>
