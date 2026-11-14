@@ -1,0 +1,103 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { album } from '../data/site';
+
+const musicians = [
+  ['Bill Moore', 'mandolin, upright bass, vocals'],
+  ['Mark Smith', 'dobro, upright bass, vocals'],
+  ['Jonah Schupbach', 'guitar, vocals'],
+  ['Josh Stewart', 'banjo, guitar, vocals'],
+  ['Boyd Timothy', 'guitar, mandolin, upright bass, vocals'],
+];
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'MusicAlbum',
+  name: album.title,
+  byArtist: { '@type': 'MusicGroup', name: album.band, url: album.bandSite },
+  datePublished: album.releasedISO,
+  recordLabel: { '@type': 'Organization', name: 'Molinello Music' },
+  image: new URL(album.cover, 'https://www.molinellomusic.com').toString(),
+  genre: 'Bluegrass',
+};
+---
+
+<BaseLayout
+  title="Molinello Records: Basin & Grange - Walk You Down the Road"
+  description="Molinello Records released Walk You Down the Road, the debut album from Utah bluegrass band Basin & Grange, on June 5, 2024."
+  ogImage={album.cover}
+  structuredData={structuredData}
+>
+  <section class="bg-brand-dark text-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 py-12 md:py-20">
+      <p class="text-brand-orange font-heading font-bold text-sm uppercase tracking-widest mb-6 text-center md:text-left">Molinello Records</p>
+      <div class="md:flex items-center gap-12">
+        <img src={album.cover} alt={`${album.band}: ${album.title} album cover`} class="w-full max-w-sm mx-auto md:mx-0 md:w-2/5 rounded-xl shadow-2xl mb-8 md:mb-0" />
+        <div class="text-center md:text-left">
+          <h1 class="font-heading font-extrabold text-4xl md:text-5xl mb-2">{album.band}</h1>
+          <p class="font-heading text-2xl md:text-3xl text-gray-300 mb-2"><em>{album.title}</em></p>
+          <p class="text-gray-400 mb-6">Released {album.released} on Molinello Records</p>
+          <div class="flex flex-wrap justify-center md:justify-start gap-3">
+            <a href={album.listen} target="_blank" rel="noopener noreferrer" class="bg-brand-orange text-white font-heading font-bold px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors">Listen now</a>
+            <a href={album.albumPage} target="_blank" rel="noopener noreferrer" class="border-2 border-white/30 text-white font-heading font-bold px-6 py-3 rounded-lg hover:border-brand-orange hover:text-brand-orange transition-colors">Band website</a>
+            <a href={album.radio} target="_blank" rel="noopener noreferrer" class="border-2 border-white/30 text-white font-heading font-bold px-6 py-3 rounded-lg hover:border-brand-orange hover:text-brand-orange transition-colors">DJ/Radio download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-14 md:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 space-y-6 text-gray-700 text-lg leading-relaxed">
+      <h2 class="font-heading font-bold text-2xl text-brand-dark">Where Molinello started</h2>
+      <p>
+        Molinello started as the label for our record. When Basin &amp; Grange finished <em>Walk You Down the Road</em>, we needed a name to release it under, and Molinello was it. Now we build the gear we play through, but the label is still home to the album.
+      </p>
+      <h2 class="font-heading font-bold text-2xl text-brand-dark pt-4">The album</h2>
+      <p>
+        <em>Walk You Down the Road</em> has 10 original songs and 2 covers. One cover is &ldquo;Jenny Lynn,&rdquo; written by the late Ron Spears, a Utah native and member of Fast Track. The opening track, &ldquo;Pines of Caroline,&rdquo; written by Boyd Timothy, was featured in the 2021 IBMA Songwriter Showcase. The single &ldquo;Bad Day at Sheep Creek&rdquo; tells the story of a 1965 flash flood that took the lives of a young Utah family.
+      </p>
+      <h2 class="font-heading font-bold text-2xl text-brand-dark pt-4">The band</h2>
+      <p>
+        Basin &amp; Grange is a five-piece, all-acoustic bluegrass band with roots in Salt Lake City, Utah. They won the inaugural band competition at the Durango Meltdown Bluegrass Festival in 2022 and returned as a main stage act in 2023. They're best known for harmony singing and play regularly around the Intermountain West.
+      </p>
+    </div>
+  </section>
+
+  <section class="pb-14 md:pb-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="bg-brand-warm rounded-xl p-6 md:p-8">
+        <h2 class="font-heading font-bold text-2xl mb-6">Credits</h2>
+        <dl class="grid sm:grid-cols-3 gap-6 mb-8">
+          <div>
+            <dt class="text-xs text-gray-500 font-heading font-semibold uppercase tracking-wider mb-1">Label</dt>
+            <dd>Molinello Records</dd>
+          </div>
+          <div>
+            <dt class="text-xs text-gray-500 font-heading font-semibold uppercase tracking-wider mb-1">Producer</dt>
+            <dd>Boyd Timothy</dd>
+          </div>
+          <div>
+            <dt class="text-xs text-gray-500 font-heading font-semibold uppercase tracking-wider mb-1">Mixing &amp; mastering</dt>
+            <dd>Scott Vestal</dd>
+          </div>
+        </dl>
+        <h3 class="font-heading font-bold text-lg mb-3">Musicians</h3>
+        <ul>
+          {musicians.map(([name, role]) => (
+            <li class="sm:flex justify-between gap-4 border-t border-black/10 py-2">
+              <span class="font-heading font-semibold block">{name}</span>
+              <span class="text-gray-600 text-sm">{role}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <p class="text-center text-gray-600 mt-10">
+        Watch the <a href="/news_20240603-bng-jenny-lynn-video" class="text-brand-orange hover:underline">&ldquo;Jenny Lynn&rdquo; video</a>, or follow the band on
+        <a href="https://www.facebook.com/basingrange" target="_blank" rel="noopener noreferrer" class="text-brand-orange hover:underline">Facebook</a>,
+        <a href="https://www.instagram.com/basinandgrange/" target="_blank" rel="noopener noreferrer" class="text-brand-orange hover:underline">Instagram</a> and
+        <a href="https://www.youtube.com/@basinandgrange" target="_blank" rel="noopener noreferrer" class="text-brand-orange hover:underline">YouTube</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
