@@ -283,13 +283,40 @@
     },
     {
       "id": "fishman-preamp",
-      "title": "Fishman preamp",
-      "published": false,
+      "title": "Fishman Pocket Blender Preamp",
+      "published": true,
       "status": "available",
-      "dateListed": "",
-      "condition": "",
-      "photos": [],
-      "description": ""
+      "dateListed": "2026-11-14",
+      "condition": "Used, works fine, light wear on the finish",
+      "price": "$125",
+      "photos": [
+        {
+          "src": "/images/for-sale/fishman-pocket-blender/full/img-0722.jpg",
+          "thumb": "/images/for-sale/fishman-pocket-blender/thumb/img-0722.jpg",
+          "alt": "Fishman Pocket Blender, angled front view with the battery door on top"
+        },
+        {
+          "src": "/images/for-sale/fishman-pocket-blender/full/img-0720.jpg",
+          "thumb": "/images/for-sale/fishman-pocket-blender/thumb/img-0720.jpg",
+          "alt": "Front panel: microphone and transducer channels with volume, bass, treble, trim and phase, plus master and mute"
+        },
+        {
+          "src": "/images/for-sale/fishman-pocket-blender/full/img-0723.jpg",
+          "thumb": "/images/for-sale/fishman-pocket-blender/thumb/img-0723.jpg",
+          "alt": "Back panel: input with phantom power switch, effects loop send and return jacks, 1/4\" and XLR outputs, ground lift"
+        }
+      ],
+      "description": "Fishman's original Pocket Blender, the made-in-USA two-channel preamp for blending an acoustic instrument's pickup with a microphone. Each channel has its own volume, bass, treble, trim and phase controls, and the microphone channel adds hi and lo switches. A master volume and mute switch handle the combined signal. Both sources come in on one stereo 1/4\" jack (pickup on the tip, mic on the ring), with a switchable 9V supply to power a mini mic. Each channel has its own effects send and return, so you can put a pedal on the pickup or the mic alone. The blend goes out through a 1/4\" jack or an XLR with ground lift, so it doubles as a DI into a PA or recording interface. It runs on a 9-volt battery, with a low-battery light on the front, or an AC adapter. Fishman no longer makes it. It works fine; I'm only selling it because I've moved on to other gear.",
+      "specs": [
+        ["Type", "Two-channel acoustic preamp, blender and DI"],
+        ["Channels", "Microphone and transducer: volume, bass, treble, trim and phase on each; hi and lo switches on the mic channel"],
+        ["Master", "Master volume, mute switch, low-battery light"],
+        ["Input", "Stereo 1/4\" (transducer on tip, microphone on ring), switchable 9V mic power"],
+        ["Effects loops", "Separate send and return for each channel"],
+        ["Outputs", "1/4\" and XLR, ground lift switch"],
+        ["Power", "9V battery or AC adapter (Fishman 910-R or Roland PSA series, per the back panel)"],
+        ["Made", "USA"]
+      ]
     },
     {
       "id": "greenlee-punch",
