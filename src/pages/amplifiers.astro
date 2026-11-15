@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { amps, gallery } from '../data/amplifiers';
-import { liveListing } from '../data/for-sale';
+import { liveListing, listingHref } from '../data/for-sale';
 import { contactHref } from '../data/site';
 import Lightbox from '../components/Lightbox.astro';
 
@@ -55,7 +55,7 @@ const full = (file: string) => `/images/amplifiers/gallery/full/${file}`;
               <div class="md:w-1/2">
                 <h2 class="font-heading font-extrabold text-2xl md:text-3xl mb-3">{amp.name}</h2>
                 {listing && (
-                  <a href={`/for-sale#${listing.id}`} class="inline-flex items-center gap-1 text-xs font-heading font-bold uppercase tracking-wider bg-brand-orange/15 text-orange-700 px-2.5 py-1 rounded-full mb-4 hover:bg-brand-orange/25 transition-colors">
+                  <a href={listingHref(listing)} class="inline-flex items-center gap-1 text-xs font-heading font-bold uppercase tracking-wider bg-brand-orange/15 text-orange-700 px-2.5 py-1 rounded-full mb-4 hover:bg-brand-orange/25 transition-colors">
                     For sale &rarr;
                   </a>
                 )}

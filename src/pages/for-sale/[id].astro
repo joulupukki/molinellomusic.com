@@ -1,0 +1,44 @@
+---
+// One page per published listing, so each item has its own link and its own social
+// preview (title, price and first photo) when shared on Facebook and elsewhere.
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { publishedListings, type Listing } from '../../data/for-sale';
+
+import ListingCard from '../../components/ListingCard.astro';
+import Lightbox from '../../components/Lightbox.astro';
+
+export function getStaticPaths() {
+  return publishedListings.map((item) => ({ params: { id: item.id }, props: { item } }));
+}
+
+const { item } = Astro.props as { item: Listing };
+
+// Social previews show roughly the first 150-200 characters; cut at a word boundary.
+const summary = (text: string, max = 180) =>
+  text.length <= max ? text : `${text.slice(0, text.lastIndexOf(' ', max)).replace(/[,;:.]$/, '')}…`;
+
+const sold = item.status === 'sold';
+const lead = [sold ? 'Sold' : item.price, item.condition].filter(Boolean).join(' · ');
+const description = [lead, summary(item.description)].filter(Boolean).join('. ');
+---
+
+<BaseLayout
+  title={`${item.title}${item.price && !sold ? ` - ${item.price}` : ''} | For Sale - Molinello Music`}
+  description={description}
+  ogImage={item.photos[0]?.src}
+  noindex={sold}
+>
+  <section class="py-10 md:py-14">
+    <div class="max-w-xl mx-auto px-4 sm:px-6">
+      <a href="/for-sale" class="inline-block font-heading font-semibold text-sm text-gray-600 hover:text-brand-orange transition-colors mb-6">
+        &larr; All items for sale
+      </a>
+      <ListingCard item={item} />
+      <p class="text-sm text-gray-500 text-center mt-6">
+        Local pickup in Highland, Utah, or shipping by arrangement. Prices are firm-ish — reasonable offers considered.
+      </p>
+    </div>
+  </section>
+
+  <Lightbox />
+</BaseLayout>
