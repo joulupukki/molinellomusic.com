@@ -139,12 +139,12 @@
 <div class="am-cover">
   <img class="am-cover-icon" src="/images/acoustimatch/guide/app-icon.png" alt="">
   <h1>AcoustiMatch</h1>
-  <p>User Guide, version 1.2 beta</p>
+  <p>User Guide, version 1.3 beta</p>
   <figure><img src="/images/acoustimatch/guide/overview.png" alt="AcoustiMatch with a match and EQ points"></figure>
 </div>
 
 <h1>AcoustiMatch</h1>
-<p class="am-version">User Guide, version 1.2 beta</p>
+<p class="am-version">User Guide, version 1.3 beta</p>
 <p class="am-print-title">About AcoustiMatch</p>
 
 <p>A pickup and a microphone hear an acoustic instrument very differently. The pickup gives you
@@ -232,7 +232,8 @@ use the plug-in. Either way the result and the exported IR are the same.</p>
     setting</a> if you like, then click <b>Export IR…</b> (see <a href="#am-export">Exporting an
     IR</a>).</li>
 </ol>
-<p>To start again with other files, click <b>Load other recordings</b>.</p>
+<p>To start again with other files, click <b>Load other recordings</b> and confirm. This clears the
+current match but keeps your EQ points, so export an IR first if you want to keep it.</p>
 
 <h3 id="am-plugin">In your DAW</h3>
 <figure><img src="/images/acoustimatch/guide/plugin-capture.png" width="529" alt="The plug-in's start screen"></figure>
@@ -246,7 +247,7 @@ use the plug-in. Either way the result and the exported IR are the same.</p>
   <li>Click <b>Build match</b>. The pickup track now plays through the match. Use the power button
     in the toolbar to bypass AcoustiMatch, and solo the mic track to hear what you're aiming for.</li>
   <li>Fine-tune if you like, then click <b>Export IR…</b>. To start over, choose <b>Capture
-    again</b>; any EQ points you've added are kept.</li>
+    again</b> and confirm; any EQ points you've added are kept.</li>
 </ol>
 <p class="am-note">AcoustiMatch saves your EQ points (shapes and slopes included) and Attack setting
 with the DAW project, but not the match itself. When you reopen the project you'll need to capture
@@ -276,7 +277,7 @@ left to 20&nbsp;kHz on the right.</p>
   <li>The <b>⋯ menu</b> holds Clear all EQ points, Capture again and Settings. See
     <a href="#am-menu">Menu and settings</a>.</li>
   <li>The bronze <b>Match</b> curve is the correction AcoustiMatch applies to the pickup: above the
-    center line it's boosting, below it's cutting.</li>
+    center line it's boosting, below it's cutting. It changes slightly with the Attack setting.</li>
   <li>While audio plays, the blue line shows the <b>pickup's spectrum</b> and the green line the
     <b>mic's</b>.</li>
   <li>The light <b>EQ curve</b> shows all your EQ points combined.</li>
@@ -364,8 +365,9 @@ hear. EQ can't fully fix it, so AcoustiMatch has a separate control for it in th
   <tr><td><b>Roomy</b></td><td>Removes the quack entirely, at the cost of a little room and distance.</td></tr>
 </table>
 <p>Which is best depends on the instrument and how you play it. A fingerpicked part might suit
-Direct, while hard strumming often sounds better on Natural or Roomy. Attack affects both what you
-hear and the IR you export.</p>
+Direct, while hard strumming often sounds better on Natural or Roomy. All three play at the same
+loudness, so you can switch while listening and compare them fairly. Attack affects what you hear,
+the Match curve and the IR you export.</p>
 
 <h2 id="am-export">Exporting an IR</h2>
 <figure><img src="/images/acoustimatch/guide/export.png" width="368" alt="The export panel"></figure>
@@ -374,7 +376,8 @@ to save the WAV file.</p>
 <dl class="am-controls">
   <dt>Length</dt>
   <dd>1024, 2048, 4096 or 8192 samples. Many pedals and amps take 1024 or 2048. Longer IRs hold
-    more low-end detail, but not every device accepts them; for an IR loader plug-in in a DAW, use
+    more low-end detail, but not every device accepts them. If your device takes 2048, use it rather
+    than 1024, which can be a few dB off below about 200&nbsp;Hz; for an IR loader plug-in in a DAW, use
     4096 or 8192. The panel shows the length in milliseconds too, since some manuals list it that
     way.</dd>
   <dt>Sample rate</dt>
