@@ -139,12 +139,12 @@
 <div class="am-cover">
   <img class="am-cover-icon" src="/images/acoustimatch/guide/app-icon.png" alt="">
   <h1>AcoustiMatch</h1>
-  <p>User Guide, version 1.3 beta</p>
+  <p>User Guide, version 1.4</p>
   <figure><img src="/images/acoustimatch/guide/overview.png" alt="AcoustiMatch with a match and EQ points"></figure>
 </div>
 
 <h1>AcoustiMatch</h1>
-<p class="am-version">User Guide, version 1.3 beta</p>
+<p class="am-version">User Guide, version 1.4</p>
 <p class="am-print-title">About AcoustiMatch</p>
 
 <p>A pickup and a microphone hear an acoustic instrument very differently. The pickup gives you
@@ -161,6 +161,7 @@ as an impulse response (IR) to load into a pedal, amp or IR loader.</p>
   <li><a href="#am-screen">Overview</a></li>
   <li><a href="#am-bands">Adjusting with EQ points</a></li>
   <li><a href="#am-attack">The Attack setting</a></li>
+  <li><a href="#am-enhance">Enhance</a></li>
   <li><a href="#am-export">Exporting an IR</a></li>
   <li><a href="#am-menu">Menu and settings</a></li>
   <li><a href="#am-tips">Getting a better match</a></li>
@@ -190,7 +191,7 @@ the path. Restart your DAW afterwards so it picks up the new plug-in.</p>
 protected your PC. Click <b>More info</b>, then <b>Run anyway</b>.</p>
 
 <p>The first time AcoustiMatch opens, you'll be asked to accept the license agreement. Click
-<b>I agree</b> and you won't see it again on that computer.</p>
+<b>I agree</b> and you won't see it again on that computer unless the agreement changes.</p>
 
 <h2 id="am-before">Recording the pickup and mic</h2>
 <p>Everything starts with a recording. AcoustiMatch compares the pickup with the mic, so it needs
@@ -205,8 +206,11 @@ another input, and record both tracks together.</p>
   <li>Both files need the same sample rate and the same length. If you record both tracks in one
     pass and export them over the same range, this takes care of itself.</li>
   <li>Record at least 25 seconds of playing. Thirty seconds to a minute is better.</li>
-  <li>Keep both tracks dry: no EQ, compression or reverb, and don't normalize or trim one file
-    without doing the same to the other.</li>
+  <li>Keep the pickup track dry: no EQ, compression or reverb. Keep the mic free of compression
+    and reverb too, but EQ on the mic is fine and often helps (see
+    <a href="#am-shape-mic">Shaping the mic sound</a>).</li>
+  <li>Normalize both files so each peaks at &minus;1.0&nbsp;dB. This gives a strong IR. Don't trim
+    one file without trimming the other the same way.</li>
 </ul>
 <p class="am-note">When you export from your DAW, export each track on its own rather than a mix.
 If there's a choice between mono and split stereo, choose mono.</p>
@@ -249,8 +253,8 @@ current match but keeps your EQ points, so export an IR first if you want to kee
   <li>Fine-tune if you like, then click <b>Export IR…</b>. To start over, choose <b>Capture
     again</b> and confirm; any EQ points you've added are kept.</li>
 </ol>
-<p class="am-note">AcoustiMatch saves your EQ points (shapes and slopes included) and Attack setting
-with the DAW project, but not the match itself. When you reopen the project you'll need to capture
+<p class="am-note">AcoustiMatch saves your EQ points (shapes and slopes included) and Attack and Enhance
+settings with the DAW project, but not the match itself. When you reopen the project you'll need to capture
 again, so export an IR before closing if you want to keep the result.</p>
 <p>If nothing seems to happen during capture, check that playback is running and look at the green
 Mic line on the graph. If it stays flat, the side chain isn't connected.</p>
@@ -260,24 +264,26 @@ Mic line on the graph. If it stays flat, the side chain isn't connected.</p>
 left to 20&nbsp;kHz on the right.</p>
 <div class="am-overview">
   <img src="/images/acoustimatch/guide/overview.png" alt="The AcoustiMatch window with numbered callouts">
-  <span class="am-callout" style="left: 66.6%; top: 9.6%">1</span>
-  <span class="am-callout" style="left: 80.4%; top: 9.6%">2</span>
-  <span class="am-callout" style="left: 88.8%; top: 9.6%">3</span>
-  <span class="am-callout" style="left: 97.1%; top: 9.6%">4</span>
-  <span class="am-callout" style="left: 35.6%; top: 19.5%">5</span>
-  <span class="am-callout" style="left: 49.5%; top: 52%">6</span>
-  <span class="am-callout" style="left: 45%; top: 34.5%">7</span>
-  <span class="am-callout" style="left: 72.5%; top: 27.5%">8</span>
-  <span class="am-callout" style="left: 72%; top: 94%">9</span>
+  <span class="am-callout" style="left: 43.8%; top: 9.6%">1</span>
+  <span class="am-callout" style="left: 66.6%; top: 9.6%">2</span>
+  <span class="am-callout" style="left: 80.4%; top: 9.6%">3</span>
+  <span class="am-callout" style="left: 88.8%; top: 9.6%">4</span>
+  <span class="am-callout" style="left: 97.1%; top: 9.6%">5</span>
+  <span class="am-callout" style="left: 35.6%; top: 19.5%">6</span>
+  <span class="am-callout" style="left: 49.5%; top: 52%">7</span>
+  <span class="am-callout" style="left: 45%; top: 34.5%">8</span>
+  <span class="am-callout" style="left: 72.5%; top: 27.5%">9</span>
+  <span class="am-callout" style="left: 72%; top: 94%">10</span>
 </div>
 <ol class="am-legend">
+  <li><b>Enhance</b> smooths the narrow peaks and notches in the top end. See <a href="#am-enhance">Enhance</a>.</li>
   <li><b>Attack</b> softens the pickup's hard attack. See <a href="#am-attack">The Attack setting</a>.</li>
   <li><b>Bypass</b> (plug-in only) switches AcoustiMatch off so you can compare.</li>
   <li><b>Export IR…</b> saves the result as a WAV file. See <a href="#am-export">Exporting an IR</a>.</li>
   <li>The <b>⋯ menu</b> holds Clear all EQ points, Capture again and Settings. See
     <a href="#am-menu">Menu and settings</a>.</li>
   <li>The bronze <b>Match</b> curve is the correction AcoustiMatch applies to the pickup: above the
-    center line it's boosting, below it's cutting. It changes slightly with the Attack setting.</li>
+    center line it's boosting, below it's cutting. It changes slightly with the Attack and Enhance settings.</li>
   <li>While audio plays, the blue line shows the <b>pickup's spectrum</b> and the green line the
     <b>mic's</b>.</li>
   <li>The light <b>EQ curve</b> shows all your EQ points combined.</li>
@@ -369,10 +375,20 @@ Direct, while hard strumming often sounds better on Natural or Roomy. All three 
 loudness, so you can switch while listening and compare them fairly. Attack affects what you hear,
 the Match curve and the IR you export.</p>
 
+<h2 id="am-enhance">Enhance</h2>
+<p>A match can have narrow peaks and notches in the high frequencies (comb filtering from the
+instrument's body and the room) that can sound a little “phasey”. Tick <b>Enhance</b>, to the left
+of Attack, to smooth them out. It averages the match over 1/24-octave steps, which changes the
+response by about 2–3.5&nbsp;dB above 4&nbsp;kHz and by less than 1&nbsp;dB below that, so the body and
+midrange stay as they were.</p>
+<p>It's off by default. Like Attack, it affects what you hear, the Match curve and the IR you export,
+and it works with every Attack setting. It plays at the same loudness as without it, so you can
+switch it on and off while listening and keep whichever you prefer.</p>
+
 <h2 id="am-export">Exporting an IR</h2>
 <figure><img src="/images/acoustimatch/guide/export.png" width="368" alt="The export panel"></figure>
 <p>Click <b>Export IR…</b>, choose a length and sample rate, then click <b>Save IR…</b> and pick where
-to save the WAV file.</p>
+to save the WAV file. The IR sounds like what you hear, with your Attack, Enhance and EQ settings.</p>
 <dl class="am-controls">
   <dt>Length</dt>
   <dd>1024, 2048, 4096 or 8192 samples. Many pedals and amps take 1024 or 2048. Longer IRs hold
@@ -384,8 +400,8 @@ to save the WAV file.</p>
   <dd>44.1, 48 or 96&nbsp;kHz. Use the rate your pedal expects, or your session's rate in a DAW.</dd>
 </dl>
 <p>The right settings depend on what will load the IR, so check its manual. The file name includes
-the Attack setting, for example <i>AcoustiMatch IR Natural.wav</i>, so you can export one of each and
-compare them on your rig.</p>
+the Attack setting, and Enhance when it's on, for example <i>AcoustiMatch IR Natural.wav</i> or
+<i>AcoustiMatch IR Natural Enhanced.wav</i>, so you can export several and compare them on your rig.</p>
 
 <h2 id="am-menu">Menu and settings</h2>
 <p>The ⋯ button at the top right holds Clear all EQ points, Capture again (Load other recordings in
@@ -404,6 +420,19 @@ pickup's tone, volume and blend controls the way you'll use them on stage, becau
 sound right with the same settings.</p>
 <p>A match belongs to one instrument, pickup and mic. If you change any of them, make a new one.</p>
 
+<h3 id="am-shape-mic">Shaping the mic sound</h3>
+<p>AcoustiMatch makes the pickup sound like the mic track, so the best results come from a mic track
+that already sounds exactly the way you want the instrument to sound. Before you export the mic
+file, put an EQ on the mic track in your DAW and shape it to taste. This usually gives a better
+match on the first try than fixing things afterwards. If you can't EQ the mic before exporting, use
+<a href="#am-bands">EQ points</a> in AcoustiMatch instead.</p>
+<p>Think about where you'll use the instrument. In a full band, a guitar rarely needs its lowest
+frequencies, because the bass already fills them, so a low cut (high-pass filter) on the mic keeps
+the guitar out of the bass's way. For solo playing you may want no low cut at all, or a very gentle
+one that only removes rumble.</p>
+<p>These are only starting points. Experiment to find what sounds best for your instrument and the
+way you play.</p>
+
 <h2 id="am-trouble">Troubleshooting</h2>
 <table>
   <tr><th>Message or problem</th><th>What to do</th></tr>
@@ -419,8 +448,8 @@ sound right with the same settings.</p>
 </table>
 
 <h2 id="am-help" class="am-same-page">Feedback and support</h2>
-<p>AcoustiMatch is a free beta, and hearing how the IRs work on real rigs is the most useful thing
-for its development. You can reach us through Send feedback in the About window or at
+<p>AcoustiMatch is free, and hearing how the IRs work on real rigs is the most useful thing for its
+development. You can reach us through Send feedback in the About window or at
 <a href="https://www.molinellomusic.com/contact/">molinellomusic.com/contact</a>. If you're stuck,
 email <a href="mailto:support@molinellomusic.com">support@molinellomusic.com</a>.</p>
 
