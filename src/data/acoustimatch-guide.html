@@ -139,12 +139,12 @@
 <div class="am-cover">
   <img class="am-cover-icon" src="/images/acoustimatch/guide/app-icon.png" alt="">
   <h1>AcoustiMatch</h1>
-  <p>User Guide, version 1.4</p>
+  <p>User Guide, version 1.5</p>
   <figure><img src="/images/acoustimatch/guide/overview.png" alt="AcoustiMatch with a match and EQ points"></figure>
 </div>
 
 <h1>AcoustiMatch</h1>
-<p class="am-version">User Guide, version 1.4</p>
+<p class="am-version">User Guide, version 1.5</p>
 <p class="am-print-title">About AcoustiMatch</p>
 
 <p>A pickup and a microphone hear an acoustic instrument very differently. The pickup gives you
@@ -162,6 +162,7 @@ as an impulse response (IR) to load into a pedal, amp or IR loader.</p>
   <li><a href="#am-bands">Adjusting with EQ points</a></li>
   <li><a href="#am-attack">The Attack setting</a></li>
   <li><a href="#am-enhance">Enhance</a></li>
+  <li><a href="#am-blend">Pickup blend</a></li>
   <li><a href="#am-export">Exporting an IR</a></li>
   <li><a href="#am-menu">Menu and settings</a></li>
   <li><a href="#am-tips">Getting a better match</a></li>
@@ -253,8 +254,8 @@ current match but keeps your EQ points, so export an IR first if you want to kee
   <li>Fine-tune if you like, then click <b>Export IR…</b>. To start over, choose <b>Capture
     again</b> and confirm; any EQ points you've added are kept.</li>
 </ol>
-<p class="am-note">AcoustiMatch saves your EQ points (shapes and slopes included) and Attack and Enhance
-settings with the DAW project, but not the match itself. When you reopen the project you'll need to capture
+<p class="am-note">AcoustiMatch saves your EQ points (shapes and slopes included) and Attack, Enhance and
+Blend settings with the DAW project, but not the match itself. When you reopen the project you'll need to capture
 again, so export an IR before closing if you want to keep the result.</p>
 <p>If nothing seems to happen during capture, check that playback is running and look at the green
 Mic line on the graph. If it stays flat, the side chain isn't connected.</p>
@@ -264,18 +265,20 @@ Mic line on the graph. If it stays flat, the side chain isn't connected.</p>
 left to 20&nbsp;kHz on the right.</p>
 <div class="am-overview">
   <img src="/images/acoustimatch/guide/overview.png" alt="The AcoustiMatch window with numbered callouts">
-  <span class="am-callout" style="left: 43.8%; top: 9.6%">1</span>
-  <span class="am-callout" style="left: 66.6%; top: 9.6%">2</span>
-  <span class="am-callout" style="left: 80.4%; top: 9.6%">3</span>
-  <span class="am-callout" style="left: 88.8%; top: 9.6%">4</span>
-  <span class="am-callout" style="left: 97.1%; top: 9.6%">5</span>
-  <span class="am-callout" style="left: 35.6%; top: 19.5%">6</span>
-  <span class="am-callout" style="left: 49.5%; top: 52%">7</span>
-  <span class="am-callout" style="left: 45%; top: 34.5%">8</span>
-  <span class="am-callout" style="left: 72.5%; top: 27.5%">9</span>
-  <span class="am-callout" style="left: 72%; top: 94%">10</span>
+  <span class="am-callout" style="left: 28%; top: 9.6%">1</span>
+  <span class="am-callout" style="left: 45.4%; top: 9.6%">2</span>
+  <span class="am-callout" style="left: 66.6%; top: 9.6%">3</span>
+  <span class="am-callout" style="left: 80.4%; top: 9.6%">4</span>
+  <span class="am-callout" style="left: 88.8%; top: 9.6%">5</span>
+  <span class="am-callout" style="left: 97.1%; top: 9.6%">6</span>
+  <span class="am-callout" style="left: 35.6%; top: 19.5%">7</span>
+  <span class="am-callout" style="left: 49.5%; top: 52%">8</span>
+  <span class="am-callout" style="left: 45%; top: 34.5%">9</span>
+  <span class="am-callout" style="left: 72.5%; top: 27.5%">10</span>
+  <span class="am-callout" style="left: 72%; top: 94%">11</span>
 </div>
 <ol class="am-legend">
+  <li><b>Blend</b> mixes some of the raw pickup back in. See <a href="#am-blend">Pickup blend</a>.</li>
   <li><b>Enhance</b> smooths the narrow peaks and notches in the top end. See <a href="#am-enhance">Enhance</a>.</li>
   <li><b>Attack</b> softens the pickup's hard attack. See <a href="#am-attack">The Attack setting</a>.</li>
   <li><b>Bypass</b> (plug-in only) switches AcoustiMatch off so you can compare.</li>
@@ -283,7 +286,7 @@ left to 20&nbsp;kHz on the right.</p>
   <li>The <b>⋯ menu</b> holds Clear all EQ points, Capture again and Settings. See
     <a href="#am-menu">Menu and settings</a>.</li>
   <li>The bronze <b>Match</b> curve is the correction AcoustiMatch applies to the pickup: above the
-    center line it's boosting, below it's cutting. It changes slightly with the Attack and Enhance settings.</li>
+    center line it's boosting, below it's cutting. It changes slightly with the Attack and Enhance settings, and more with Blend.</li>
   <li>While audio plays, the blue line shows the <b>pickup's spectrum</b> and the green line the
     <b>mic's</b>.</li>
   <li>The light <b>EQ curve</b> shows all your EQ points combined.</li>
@@ -385,10 +388,31 @@ midrange stay as they were.</p>
 and it works with every Attack setting. It plays at the same loudness as without it, so you can
 switch it on and off while listening and keep whichever you prefer.</p>
 
+<h2 id="am-blend">Pickup blend</h2>
+<p>Many preamps and pedals have a blend knob that mixes the raw pickup in with the IR. <b>Blend</b>,
+at the left of the toolbar, does the same inside AcoustiMatch. The percentage is how much of the
+match you hear; the rest is raw pickup. At 100%, the default, you hear the match alone; at 0%, the
+pickup alone. Drag left to mix in more pickup. Double-click the slider to go back to 100%.</p>
+<p>A 100% match sounds closest to the mic, and at home or on a quiet stage that's usually what you
+want. On a loud stage it can sound hollow or distant and feed back more easily, so many players keep
+most of the signal on the pickup and add only a little of the IR, to take the edge off the piezo,
+for example a Blend of 20–30%.
+Blend lets you build that into the IR. Try a few settings at soundcheck.</p>
+<p>Every setting plays at the same loudness, so you can drag while listening and judge the tone, not
+the volume. Like Attack and Enhance, Blend affects what you hear, the Match curve and the IR you
+export. In the app, choose <b>Matched</b> to hear it.</p>
+<p>Settings near the middle, roughly 35–65%, can sound hollow. The pickup and the mic don't line up
+perfectly at every frequency, so when they're mixed at similar levels they partly cancel, causing
+dips in the low end and low mids. It's the same thing that happens when you blend a real pickup and
+mic on a mixer. Toward either end, one of the two dominates and the dips get small. Watch the Match
+curve while you drag to see where it dips.</p>
+<p>If your pedal or preamp has its own blend control, you can export at 100% and use that instead.
+It works the same way, as long as the device keeps the pickup and the IR in time.</p>
+
 <h2 id="am-export">Exporting an IR</h2>
 <figure><img src="/images/acoustimatch/guide/export.png" width="368" alt="The export panel"></figure>
 <p>Click <b>Export IR…</b>, choose a length and sample rate, then click <b>Save IR…</b> and pick where
-to save the WAV file. The IR sounds like what you hear, with your Attack, Enhance and EQ settings.</p>
+to save the WAV file. The IR sounds like what you hear, with your Attack, Enhance, Blend and EQ settings.</p>
 <dl class="am-controls">
   <dt>Length</dt>
   <dd>1024, 2048, 4096 or 8192 samples. Many pedals and amps take 1024 or 2048. Longer IRs hold
@@ -398,10 +422,19 @@ to save the WAV file. The IR sounds like what you hear, with your Attack, Enhanc
     way.</dd>
   <dt>Sample rate</dt>
   <dd>44.1, 48 or 96&nbsp;kHz. Use the rate your pedal expects, or your session's rate in a DAW.</dd>
+  <dt>Also export blends</dt>
+  <dd>Also saves copies of the IR at Blend 10%, 25% and 75%, that much match with the rest raw
+    pickup (see <a href="#am-blend">Pickup blend</a>), next to the main file and named after it, for
+    example <i>AcoustiMatch IR Natural Blend 25.wav</i>. Load them all and pick one at soundcheck. It's
+    handy for pedals with no blend control of their own. The set skips the middle settings, which can
+    sound hollow. The option is only available when Blend is at 100%; to export one custom blend, set
+    the Blend slider instead. It's off each time you open the panel. Exporting over files with the
+    same names replaces them.</dd>
 </dl>
 <p>The right settings depend on what will load the IR, so check its manual. The file name includes
-the Attack setting, and Enhance when it's on, for example <i>AcoustiMatch IR Natural.wav</i> or
-<i>AcoustiMatch IR Natural Enhanced.wav</i>, so you can export several and compare them on your rig.</p>
+the Attack setting, Enhance when it's on and the Blend percentage when it's below 100% (without
+the % sign, which some devices don't handle), for example
+<i>AcoustiMatch IR Natural.wav</i> or <i>AcoustiMatch IR Natural Enhanced Blend 30.wav</i>, so you can export several and compare them on your rig.</p>
 
 <h2 id="am-menu">Menu and settings</h2>
 <p>The ⋯ button at the top right holds Clear all EQ points, Capture again (Load other recordings in
